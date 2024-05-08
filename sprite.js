@@ -8,7 +8,7 @@ export default class {
         this.#ctx = ctx
     }
 
-    loadImages() {
+    async loadImages() {
         const img = new Image(); // Create new img element
         img.src = "test_img.png"
         await img.decode();

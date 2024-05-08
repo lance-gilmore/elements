@@ -8,10 +8,10 @@ export default class {
         this.#ctx = ctx
     }
 
-    run() {
+    async run() {
         //this.#loadImages()
         const s = new Sprite(this.#ctx)
-        s.loadImages()
+        await s.loadImages()
         s.drawImage()
     }
 
