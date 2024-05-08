@@ -16,7 +16,7 @@ export default class {
     }
 
     drawImage() {
-        this.#ctx.drawImage(this.#images[0])
+        this.#ctx.drawImage(this.#images[0], 10, 10, 100, 100)
     }
 
 }
