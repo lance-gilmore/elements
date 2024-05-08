@@ -6,25 +6,13 @@
     <h1>Elements</h1>
     <canvas id="mainCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
 
-    <script>
-      // const c = document.getElementById("mainCanvas");
-      // const ctx = c.getContext("2d");
-
-      // const img = new Image(); // Create new img element
-      // img.addEventListener("load", () => {
-      //   ctx.drawImage(img, 10, 10, 100, 100);
-      // });
-      // img.src = "test_img.png";
-
+    <script type="module">
+      import MainRunner from './main_runner.js'
+      const c = document.getElementById("mainCanvas")
+      const runner = new MainRunner(c)
+      runner.run()
+      
     </script>
-
-<script type="module">
-  import MainRunner from './main_runner.js'
-  const c = document.getElementById("mainCanvas")
-  const runner = new MainRunner(c)
-  runner.loadImages()
-  
-</script>
 
   </body>
 </html>
