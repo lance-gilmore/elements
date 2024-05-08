@@ -9,9 +9,15 @@
     <script>
       var c = document.getElementById("mainCanvas");
       var ctx = c.getContext("2d");
-      var img = document.getElementById("test_img.png");
-      ctx.drawImage(img, 10, 10);
+
+      const img = new Image(); // Create new img element
+      img.addEventListener("load", () => {
+        ctx.drawImage(img, 10, 10);
+      });
+      img.src = "test_img.png";
+
+      
     </script>
-    
+
   </body>
 </html>
