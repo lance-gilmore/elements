@@ -11,7 +11,7 @@ export default class {
     loadImages() {
         const img = new Image(); // Create new img element
         img.addEventListener("load", () => {
-            #ctx.drawImage(img, 10, 10, 100, 100);
+            this.#ctx.drawImage(img, 10, 10, 100, 100);
         });
         img.src = "test_img.png";
     }
