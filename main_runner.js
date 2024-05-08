@@ -9,18 +9,9 @@ export default class {
     }
 
     async run() {
-        //this.#loadImages()
         const s = new Sprite(this.#ctx)
         await s.loadImages()
         s.drawImage()
-    }
-
-    #loadImages() {
-        const img = new Image(); // Create new img element
-        img.addEventListener("load", () => {
-            this.#ctx.drawImage(img, 10, 10, 100, 100)
-        });
-        img.src = "test_img.png"
     }
 
 }

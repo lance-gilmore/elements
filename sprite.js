@@ -9,10 +9,12 @@ export default class {
     }
 
     async loadImages() {
-        const img = new Image(); // Create new img element
-        img.src = "test_img.png"
-        await img.decode();
-        this.#images.push(img)
+        for (const location of this.#imageLocations) {
+            const img = new Image();
+            img.src = location
+            await img.decode();
+            this.#images.push(img)
+        }
     }
 
     drawImage() {
