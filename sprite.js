@@ -1,7 +1,7 @@
 
 export default class {
     #ctx
-    #imageLocations = ["test_img.png","bunny_sprite.png"]
+    #imageLocations = ["test_img.png","bunny_sprites.png"]
     #images = []
 
     constructor(ctx) {
@@ -24,8 +24,11 @@ export default class {
         const height = 100
         const offsetx = 10
         const offsety = 10
+        const dwidth = 100
+        const dheight = 100
 
-        this.#ctx.drawImage(this.#images[1], x, y, width, height, offsetx, offsety)
+        //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+        this.#ctx.drawImage(this.#images[1], x, y, width, height, offsetx, offsety, dwidth, dheight)
     }
 
 }
