@@ -18,17 +18,17 @@ export default class {
     }
 
     draw() {
-        const x = 10
-        const y = 10
-        const width = 200
-        const height = 200
-        const offsetx = -100
-        const offsety = -100
-        const dwidth = 300
-        const dheight = 300
+        const canvasx = 0
+        const canvasy = 10
+        const canvasw = 700
+        const canvash = 500
+        const imagex = 200
+        const imagey = 200
+        const imagew = 300
+        const imageh = 300
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
-        this.#ctx.drawImage(this.#images[1], x, y, width, height, offsetx, offsety, dwidth, dheight)
+        this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
     }
 
 }
