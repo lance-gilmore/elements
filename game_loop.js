@@ -10,12 +10,16 @@ export default class {
 
     async start() {
         this.#running = true
+        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
         while (this.#running) {
+            
 
             this.#update()
 
             this.#render()
+            
+            await sleep(1000)
         }
 
     }

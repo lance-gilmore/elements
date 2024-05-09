@@ -2,9 +2,11 @@
 export default class {
     #ctx
     #imageLocations = ["test_img.png","bunny_sprites.png"]
+    #currentSprite = 0
     #images = []
     #spriteLocations = [
-        []
+        [685,641,15,28],
+        [700,641,15,28]
     ]
 
     constructor(ctx) {
@@ -21,7 +23,10 @@ export default class {
     }
 
     update() {
-
+        this.#currentSprite++
+        if (this.#currentSprite > this.#spriteLocations.length) {
+            this.#currentSprite = 0
+        }
     }
 
     draw() {
@@ -29,16 +34,16 @@ export default class {
         const canvasy = 10
         const canvasw = 100
         const canvash = 100
-        const imagex = 685
-        const imagey = 641
-        const imagew = 15
-        const imageh = 29
+
+        const imagex = this.#spriteLocations[this.#currentSprite][0]
+        const imagey = this.#spriteLocations[this.#currentSprite][1]
+        const imagew = this.#spriteLocations[this.#currentSprite][2]
+        const imageh = this.#spriteLocations[this.#currentSprite][3]
 
         this.#ctx.beginPath();
         this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
         this.#ctx.stroke();
 
-        //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
     }
 
