@@ -2,7 +2,7 @@
 export default class {
     #ctx
     #imageLocations = ["test_img.png","bunny_sprites.png"]
-    #currentSprite = 0
+    #currentSprite = 1
     #images = []
     #spriteLocations = [
         [685,641,15,27],
@@ -25,14 +25,14 @@ export default class {
     update() {
         this.#currentSprite++
         if (this.#currentSprite > this.#spriteLocations.length) {
-            this.#currentSprite = 1
+            this.#currentSprite = 0
         }
     }
 
     draw() {
         const canvasx = 10
         const canvasy = 10
-        const canvasw = 80
+        const canvasw = 60
         const canvash = 100
 
         const imagex = this.#spriteLocations[this.#currentSprite][0]
