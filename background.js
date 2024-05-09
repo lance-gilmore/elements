@@ -31,17 +31,13 @@ export default class {
     draw() {
         const canvasx = 0
         const canvasy = 0
-        const canvasw = 700
-        const canvash = 500
+        const canvasw = 800
+        const canvash = 600
 
         const imagex = this.#spriteLocations[this.#currentSprite][0]
         const imagey = this.#spriteLocations[this.#currentSprite][1]
         const imagew = this.#spriteLocations[this.#currentSprite][2]
         const imageh = this.#spriteLocations[this.#currentSprite][3]
-
-        this.#ctx.beginPath();
-        this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
-        this.#ctx.stroke();
 
         this.#ctx.drawImage(this.#images[0], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
     }

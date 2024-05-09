@@ -1,7 +1,7 @@
 
 export default class {
     #ctx
-    #imageLocations = ["test_img.png","bunny_sprites.png"]
+    #imageLocations = ["bunny_sprites.png"]
     #currentSprite = 0
     #images = []
     #spriteLocations = [
@@ -44,7 +44,7 @@ export default class {
         this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
         this.#ctx.stroke();
 
-        this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
+        this.#ctx.drawImage(this.#images[0], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
     }
 
 }
