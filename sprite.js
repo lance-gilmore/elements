@@ -22,8 +22,8 @@ export default class {
         const canvasy = 10
         const canvasw = 700
         const canvash = 500
-        const imagex = 200
-        const imagey = 200
+        const imagex = 600
+        const imagey = 600
         const imagew = 300
         const imageh = 300
 
