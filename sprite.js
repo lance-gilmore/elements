@@ -27,6 +27,7 @@ export default class {
         if (this.#currentSprite > this.#spriteLocations.length) {
             this.#currentSprite = 0
         }
+        console.log(this.#currentSprite)
     }
 
     draw() {
