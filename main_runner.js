@@ -1,5 +1,6 @@
 import Sprite from './sprite.js'
 import GameLoop from './game_loop.js'
+import Background from './background.js'
 
 export default class {
     #ctx
@@ -12,10 +13,12 @@ export default class {
     async run() {
         const s = new Sprite(this.#ctx)
         await s.loadImages()
-        //s.draw()
+        
+        const b = new Background(this.#ctx)
 
         const loop = new GameLoop(this.#ctx)
         loop.addEntity(s)
+        loop.addEntity(b)
         loop.start()
     }
 
