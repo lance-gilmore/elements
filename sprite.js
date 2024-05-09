@@ -20,6 +20,10 @@ export default class {
         }
     }
 
+    update() {
+        
+    }
+
     draw() {
         const canvasx = 10
         const canvasy = 10
