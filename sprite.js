@@ -2,11 +2,11 @@
 export default class {
     #ctx
     #imageLocations = ["test_img.png","bunny_sprites.png"]
-    #currentSprite = 1
+    #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [685,641,16,26],
-        [717,641,16,26]
+        [685,641,16,27],
+        [717,641,16,27]
     ]
 
     constructor(ctx) {
