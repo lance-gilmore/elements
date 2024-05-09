@@ -25,10 +25,10 @@ export default class {
         const canvasy = 10
         const canvasw = 100
         const canvash = 100
-        const imagex = 678
-        const imagey = 640
-        const imagew = 30
-        const imageh = 30
+        const imagex = 683
+        const imagey = 641
+        const imagew = 20
+        const imageh = 29
 
         this.#ctx.beginPath();
         this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
