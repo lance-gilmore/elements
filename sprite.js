@@ -22,8 +22,8 @@ export default class {
         const y = 10
         const width = 200
         const height = 200
-        const offsetx = 100
-        const offsety = 100
+        const offsetx = -100
+        const offsety = -100
         const dwidth = 300
         const dheight = 300
 
