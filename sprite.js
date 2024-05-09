@@ -27,8 +27,8 @@ export default class {
         const canvash = 50
         const imagex = 670
         const imagey = 640
-        const imagew = 50
-        const imageh = 50
+        const imagew = 30
+        const imageh = 30
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
