@@ -20,10 +20,10 @@ export default class {
     draw() {
         const x = 10
         const y = 10
-        const width = 100
-        const height = 100
-        const offsetx = 10
-        const offsety = 10
+        const width = 200
+        const height = 200
+        const offsetx = 600
+        const offsety = 600
         const dwidth = 300
         const dheight = 300
 
