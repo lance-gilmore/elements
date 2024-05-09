@@ -5,8 +5,8 @@ export default class {
     #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [685,641,17,28],
-        [717,641,17,28]
+        [685,641,17,29],
+        [717,641,17,29]
     ]
 
     constructor(ctx) {
@@ -24,7 +24,7 @@ export default class {
 
     update() {
         this.#currentSprite++
-        if (this.#currentSprite > this.#spriteLocations.length) {
+        if (this.#currentSprite > this.#spriteLocations.length -1) {
             this.#currentSprite = 0
         }
         console.log(this.#currentSprite)
