@@ -24,8 +24,8 @@ export default class {
         const height = 100
         const offsetx = 10
         const offsety = 10
-        const dwidth = 100
-        const dheight = 100
+        const dwidth = 300
+        const dheight = 300
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], x, y, width, height, offsetx, offsety, dwidth, dheight)
