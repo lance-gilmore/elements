@@ -15,6 +15,7 @@ export default class {
         await s.loadImages()
         
         const b = new Background(this.#ctx)
+        await b.loadImages()
 
         const loop = new GameLoop(this.#ctx)
         loop.addEntity(b)
