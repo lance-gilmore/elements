@@ -30,8 +30,8 @@ export default class {
     }
 
     draw() {
-        const canvasx = 10
-        const canvasy = 10
+        const canvasx = 100
+        const canvasy = 100
         const canvasw = 60
         const canvash = 100
 

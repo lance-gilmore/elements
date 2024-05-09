@@ -5,7 +5,7 @@ export default class {
     #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [0,443,500,200]
+        [0,445,490,250]
     ]
 
     constructor(ctx) {
