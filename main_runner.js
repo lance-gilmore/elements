@@ -17,8 +17,9 @@ export default class {
         const b = new Background(this.#ctx)
 
         const loop = new GameLoop(this.#ctx)
-        loop.addEntity(s)
         loop.addEntity(b)
+        loop.addEntity(s)
+        
         loop.start()
     }
 
