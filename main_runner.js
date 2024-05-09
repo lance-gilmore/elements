@@ -11,7 +11,7 @@ export default class {
     async run() {
         const s = new Sprite(this.#ctx)
         await s.loadImages()
-        s.drawImage()
+        s.draw()
     }
 
 
