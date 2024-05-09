@@ -31,9 +31,9 @@ export default class {
 
     draw() {
         const canvasx = 100
-        const canvasy = 100
-        const canvasw = 60
-        const canvash = 100
+        const canvasy = 300
+        const canvasw = 30
+        const canvash = 50
 
         const imagex = this.#spriteLocations[this.#currentSprite][0]
         const imagey = this.#spriteLocations[this.#currentSprite][1]
