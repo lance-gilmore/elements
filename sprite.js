@@ -21,7 +21,7 @@ export default class {
     }
 
     update() {
-        
+
     }
 
     draw() {
@@ -29,9 +29,9 @@ export default class {
         const canvasy = 10
         const canvasw = 100
         const canvash = 100
-        const imagex = 683
+        const imagex = 685
         const imagey = 641
-        const imagew = 20
+        const imagew = 15
         const imageh = 29
 
         this.#ctx.beginPath();
