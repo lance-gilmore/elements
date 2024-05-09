@@ -3,6 +3,9 @@ export default class {
     #ctx
     #imageLocations = ["test_img.png","bunny_sprites.png"]
     #images = []
+    #spriteLocations = [
+        []
+    ]
 
     constructor(ctx) {
         this.#ctx = ctx
@@ -20,12 +23,12 @@ export default class {
     draw() {
         const canvasx = 0
         const canvasy = 10
-        const canvasw = 700
-        const canvash = 500
-        const imagex = 650
-        const imagey = 650
-        const imagew = 100
-        const imageh = 100
+        const canvasw = 50
+        const canvash = 50
+        const imagex = 670
+        const imagey = 640
+        const imagew = 50
+        const imageh = 50
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
