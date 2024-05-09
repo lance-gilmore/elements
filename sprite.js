@@ -25,7 +25,7 @@ export default class {
     update() {
         this.#currentSprite++
         if (this.#currentSprite > this.#spriteLocations.length) {
-            this.#currentSprite = 0
+            this.#currentSprite = 1
         }
     }
 
