@@ -21,14 +21,18 @@ export default class {
     }
 
     draw() {
-        const canvasx = 0
-        const canvasy = 0
+        const canvasx = 10
+        const canvasy = 10
         const canvasw = 100
         const canvash = 100
-        const imagex = 675
-        const imagey = 645
+        const imagex = 678
+        const imagey = 640
         const imagew = 30
         const imageh = 30
+
+        ctx.beginPath();
+        ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
+        ctx.stroke();
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
