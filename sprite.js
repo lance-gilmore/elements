@@ -22,11 +22,11 @@ export default class {
 
     draw() {
         const canvasx = 0
-        const canvasy = 10
-        const canvasw = 50
-        const canvash = 50
-        const imagex = 670
-        const imagey = 640
+        const canvasy = 0
+        const canvasw = 100
+        const canvash = 100
+        const imagex = 675
+        const imagey = 645
         const imagew = 30
         const imageh = 30
 
