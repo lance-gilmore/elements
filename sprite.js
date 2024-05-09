@@ -30,9 +30,9 @@ export default class {
         const imagew = 30
         const imageh = 30
 
-        ctx.beginPath();
-        ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
-        ctx.stroke();
+        this.#ctx.beginPath();
+        this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
+        this.#ctx.stroke();
 
         //drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
         this.#ctx.drawImage(this.#images[1], imagex, imagey, imagew, imageh, canvasx, canvasy, canvasw, canvash)
