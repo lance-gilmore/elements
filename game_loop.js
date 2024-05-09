@@ -8,6 +8,10 @@ export default class {
         this.#ctx = ctx
     }
 
+    async addEntity(entity) {
+        this.#entities.push(entity)
+    }
+
     async start() {
         this.#running = true
         const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -18,7 +22,7 @@ export default class {
             this.#update()
 
             this.#render()
-            
+
             await sleep(1000)
         }
 
