@@ -5,8 +5,8 @@ export default class {
     #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [685,641,16,27],
-        [717,641,16,27]
+        [685,641,17,28],
+        [717,641,17,28]
     ]
 
     constructor(ctx) {
