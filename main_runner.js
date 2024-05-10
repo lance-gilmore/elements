@@ -1,6 +1,7 @@
 import Sprite from './sprite.js'
 import GameLoop from './game_loop.js'
 import Background from './background.js'
+import Platform from './platform.js'
 
 export default class {
     #ctx
@@ -17,8 +18,12 @@ export default class {
         const b = new Background(this.#ctx)
         await b.loadImages()
 
+        const p = new Platform(this.#ctx)
+        await p.loadImages()
+
         const loop = new GameLoop(this.#ctx)
         loop.addEntity(b)
+        loop.addEntity(p)
         loop.addEntity(s)
         
         loop.start()
