@@ -8,6 +8,7 @@ export default class extends Entity {
     canvash = 0
 
     constructor(ctx, x, y, w, h) {
+        super()
         this.ctx = ctx
         this.canvasx = x
         this.canvasx = y
