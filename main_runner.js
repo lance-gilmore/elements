@@ -18,7 +18,7 @@ export default class {
         await s.loadImages()
         
         const b = new Background(this.#ctx)
-        await b.loadImages()
+        await b.loadImage()
 
         const p = new Platform(this.#ctx,100,420)
         await p.loadImages()
