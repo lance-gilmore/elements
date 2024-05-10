@@ -26,7 +26,7 @@ export default class extends Drawable {
         // this.#ctx.rect(canvasx-1, canvasy-1, canvasw+1, canvash+1);
         // this.#ctx.stroke();
 
-        this.#ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+        this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
     }
 
 }
