@@ -5,7 +5,7 @@ export default class {
     #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [725,186,72,92]
+        [725,186,70,90]
     ]
 
     constructor(ctx) {
@@ -30,7 +30,7 @@ export default class {
 
     draw() {
         const canvasx = 150
-        const canvasy = 200
+        const canvasy = 220
         const canvasw = 150
         const canvash = 190
 
