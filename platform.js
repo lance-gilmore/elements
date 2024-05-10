@@ -5,7 +5,7 @@ export default class {
     #currentSprite = 0
     #images = []
     #spriteLocations = [
-        [479,798,50,50]
+        [482,800,50,50]
     ]
 
     constructor(ctx) {
@@ -30,9 +30,9 @@ export default class {
 
     draw() {
         const canvasx = 100
-        const canvasy = 400
-        const canvasw = 100
-        const canvash = 100
+        const canvasy = 420
+        const canvasw = 150
+        const canvash = 150
 
         const imagex = this.#spriteLocations[this.#currentSprite][0]
         const imagey = this.#spriteLocations[this.#currentSprite][1]
