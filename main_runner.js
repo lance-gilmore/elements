@@ -19,8 +19,11 @@ export default class {
         const b = new Background(this.#ctx)
         await b.loadImages()
 
-        const p = new Platform(this.#ctx)
+        const p = new Platform(this.#ctx,100,420)
         await p.loadImages()
+
+        const p2 = new Platform(this.#ctx,250,420)
+        await p2.loadImages()
 
         const h = new House(this.#ctx)
         await h.loadImages()
@@ -28,6 +31,7 @@ export default class {
         const loop = new GameLoop(this.#ctx)
         loop.addEntity(b)
         loop.addEntity(p)
+        loop.addEntity(p2)
         loop.addEntity(h)
         loop.addEntity(s)
         

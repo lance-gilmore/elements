@@ -4,12 +4,18 @@ export default class {
     #imageLocations = ["bunny_sprites.png"]
     #currentSprite = 0
     #images = []
+
+    #canvasx = 0
+    #canvasy = 0
+
     #spriteLocations = [
         [483,800,48,47]
     ]
 
-    constructor(ctx) {
+    constructor(ctx, x, y) {
         this.#ctx = ctx
+        this.#canvasx = x
+        this.#canvasx = y
     }
 
     async loadImages() {
@@ -29,8 +35,8 @@ export default class {
     }
 
     draw() {
-        const canvasx = 100
-        const canvasy = 420
+        const canvasx = this.#canvasx
+        const canvasy = this.#canvasy
         const canvasw = 150
         const canvash = 150
 
