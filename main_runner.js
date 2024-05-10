@@ -2,6 +2,7 @@ import Sprite from './sprite.js'
 import GameLoop from './game_loop.js'
 import Background from './background.js'
 import Platform from './platform.js'
+import House from './house.js'
 
 export default class {
     #ctx
@@ -21,9 +22,13 @@ export default class {
         const p = new Platform(this.#ctx)
         await p.loadImages()
 
+        const h = new House(this.#ctx)
+        await h.loadImages()
+
         const loop = new GameLoop(this.#ctx)
         loop.addEntity(b)
         loop.addEntity(p)
+        loop.addEntity(h)
         loop.addEntity(s)
         
         loop.start()
