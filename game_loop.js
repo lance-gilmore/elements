@@ -15,8 +15,9 @@ export default class {
           };
         console.log('hre')
         document.addEventListener("keydown", (event) => {
-            console.log(event.location)
-            if (event.locaton == 38) {
+            console.log(event.code)
+            console.log(event.key)
+            if (event.code == 38) {
                 console.log('up')
             }
         })
