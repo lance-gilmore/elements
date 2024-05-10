@@ -15,7 +15,7 @@ export default class {
     constructor(ctx, x, y) {
         this.#ctx = ctx
         this.#canvasx = x
-        this.#canvasx = y
+        this.#canvasy = y
     }
 
     async loadImages() {
