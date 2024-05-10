@@ -15,10 +15,19 @@ export default class {
           };
         
         document.addEventListener("keydown", (event) => {
-            console.log(event.code)
-            console.log(event.key)
+            
+            //console.log(event.key)
             if (event.key == 'ArrowUp') {
                 console.log('up')
+            }
+            if (event.key == 'ArrowDown') {
+                console.log('down')
+            }
+            if (event.key == 'ArrowLeft') {
+                console.log('left')
+            }
+            if (event.key == 'ArrowRight') {
+                console.log('right')
             }
         })
     }
