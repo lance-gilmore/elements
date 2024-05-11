@@ -33,7 +33,6 @@ export default class extends AnimatedSprite {
             this.canvasx = this.canvasx + 2
         }
 
-
         this.move(this.canvasx, this.canvasy)
         super.update()
     }
