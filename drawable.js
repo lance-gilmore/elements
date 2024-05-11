@@ -21,6 +21,7 @@ export default class extends Entity {
     }
 
     move(x,y) {
+        console.log('mmm')
         this.canvasx = x
         this.canvasy = y
     }
