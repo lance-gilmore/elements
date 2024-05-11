@@ -14,7 +14,9 @@ export default class {
     }
 
     async run() {
-        const s = new Bunny(this.#ctx)
+        const controlls = new Controlls()
+
+        const s = new Bunny(this.#ctx, controlls)
         await s.load()
         
         const b = new Background(this.#ctx)
@@ -29,7 +31,7 @@ export default class {
         const h = new House(this.#ctx)
         await h.load()
 
-        const controlls = new Controlls()
+        
 
         const loop = new GameLoop(this.#ctx, controlls)
         loop.addEntity(b)

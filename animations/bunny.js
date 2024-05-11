@@ -3,9 +3,11 @@ import Bunny1 from '../sprites/bunny1.js'
 import Bunny2 from '../sprites/bunny2.js'
 
 export default class extends AnimatedSprite {
+    #controlls
 
-    constructor(ctx) {
+    constructor(ctx, controlls) {
         super(ctx, 100, 350, 40, 70)
+        this.#controlls = controlls
     }
 
     async load() {
@@ -15,6 +17,13 @@ export default class extends AnimatedSprite {
         const b2 = new Bunny2(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
         await b2.load()
         this.images.push(b2)
+    }
+
+    update() {
+        if (this.#controlls.upPressed) {
+            this.move(this.canvasx, this.canvasy - 2)
+        }
+        super.update()
     }
 
 }

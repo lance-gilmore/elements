@@ -20,4 +20,9 @@ export default class extends Entity {
 
     }
 
+    move(x,y) {
+        this.canvasx = x
+        this.canvasy = y
+    }
+
 }

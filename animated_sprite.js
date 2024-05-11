@@ -20,6 +20,12 @@ export default class extends Drawable {
         }
     }
 
+    move(x,y) {
+        for (const image of this.images) {
+            image.move(x,y)
+        }
+    }
+
     draw() {
         this.images[this.currentSprite].draw()
     }
