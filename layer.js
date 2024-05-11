@@ -16,11 +16,13 @@ export default class extends Drawable {
             const ey = element.canvasy
             const er = element.canvasx + element.canvasw
             const eb = element.canvasy + element.canvash
+            
             if (x < er && r > ex && y < eb && b > ey) {
-                console.log('collision')
+                return true
             }
 
         }
+        return false
     }
 
     async load() {

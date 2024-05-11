@@ -29,26 +29,38 @@ export default class extends AnimatedSprite {
 
     update() {
         const movementSpeed = 8
-
+        
         let moving = false
         if (this.#controlls.upPressed) {
             this.canvasy = this.canvasy - movementSpeed
             moving = true
+            if (this.checkCollisions()) {
+                this.canvasy = this.canvasy + movementSpeed
+            }
         }
         if (this.#controlls.downPressed) {
             this.canvasy = this.canvasy + movementSpeed
             moving = true
+            if (this.checkCollisions()) {
+                this.canvasy = this.canvasy - movementSpeed
+            }
         }
         if (this.#controlls.leftPressed) {
             this.canvasx = this.canvasx - movementSpeed
             moving = true
+            if (this.checkCollisions()) {
+                this.canvasx = this.canvasx + movementSpeed
+            }
         }
         if (this.#controlls.rightPressed) {
             this.canvasx = this.canvasx + movementSpeed
             moving = true
+            if (this.checkCollisions()) {
+                this.canvasx = this.canvasx - movementSpeed
+            }
         }
 
-        this.checkCollisions()
+        
 
         if (moving) {
             this.move(this.canvasx, this.canvasy)
