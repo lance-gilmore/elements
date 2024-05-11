@@ -21,6 +21,7 @@ export default class extends AnimatedSprite {
 
     update() {
         if (this.#controlls.upPressed) {
+            console.log('updatey: '+this.canvasy - 2)
             this.move(this.canvasx, this.canvasy - 2)
         }
         super.update()

@@ -21,7 +21,6 @@ export default class extends Drawable {
     }
 
     move(x,y) {
-        console.log('move')
         for (const image of this.images) {
             image.move(x,y)
         }
