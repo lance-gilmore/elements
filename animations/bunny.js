@@ -14,8 +14,11 @@ export default class extends AnimatedSprite {
 
     checkCollisions() {
         for (const collidable of this.#collidables) {
-            collidable.checkCollision(this.canvasx, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)
+            if (collidable.checkCollision(this.canvasx, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)) {
+                return true
+            }
         }
+        return false
     }
 
     async load() {
