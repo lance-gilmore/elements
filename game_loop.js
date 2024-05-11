@@ -25,7 +25,7 @@ export default class {
 
             this.#render()
 
-            await sleep(500)
+            await sleep(100)
         }
 
     }
