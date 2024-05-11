@@ -11,7 +11,7 @@ export default class extends Entity {
         super()
         this.ctx = ctx
         this.canvasx = x
-        this.canvasx = y
+        this.canvasy = y
         this.canvasw = w
         this.canvash = h
     }

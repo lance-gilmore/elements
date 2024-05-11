@@ -1,11 +1,11 @@
-import Sprite from './sprite_drawable.js'
+import Sprite from '../sprite_drawable.js'
 
 export default class extends Sprite {
     imageLocation = "bunny_sprites.png"
-    spriteLocation = [0,445,482,241]
+    spriteLocation = [725,186,70,90]
     
     constructor(ctx) {
-        super(ctx, 0, 0, 800, 600)
+        super(ctx, 150, 230, 120, 190)
     }
 
 }
