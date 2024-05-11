@@ -20,21 +20,28 @@ export default class extends AnimatedSprite {
     }
 
     update() {
+        let moving = false
         if (this.#controlls.upPressed) {
             this.canvasy = this.canvasy - 2
+            moving = true
         }
         if (this.#controlls.downPressed) {
             this.canvasy = this.canvasy + 2
+            moving = true
         }
         if (this.#controlls.leftPressed) {
             this.canvasx = this.canvasx - 2
+            moving = true
         }
         if (this.#controlls.rightPressed) {
             this.canvasx = this.canvasx + 2
+            moving = true
         }
 
-        this.move(this.canvasx, this.canvasy)
-        super.update()
+        if (moving) {
+            this.move(this.canvasx, this.canvasy)
+            super.update()
+        }
     }
 
 }
