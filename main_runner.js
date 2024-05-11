@@ -16,8 +16,7 @@ export default class {
     async run() {
         const controlls = new Controlls()
 
-        const s = new Bunny(this.#ctx, controlls)
-        await s.load()
+        
         
         const b = new Background(this.#ctx,0,0,800,600,controlls)
         await b.load()
@@ -27,6 +26,9 @@ export default class {
 
         const h = new Foreground(this.#ctx,0,0,800,600,controlls)
         await h.load()
+
+        const s = new Bunny(this.#ctx, controlls, [p])
+        await s.load()
 
         const loop = new GameLoop(this.#ctx, controlls)
         loop.addEntity(b)

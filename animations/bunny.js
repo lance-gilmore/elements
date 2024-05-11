@@ -4,10 +4,18 @@ import Bunny2 from '../sprites/bunny2.js'
 
 export default class extends AnimatedSprite {
     #controlls
+    #collidables
 
-    constructor(ctx, controlls) {
+    constructor(ctx, controlls, collidables) {
         super(ctx, 100, 350, 40, 70)
         this.#controlls = controlls
+        this.#collidables = collidables
+    }
+
+    checkCollisions() {
+        for (const collidable of this.#collidables) {
+            collidable.checkCollision(this.canvasx, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)
+        }
     }
 
     async load() {
@@ -39,6 +47,8 @@ export default class extends AnimatedSprite {
             this.canvasx = this.canvasx + movementSpeed
             moving = true
         }
+
+        this.checkCollisions()
 
         if (moving) {
             this.move(this.canvasx, this.canvasy)

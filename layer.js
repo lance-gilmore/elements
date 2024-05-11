@@ -10,6 +10,19 @@ export default class extends Drawable {
         this.controlls = controlls
     }
 
+    checkCollision(x,y,r,b) {
+        for (const element of this.elements) {
+            const ex = element.canvasx
+            const ey = element.canvasy
+            const er = element.canvasx + element.canvasw
+            const eb = element.canvasy + element.canvash
+            if (x < er && r > ex && y < eb && b > ey) {
+                console.log('collision')
+            }
+
+        }
+    }
+
     async load() {
 
     }
