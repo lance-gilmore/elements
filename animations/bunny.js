@@ -10,10 +10,10 @@ export default class extends AnimatedSprite {
 
     async load() {
         const b1 = new Bunny1(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
-        await b1.loadImage()
+        await b1.load()
         this.images.push(b1)
         const b2 = new Bunny2(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
-        await b2.loadImage()
+        await b2.load()
         this.images.push(b2)
     }
 
