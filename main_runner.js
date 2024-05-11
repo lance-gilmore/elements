@@ -29,8 +29,6 @@ export default class {
         const h = new House(this.#ctx)
         await h.load()
 
-        
-
         const loop = new GameLoop(this.#ctx, controlls)
         loop.addEntity(b)
         loop.addEntity(p)

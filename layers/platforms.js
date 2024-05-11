@@ -8,10 +8,10 @@ export default class extends Drawable {
     }
 
     async load() {
-        const p = new Platform(this.#ctx,100,420)
+        const p = new Platform(this.ctx,100,420)
         await p.load()
 
-        const p2 = new Platform(this.#ctx,250,420)
+        const p2 = new Platform(this.ctx,250,420)
         await p2.load()
 
         this.elements.push(p)
