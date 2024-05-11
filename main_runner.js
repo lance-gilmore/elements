@@ -1,8 +1,8 @@
-import Bunny from '/sprites/bunny.js'
+import Bunny from './sprites/bunny.js'
 import GameLoop from './game_loop.js'
-import Background from '/sprites/background.js'
-import Platform from '/sprites/platform.js'
-import House from '/sprites/house.js'
+import Background from './sprites/background.js'
+import Platform from './sprites/platform.js'
+import House from './sprites/house.js'
 import Controlls from './controlls.js'
 
 export default class {
