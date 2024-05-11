@@ -20,7 +20,6 @@ export default class {
 
         while (this.#running) {
             
-
             this.#update()
 
             this.#render()
@@ -45,7 +44,5 @@ export default class {
     async stop() {
         this.#running = false
     }
-
-
 
 }
