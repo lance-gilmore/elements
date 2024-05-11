@@ -9,7 +9,7 @@ export default class extends Drawable {
         super(ctx, x, y, w, h)
     }
 
-    async loadImage() {
+    async load() {
         const img = new Image();
         img.src = this.imageLocation
         await img.decode()

@@ -1,4 +1,4 @@
-import Bunny from './sprites/bunny.js'
+import Bunny from './animations/bunny.js'
 import GameLoop from './game_loop.js'
 import Background from './sprites/background.js'
 import Platform from './sprites/platform.js'
@@ -15,19 +15,19 @@ export default class {
 
     async run() {
         const s = new Bunny(this.#ctx)
-        await s.loadImages()
+        await s.load()
         
         const b = new Background(this.#ctx)
-        await b.loadImage()
+        await b.load()
 
         const p = new Platform(this.#ctx,100,420)
-        await p.loadImage()
+        await p.load()
 
         const p2 = new Platform(this.#ctx,250,420)
-        await p2.loadImage()
+        await p2.load()
 
         const h = new House(this.#ctx)
-        await h.loadImage()
+        await h.load()
 
         const controlls = new Controlls()
 
