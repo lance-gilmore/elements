@@ -1,6 +1,6 @@
 import Bunny from './animations/bunny.js'
 import GameLoop from './game_loop.js'
-import Background from './sprites/background.js'
+import Background from './layers/background.js'
 import Platform from './sprites/platform.js'
 import House from './sprites/house.js'
 import Controlls from './controlls.js'
@@ -19,7 +19,7 @@ export default class {
         const s = new Bunny(this.#ctx, controlls)
         await s.load()
         
-        const b = new Background(this.#ctx)
+        const b = new Background(this.#ctx,0,0,800,600,controlls)
         await b.load()
 
         const p = new Platform(this.#ctx,100,420)
