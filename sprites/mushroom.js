@@ -5,7 +5,7 @@ export default class extends Sprite {
     spriteLocation = [647,811,25,21]
     
     constructor(ctx, x, y, w, h) {
-        super(ctx, 150, 400, 25, 21)
+        super(ctx, 200, 400, 50, 42)
     }
 
 }
