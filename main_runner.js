@@ -14,20 +14,21 @@ export default class {
     }
 
     async run() {
-        const controlls = new Controlls()
+        const maxw = 800
+        const maxh = 600
 
+        const controlls = new Controlls()
         
-        
-        const b = new Background(this.#ctx,0,0,800,600,controlls)
+        const b = new Background(this.#ctx,0,0,maxw,maxh,controlls)
         await b.load()
 
-        const p = new Platforms(this.#ctx,0,0,800,600,controlls)
+        const p = new Platforms(this.#ctx,0,0,maxw,maxh,controlls)
         await p.load()
 
-        const h = new Foreground(this.#ctx,0,0,800,600,controlls)
+        const h = new Foreground(this.#ctx,0,0,maxw,maxh,controlls)
         await h.load()
 
-        const s = new Bunny(this.#ctx, controlls, [p])
+        const s = new Bunny(this.#ctx, controlls, [p], maxw, maxh)
         await s.load()
 
         const loop = new GameLoop(this.#ctx, controlls)

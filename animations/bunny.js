@@ -6,7 +6,7 @@ export default class extends AnimatedSprite {
     #controlls
     #collidables
 
-    constructor(ctx, controlls, collidables) {
+    constructor(ctx, controlls, collidables, borderx, bordery) {
         super(ctx, 100, 350, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
