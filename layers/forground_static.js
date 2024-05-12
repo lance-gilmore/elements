@@ -13,9 +13,9 @@ export default class extends Drawable {
         await h.load()
         this.elements.push(h)
 
-        const h = new Mushroom(this.ctx)
-        await h.load()
-        this.elements.push(h)
+        const m = new Mushroom(this.ctx)
+        await m.load()
+        this.elements.push(m)
     }
 
     update() {
