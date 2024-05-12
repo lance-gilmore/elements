@@ -5,11 +5,15 @@ import Bunny2 from '../sprites/bunny2.js'
 export default class extends AnimatedSprite {
     #controlls
     #collidables
+    #borderx
+    #bordery
 
     constructor(ctx, controlls, collidables, borderx, bordery) {
         super(ctx, 100, 350, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
+        this.#borderx = borderx
+        this.#bordery = bordery
     }
 
     checkCollisions() {
@@ -37,28 +41,28 @@ export default class extends AnimatedSprite {
         if (this.#controlls.upPressed) {
             this.canvasy = this.canvasy - movementSpeed
             moving = true
-            if (this.checkCollisions()) {
+            if (this.checkCollisions() || this.canvasy < 0) {
                 this.canvasy = this.canvasy + movementSpeed
             }
         }
         if (this.#controlls.downPressed) {
             this.canvasy = this.canvasy + movementSpeed
             moving = true
-            if (this.checkCollisions()) {
+            if (this.checkCollisions() || this.canvasy > this.#bordery) {
                 this.canvasy = this.canvasy - movementSpeed
             }
         }
         if (this.#controlls.leftPressed) {
             this.canvasx = this.canvasx - movementSpeed
             moving = true
-            if (this.checkCollisions()) {
+            if (this.checkCollisions() || this.canvasx < 0) {
                 this.canvasx = this.canvasx + movementSpeed
             }
         }
         if (this.#controlls.rightPressed) {
             this.canvasx = this.canvasx + movementSpeed
             moving = true
-            if (this.checkCollisions()) {
+            if (this.checkCollisions() || this.canvasx > this.#borderx) {
                 this.canvasx = this.canvasx - movementSpeed
             }
         }
