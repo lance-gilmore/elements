@@ -2,10 +2,10 @@ import Sprite from '../sprite_drawable.js'
 
 export default class extends Sprite {
     imageLocation = "bunny_sprites.png"
-    spriteLocation = [646,810,26,22]
+    spriteLocation = [361,154,21,32]
     
     constructor(ctx, x, y, w, h) {
-        super(ctx, 300, 380, 52, 43)
+        super(ctx, x, y, w, h)
     }
 
 }

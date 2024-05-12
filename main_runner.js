@@ -1,4 +1,5 @@
 import Bunny from './animations/bunny.js'
+import Girl from './animations/girl.js'
 import GameLoop from './game_loop.js'
 import Background from './layers/background.js'
 import Platforms from './layers/platforms.js'
@@ -31,11 +32,15 @@ export default class {
         const s = new Bunny(this.#ctx, controlls, [p], maxw, maxh)
         await s.load()
 
+        const g = new Girl(this.#ctx, controlls, [p], maxw, maxh)
+        await g.load()
+
         const loop = new GameLoop(this.#ctx, controlls)
         loop.addEntity(b)
         loop.addEntity(p)
         loop.addEntity(h)
         loop.addEntity(s)
+        loop.addEntity(g)
         
         loop.start()
     }
