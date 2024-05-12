@@ -1,7 +1,6 @@
 import Drawable from '../layer.js'
 import House from '../sprites/house.js'
 import Mushroom from '../sprites/mushroom.js'
-import House from '../sprites/mushroom.js'
 
 export default class extends Drawable {
 
