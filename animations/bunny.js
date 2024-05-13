@@ -48,7 +48,7 @@ export default class extends AnimatedSprite {
         }
 
         this.canvasy = this.canvasy + this.#downSpeed
-        if (this.checkCollisions() || this.canvasy < 0) {
+        if (this.checkCollisions() || this.canvasy < 0 || this.canvasy + this.canvash > this.#bordery) {
             this.canvasy = this.canvasy - this.#downSpeed
             this.#downSpeed = 0
         }
@@ -61,11 +61,7 @@ export default class extends AnimatedSprite {
              
         }
         if (this.#controlls.downPressed) {
-            this.canvasy = this.canvasy + movementSpeed
-            moving = true
-            if (this.checkCollisions() || this.canvasy + this.canvash > this.#bordery) {
-                this.canvasy = this.canvasy - movementSpeed
-            }
+            
         }
         if (this.#controlls.leftPressed) {
             this.canvasx = this.canvasx - movementSpeed
