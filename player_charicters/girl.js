@@ -18,10 +18,10 @@ export default class extends PlayerCharicter {
     }
 
     async load() {
-        const b1 = new Bunny1(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
+        const b1 = new Girl1(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
         await b1.load()
         this.images.push(b1)
-        const b2 = new Bunny2(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
+        const b2 = new Girl2(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
         await b2.load()
         this.images.push(b2)
     }
