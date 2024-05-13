@@ -1,4 +1,4 @@
-import Bunny from './animations/bunny.js'
+import Bunny from './bunny.js'
 import Girl from './animations/girl.js'
 import GameLoop from './game_loop.js'
 import Background from './layers/background.js'
