@@ -7,6 +7,7 @@ export default class extends AnimatedSprite {
     #collidables
     #borderx
     #bordery
+    #downSpeed = 0
 
     constructor(ctx, controlls, collidables, borderx, bordery) {
         super(ctx, 100, 350, 40, 70)
@@ -36,14 +37,27 @@ export default class extends AnimatedSprite {
 
     update() {
         const movementSpeed = 8
+        const gravity = 2;
+        const jumpSpeed = -20;
+        const terminalVelocity = 20
+
+        this.#downSpeed = this.#downSpeed + gravity
+
+        if (this.#downSpeed > terminalVelocity) {
+            this.#downSpeed = terminalVelocity
+        }
+
+        this.canvasy = this.canvasy + this.#downSpeed
+        if (this.checkCollisions() || this.canvasy < 0) {
+            this.canvasy = this.canvasy - this.#downSpeed
+        }
         
         let moving = false
         if (this.#controlls.upPressed) {
-            this.canvasy = this.canvasy - movementSpeed
-            moving = true
-            if (this.checkCollisions() || this.canvasy < 0) {
-                this.canvasy = this.canvasy + movementSpeed
+            if (this.#downSpeed == 0) {
+                this.#downSpeed = jumpSpeed
             }
+             
         }
         if (this.#controlls.downPressed) {
             this.canvasy = this.canvasy + movementSpeed
