@@ -83,9 +83,8 @@ export default class extends AnimatedSprite {
         }
 
         
-
+        this.move(this.canvasx, this.canvasy)
         if (moving) {
-            this.move(this.canvasx, this.canvasy)
             super.update()
         } else {
             this.currentSprite = 0
