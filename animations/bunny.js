@@ -50,6 +50,7 @@ export default class extends AnimatedSprite {
         this.canvasy = this.canvasy + this.#downSpeed
         if (this.checkCollisions() || this.canvasy < 0) {
             this.canvasy = this.canvasy - this.#downSpeed
+            this.#downSpeed = 0
         }
         
         let moving = false
