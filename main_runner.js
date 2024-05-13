@@ -1,5 +1,5 @@
 import Bunny from './player_charicters/bunny.js'
-import Girl from './animations/girl.js'
+import Girl from './player_charicters/girl.js'
 import GameLoop from './game_loop.js'
 import Background from './layers/background.js'
 import Platforms from './layers/platforms.js'
