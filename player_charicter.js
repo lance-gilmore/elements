@@ -1,4 +1,4 @@
-import AnimatedSprite from '../animated_sprite.js'
+import AnimatedSprite from './animated_sprite.js'
 
 export default class extends AnimatedSprite {
     #controlls
