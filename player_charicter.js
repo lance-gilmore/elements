@@ -7,6 +7,7 @@ export default class extends AnimatedSprite {
     #bordery
     #downSpeed = 0
     keymap
+    #faceLeft = false
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery) {
         super(ctx, x, y, 40, 70)
@@ -54,15 +55,14 @@ export default class extends AnimatedSprite {
             }
              
         }
-        if (this.#controlls.downPressed) {
-            
-        }
+        
         if (this.#controlls[this.keymap.left]) {
             this.canvasx = this.canvasx - movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx < 0) {
                 this.canvasx = this.canvasx + movementSpeed
             }
+            this.#faceLeft = true
         }
         if (this.#controlls[this.keymap.right]) {
             this.canvasx = this.canvasx + movementSpeed
@@ -70,6 +70,7 @@ export default class extends AnimatedSprite {
             if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
                 this.canvasx = this.canvasx - movementSpeed
             }
+            this.#faceLeft = false
         }
 
         
@@ -78,6 +79,17 @@ export default class extends AnimatedSprite {
             super.update()
         } else {
             this.currentSprite = 0
+        }
+    }
+
+    draw() {
+        if (this.#faceLeft) {
+            ctx.scale(-1, 1)
+        }
+
+        super.draw()
+        if (this.#faceLeft) {
+            ctx.scale(1, 1)
         }
     }
 
