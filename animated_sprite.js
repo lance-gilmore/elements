@@ -30,4 +30,10 @@ export default class extends Drawable {
         this.images[this.currentSprite].draw()
     }
 
+    setFlipx(flipx) {
+        for (const image of this.images) {
+            image.flipx(flipx)
+        }
+    }
+
 }

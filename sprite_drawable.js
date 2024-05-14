@@ -4,6 +4,7 @@ export default class extends Drawable {
     imageLocation = ''
     #image
     spriteLocation = []
+    #flipx = false
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
@@ -17,7 +18,7 @@ export default class extends Drawable {
     }
 
     draw() {
-        const imagex = this.spriteLocation[0]
+        let imagex = this.spriteLocation[0]
         const imagey = this.spriteLocation[1]
         const imagew = this.spriteLocation[2]
         const imageh = this.spriteLocation[3]
@@ -25,8 +26,16 @@ export default class extends Drawable {
          this.ctx.beginPath();
          this.ctx.rect(this.canvasx-1, this.canvasy-1, this.canvasw+1, this.canvash+1);
          this.ctx.stroke();
+
+         if (this.#flipx) {
+            imagex = imagex * -1
+         }
         
-        this.ctx.drawImage(this.#image, imagex, imagey, -imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+        this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+    }
+
+    setFlipx(flipx) {
+        this.#flipx = flipx
     }
 
 }
