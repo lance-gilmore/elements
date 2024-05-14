@@ -4,9 +4,9 @@ import Girl2 from '../sprites/girl2.js'
 
 export default class extends PlayerCharicter {
     keymap = {
-        up: 'w',
-        left: 'a',
-        right: 'd'
+        up: 'wPressed',
+        left: 'aPressed',
+        right: 'dPressed'
     }
 
     constructor(ctx, controlls, collidables, borderx, bordery) {
