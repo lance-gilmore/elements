@@ -3,6 +3,11 @@ import Bunny1 from '../sprites/bunny1.js'
 import Bunny2 from '../sprites/bunny2.js'
 
 export default class extends PlayerCharicter {
+    keymap = {
+        up: 'upPressed',
+        left: 'leftPressed',
+        right: 'rightPressed'
+    }
 
     constructor(ctx, controlls, collidables, borderx, bordery) {
         super(ctx, 150, 350, controlls, collidables, borderx, bordery)

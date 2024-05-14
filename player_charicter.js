@@ -6,6 +6,7 @@ export default class extends AnimatedSprite {
     #borderx
     #bordery
     #downSpeed = 0
+    keymap
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery) {
         super(ctx, x, y, 40, 70)
@@ -47,7 +48,7 @@ export default class extends AnimatedSprite {
         }
         
         let moving = false
-        if (this.#controlls.upPressed) {
+        if (this.#controlls[this.keymap.up]) {
             if (this.#downSpeed == 0) {
                 this.#downSpeed = jumpSpeed
             }
@@ -56,14 +57,14 @@ export default class extends AnimatedSprite {
         if (this.#controlls.downPressed) {
             
         }
-        if (this.#controlls.leftPressed) {
+        if (this.#controlls[this.keymap.left]) {
             this.canvasx = this.canvasx - movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx < 0) {
                 this.canvasx = this.canvasx + movementSpeed
             }
         }
-        if (this.#controlls.rightPressed) {
+        if (this.#controlls[this.keymap.right]) {
             this.canvasx = this.canvasx + movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
