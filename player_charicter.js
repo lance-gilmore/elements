@@ -83,7 +83,7 @@ export default class extends AnimatedSprite {
     }
 
     draw() {
-        ctx.save()
+        this.ctx.save()
         if (this.#faceLeft) {
             this.ctx.scale(-1, 1)
         }
@@ -93,7 +93,7 @@ export default class extends AnimatedSprite {
         if (this.#faceLeft) {
             this.ctx.scale(1, 1)
         }
-        ctx.restore()
+        this.ctx.restore()
     }
 
 }
