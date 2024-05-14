@@ -20,7 +20,7 @@ export default class extends Drawable {
     draw() {
         let imagex = this.spriteLocation[0]
         const imagey = this.spriteLocation[1]
-        const imagew = this.spriteLocation[2]
+        let imagew = this.spriteLocation[2]
         const imageh = this.spriteLocation[3]
 
          this.ctx.beginPath();
@@ -29,6 +29,7 @@ export default class extends Drawable {
 
          if (this.#flipx) {
             imagex = imagex * -1
+            imagew = imagew * -1
          }
         
         this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
