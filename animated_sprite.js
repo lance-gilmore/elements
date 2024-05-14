@@ -32,7 +32,7 @@ export default class extends Drawable {
 
     setFlipx(flipx) {
         for (const image of this.images) {
-            image.flipx(flipx)
+            image.setFlipx(flipx)
         }
     }
 
