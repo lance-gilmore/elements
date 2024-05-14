@@ -86,7 +86,6 @@ export default class extends AnimatedSprite {
         if (this.#faceLeft) {
             let width = this.canvasx + this.canvasw
             width = width * -1
-            this.ctx.scale(width, height)
         }
 
         super.draw()
