@@ -83,18 +83,13 @@ export default class extends AnimatedSprite {
     }
 
     draw() {
-        let width = this.canvasx + this.canvasw
-        const height = this.canvasy + this.canvash
-        this.ctx.save()
         if (this.#faceLeft) {
+            let width = this.canvasx + this.canvasw
             width = width * -1
             this.ctx.scale(width, height)
         }
 
         super.draw()
-
-        
-        this.ctx.restore()
     }
 
 }
