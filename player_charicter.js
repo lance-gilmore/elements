@@ -84,12 +84,12 @@ export default class extends AnimatedSprite {
 
     draw() {
         if (this.#faceLeft) {
-            ctx.scale(-1, 1)
+            this.ctx.scale(-1, 1)
         }
 
         super.draw()
         if (this.#faceLeft) {
-            ctx.scale(1, 1)
+            this.ctx.scale(1, 1)
         }
     }
 
