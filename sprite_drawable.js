@@ -36,7 +36,7 @@ export default class extends Drawable {
             canvasx = canvasx * -1
          }
         
-        this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+        this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, canvasx, this.canvasy, this.canvasw, this.canvash)
         this.ctx.setTransform(1, 0, 0, 1, 0, 0)
     }
 
