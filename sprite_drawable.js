@@ -30,10 +30,8 @@ export default class extends Drawable {
          let canvasx = this.canvasx
 
          if (this.#flipx) {
-            //imagex = (imagex + imagew) * -1
-            //imagew = imagew * -1
             this.ctx.scale(-1, 1);
-            canvasx = (canvasx + imagew) * -1
+            canvasx = (canvasx + this.canvasw) * -1
          }
         
         this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, canvasx, this.canvasy, this.canvasw, this.canvash)
