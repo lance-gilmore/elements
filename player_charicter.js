@@ -71,7 +71,7 @@ export default class extends AnimatedSprite {
             }
             this.setFlipx(false)
         }
-        
+
         
         this.move(this.canvasx, this.canvasy)
         if (moving) {
@@ -80,5 +80,7 @@ export default class extends AnimatedSprite {
             this.currentSprite = 0
         }
     }
+
+
 
 }

@@ -28,11 +28,12 @@ export default class extends Drawable {
          this.ctx.stroke();
 
          if (this.#flipx) {
-            imagex = (imagex + imagew) * -1
+            //imagex = (imagex + imagew) * -1
             //imagew = imagew * -1
+            this.ctx.scale(-1, 1);
          }
         
-        this.ctx.drawImage(this.#image, imagex, imagey, -imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+        this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
     }
 
     setFlipx(flipx) {
