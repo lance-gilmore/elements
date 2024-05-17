@@ -34,6 +34,7 @@ export default class extends Drawable {
          }
         
         this.ctx.drawImage(this.#image, imagex, imagey, imagew, imageh, this.canvasx, this.canvasy, this.canvasw, this.canvash)
+        this.ctx.scale(-1, 1);
     }
 
     setFlipx(flipx) {
