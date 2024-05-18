@@ -48,6 +48,8 @@ export default class extends Level {
         const g = new Girl(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
         await g.load()
         this.girl = g
+
+        this.viewx = 50
     }
 
     draw() {
