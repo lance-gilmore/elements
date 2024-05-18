@@ -1,10 +1,6 @@
-import Bunny from './player_charicters/bunny.js'
-import Girl from './player_charicters/girl.js'
 import GameLoop from './game_loop.js'
-import Background from './layers/background.js'
-import Platforms from './layers/platforms.js'
-import Foreground from './layers/forground_static.js'
 import Controlls from './controlls.js'
+import Level1 from './levels/level1.js'
 
 export default class {
     #ctx
@@ -15,32 +11,13 @@ export default class {
     }
 
     async run() {
-        const maxw = 800
-        const maxh = 600
 
         const controlls = new Controlls()
-        
-        const b = new Background(this.#ctx,0,0,maxw,maxh,controlls)
-        await b.load()
 
-        const p = new Platforms(this.#ctx,0,0,maxw,maxh,controlls)
-        await p.load()
-
-        const h = new Foreground(this.#ctx,0,0,maxw,maxh,controlls)
-        await h.load()
-
-        const s = new Bunny(this.#ctx, controlls, [p], maxw, maxh)
-        await s.load()
-
-        const g = new Girl(this.#ctx, controlls, [p], maxw, maxh)
-        await g.load()
+        const l = new Level1()
 
         const loop = new GameLoop(this.#ctx, controlls)
-        loop.addEntity(b)
-        loop.addEntity(p)
-        loop.addEntity(h)
-        loop.addEntity(s)
-        loop.addEntity(g)
+        loop.addEntity(l)
         
         loop.start()
     }
