@@ -36,7 +36,7 @@ export default class extends Drawable {
     move(x,y) {
         super.move(x,y)
         for (const element of this.elements) {
-            element.move(element.canvasx + this.canvasx, element.canvasy + this.canvasy)
+            element.move(element.startx + this.canvasx, element.starty + this.canvasy)
         }
     }
 

@@ -6,6 +6,8 @@ export default class extends Entity {
     canvasy = 0
     canvasw = 0
     canvash = 0
+    startx
+    starty
 
     constructor(ctx, x, y, w, h) {
         super()
@@ -14,6 +16,8 @@ export default class extends Entity {
         this.canvasy = y
         this.canvasw = w
         this.canvash = h
+        this.startx = x
+        this.starty = y
     }
 
     draw() {
