@@ -12,10 +12,15 @@ export default class extends Drawable {
 
     checkCollision(x,y,r,b) {
         for (const element of this.elements) {
-            const ex = element.canvasx
-            const ey = element.canvasy
-            const er = element.canvasx + element.canvasw
-            const eb = element.canvasy + element.canvash
+            // const ex = element.canvasx
+            // const ey = element.canvasy
+            // const er = element.canvasx + element.canvasw
+            // const eb = element.canvasy + element.canvash
+
+            const ex = element.startx
+            const ey = element.starty
+            const er = element.startx + element.canvasw
+            const eb = element.starty + element.canvash
             
             if (x < er && r > ex && y < eb && b > ey) {
                 return true
