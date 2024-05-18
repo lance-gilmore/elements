@@ -55,9 +55,9 @@ export default class extends Level {
         this.platforms.draw()
         this.foreground.move(this.viewx, this.viewy)
         this.foreground.draw()
-        this.bunny.move(this.bunny.canvasx + this.viewx, this.bunny.canvasx + this.viewy)
+        this.bunny.move(this.bunny.canvasx + this.viewx, this.bunny.canvasy + this.viewy)
         this.bunny.draw()
-        this.girl.move(this.girl.canvasx + this.viewx, this.girl.canvasx + this.viewy)
+        this.girl.move(this.girl.canvasx + this.viewx, this.girl.canvasy + this.viewy)
         this.girl.draw()
     }
 
