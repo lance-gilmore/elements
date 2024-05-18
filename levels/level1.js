@@ -31,19 +31,19 @@ export default class extends Level {
         await b.load()
         this.background = b
 
-        const p = new Platforms(this.#ctx,0,0,this.levelWidth,this.levelHeigh,this.controlls)
+        const p = new Platforms(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await p.load()
         this.platforms = p
 
-        const h = new Foreground(this.#ctx,0,0,this.levelWidth,this.levelHeigh,this.controlls)
+        const h = new Foreground(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await h.load()
         this.foreground = h
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeigh)
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
         await s.load()
         this.bunny = s
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeigh)
+        const g = new Girl(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
         await g.load()
         this.girl = g
     }
