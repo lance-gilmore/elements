@@ -7,6 +7,8 @@ export default class extends AnimatedSprite {
     #bordery
     #downSpeed = 0
     keymap
+    positionx
+    positiony
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery) {
         super(ctx, x, y, 40, 70)
@@ -14,6 +16,8 @@ export default class extends AnimatedSprite {
         this.#collidables = collidables
         this.#borderx = borderx
         this.#bordery = bordery
+        this.positionx = x
+        this.positiony = y
     }
 
     checkCollisions() {
@@ -41,9 +45,11 @@ export default class extends AnimatedSprite {
             this.#downSpeed = terminalVelocity
         }
 
-        this.canvasy = this.canvasy + this.#downSpeed
+        this.positiony = this.positiony + this.#downSpeed
+        //this.canvasy = this.canvasy + this.#downSpeed
         if (this.checkCollisions() || this.canvasy < 0 || this.canvasy + this.canvash > this.#bordery) {
-            this.canvasy = this.canvasy - this.#downSpeed
+            this.positiony = this.positiony - this.#downSpeed
+            //this.canvasy = this.canvasy - this.#downSpeed
             this.#downSpeed = 0
         }
         
@@ -56,24 +62,28 @@ export default class extends AnimatedSprite {
         }
         
         if (this.#controlls[this.keymap.left]) {
-            this.canvasx = this.canvasx - movementSpeed
+            this.positionx = this.positionx - movementSpeed
+            //this.canvasx = this.canvasx - movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx < 0) {
-                this.canvasx = this.canvasx + movementSpeed
+                this.positionx = this.positionx + movementSpeed
+                //this.canvasx = this.canvasx + movementSpeed
             }
             this.setFlipx(true)
         }
         if (this.#controlls[this.keymap.right]) {
-            this.canvasx = this.canvasx + movementSpeed
+            this.positionx = this.positionx + movementSpeed
+            //this.canvasx = this.canvasx + movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
-                this.canvasx = this.canvasx - movementSpeed
+                this.positionx = this.positionx - movementSpeed
+                //this.canvasx = this.canvasx - movementSpeed
             }
             this.setFlipx(false)
         }
 
         
-        this.move(this.canvasx, this.canvasy)
+        //this.move(this.canvasx, this.canvasy)
         if (moving) {
             super.update()
         } else {

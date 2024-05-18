@@ -9,8 +9,10 @@ export default class extends Level {
 
     levelWidth = 800
     levelHeight = 600
-    viewx = 0
-    viewy = 0
+
+    viewWidth = 800
+    viewHeight = 600
+    
     controlls
     #ctx
 
@@ -55,13 +57,16 @@ export default class extends Level {
         this.platforms.draw()
         this.foreground.move(this.viewx, this.viewy)
         this.foreground.draw()
-        this.bunny.move(this.bunny.canvasx + this.viewx, this.bunny.canvasy + this.viewy)
+        this.bunny.move(this.bunny.positionx + this.viewx, this.bunny.positiony + this.viewy)
         this.bunny.draw()
-        this.girl.move(this.girl.canvasx + this.viewx, this.girl.canvasy + this.viewy)
+        this.girl.move(this.girl.positionx + this.viewx, this.girl.positiony + this.viewy)
         this.girl.draw()
     }
 
     update() {
+        const centerPoint = (this.bunny.canvasx + this.girl.canvasx) / 2
+        this.viewx = 
+
         this.bunny.update()
         this.girl.update()
     }
