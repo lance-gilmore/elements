@@ -8,7 +8,15 @@ export default class extends Drawable {
     }
 
     async load() {
-        const m = new Mountains(this.ctx)
+        const m = new Mountains(this.ctx, -800, 0, 800, 600)
+        await m.load()
+        this.elements.push(m)
+
+        const m = new Mountains(this.ctx, 0, 0, 800, 600)
+        await m.load()
+        this.elements.push(m)
+
+        const m = new Mountains(this.ctx, 800, 0, 800, 600)
         await m.load()
         this.elements.push(m)
     }

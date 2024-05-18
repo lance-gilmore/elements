@@ -4,8 +4,8 @@ export default class extends Sprite {
     imageLocation = "bunny_sprites.png"
     spriteLocation = [0,445,482,241]
     
-    constructor(ctx) {
-        super(ctx, 0, 0, 800, 600)
+    constructor(ctx, x, y, w, h) {
+        super(ctx, x, y, w, h)
     }
 
 }
