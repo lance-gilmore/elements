@@ -51,11 +51,11 @@ export default class extends Level {
     }
 
     draw() {
-        this.background.move(-this.viewx, this.viewy)
+        this.background.move(this.viewx, this.viewy)
         this.background.draw()
-        this.platforms.move(-this.viewx, this.viewy)
+        this.platforms.move(this.viewx, this.viewy)
         this.platforms.draw()
-        this.foreground.move(-this.viewx, this.viewy)
+        this.foreground.move(this.viewx, this.viewy)
         this.foreground.draw()
         this.bunny.move(this.bunny.positionx + this.viewx, this.bunny.positiony + this.viewy)
         this.bunny.draw()
@@ -65,7 +65,7 @@ export default class extends Level {
 
     update() {
         const centerPoint = (this.bunny.positionx + this.girl.positionx) / 2
-        this.viewx = (this.viewWidth / 2) - centerPoint
+        //this.viewx = (this.viewWidth / 2) - centerPoint
 
         this.bunny.update()
         this.girl.update()

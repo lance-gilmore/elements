@@ -22,7 +22,7 @@ export default class extends AnimatedSprite {
 
     checkCollisions() {
         for (const collidable of this.#collidables) {
-            if (collidable.checkCollision(this.canvasx, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)) {
+            if (collidable.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
                 return true
             }
         }
