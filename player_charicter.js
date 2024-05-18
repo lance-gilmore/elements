@@ -22,7 +22,7 @@ export default class extends AnimatedSprite {
 
     checkCollisions() {
         for (const collidable of this.#collidables) {
-            if (collidable.checkCollision(this.canvax, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)) {
+            if (collidable.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
                 return true
             }
         }
@@ -46,7 +46,7 @@ export default class extends AnimatedSprite {
         }
 
         this.positiony = this.positiony + this.#downSpeed
-        this.canvasy = this.canvasy + this.#downSpeed
+        //this.canvasy = this.canvasy + this.#downSpeed
         if (this.checkCollisions() || this.positiony < 0 || this.positiony + this.canvash > this.#bordery) {
             this.positiony = this.positiony - this.#downSpeed
             //this.canvasy = this.canvasy - this.#downSpeed
@@ -63,7 +63,7 @@ export default class extends AnimatedSprite {
         
         if (this.#controlls[this.keymap.left]) {
             this.positionx = this.positionx - movementSpeed
-            this.canvasx = this.canvasx - movementSpeed
+            //this.canvasx = this.canvasx - movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx < 0) {
                 this.positionx = this.positionx + movementSpeed
@@ -73,7 +73,7 @@ export default class extends AnimatedSprite {
         }
         if (this.#controlls[this.keymap.right]) {
             this.positionx = this.positionx + movementSpeed
-            this.canvasx = this.canvasx + movementSpeed
+            //this.canvasx = this.canvasx + movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
                 this.positionx = this.positionx - movementSpeed
