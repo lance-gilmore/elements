@@ -15,6 +15,7 @@ export default class {
         const controlls = new Controlls()
 
         const l = new Level1()
+        await l.load()
 
         const loop = new GameLoop(this.#ctx, controlls)
         loop.addEntity(l)

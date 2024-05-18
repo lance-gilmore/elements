@@ -25,7 +25,7 @@ export default class extends Level {
         this.#ctx = ctx
     }
 
-    load() {
+    async load() {
         const b = new Background(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await b.load()
         this.background = b
