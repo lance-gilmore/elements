@@ -50,7 +50,7 @@ export default class extends Level {
         this.girl = g
 
 
-        this.viewx = 50
+       // this.viewx = 50
     }
 
     draw() {
