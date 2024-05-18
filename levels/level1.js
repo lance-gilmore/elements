@@ -7,7 +7,7 @@ import Foreground from '../layers/forground_static.js'
 
 export default class extends Level {
 
-    levelWidth = 10000
+    levelWidth = 800
     levelHeight = 600
     viewx = 0
     controlls
