@@ -8,39 +8,23 @@ export default class extends Drawable {
     }
 
     async load() {
-        const p = new Platform(this.ctx,100,420)
-        await p.load()
-        this.elements.push(p)
+        const platformLocations =[
+            [100,420],
+            [250,420],
+            [500,420],
+            [-50,300],
+            [-400,0],
+            [-400,150],
+            [-400,300],
+            [-400,450]
+        ]
 
-        const p2 = new Platform(this.ctx,250,420)
-        await p2.load()
-        this.elements.push(p2)
+        for (const location of platformLocations) {
+            const p = new Platform(this.ctx,location[0],location[1])
+            await p.load()
+            this.elements.push(p)
+        }
 
-        const p3 = new Platform(this.ctx,500,420)
-        await p3.load()
-        this.elements.push(p3)
-        
-        const p4 = new Platform(this.ctx,-50,300)
-        await p4.load()
-        this.elements.push(p4)
-
-        const p5 = new Platform(this.ctx,-400,0)
-        await p5.load()
-        this.elements.push(p5)
-
-        const p6 = new Platform(this.ctx,-400,150)
-        await p6.load()
-        this.elements.push(p6)
-
-        const p7 = new Platform(this.ctx,-400,300)
-        await p7.load()
-        this.elements.push(p7)
-
-        const p8 = new Platform(this.ctx,-400,450)
-        await p8.load()
-        this.elements.push(p8)
-
-        
     }
 
     update() {
