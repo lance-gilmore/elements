@@ -12,13 +12,12 @@ export default class extends Drawable {
         await m1.load()
         this.elements.push(m1)
 
-        const m = new Mountains(this.ctx, 0, 0, 800, 600)
-        await m.load()
-        this.elements.push(m)
+        for (let i=0;i<10;i++) {
+            const m = new Mountains(this.ctx, i*800, 0, 800, 600)
+            await m.load()
+            this.elements.push(m)
+        }
 
-        const m2 = new Mountains(this.ctx, 800, 0, 800, 600)
-        await m2.load()
-        this.elements.push(m2)
     }
 
     update() {
