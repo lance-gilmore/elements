@@ -67,8 +67,8 @@ export default class extends Level {
     }
 
     update() {
-        const bunnyCenter = (this.bunny.positionx + this.bunny.canvasw) / 2
-        const girlCenter = (this.girl.positionx + this.girl.canvasw) / 2
+        const bunnyCenter = this.bunny.positionx + (this.bunny.canvasw / 2)
+        const girlCenter = this.girl.positionx + (this.girl.canvasw / 2)
         const centerPoint = (bunnyCenter + girlCenter) / 2
         this.viewx = centerPoint - (this.viewWidth / 2)
 
