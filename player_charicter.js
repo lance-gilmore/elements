@@ -75,6 +75,7 @@ export default class extends AnimatedSprite {
             this.positionx = this.positionx + movementSpeed
             //this.canvasx = this.canvasx + movementSpeed
             moving = true
+            console.log(this.canvasx + ' vs '+ this.#borderx)
             if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
                 this.positionx = this.positionx - movementSpeed
                 //this.canvasx = this.canvasx - movementSpeed
