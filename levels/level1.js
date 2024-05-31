@@ -64,8 +64,8 @@ export default class extends Level {
         // if (this.girl.positionx - this.viewx < 0) {
         //     this.girl.positionx = this.viewx
         // }
-        if (this.bunny.positionx - this.viewx > this.viewWidth) {
-            this.bunny.positionx = this.viewx + this.viewWidth - 100
+        if (this.bunny.positionx - this.viewx > this.viewWidth - this.bunny.canvasw) {
+            this.bunny.positionx = this.viewx + this.viewWidth - this.bunny.canvasw
         }
         this.bunny.move(this.bunny.positionx - this.viewx, this.bunny.positiony - this.viewy)
         this.bunny.draw()
