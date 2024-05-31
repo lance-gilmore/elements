@@ -46,10 +46,8 @@ export default class extends AnimatedSprite {
         }
 
         this.positiony = this.positiony + this.#downSpeed
-        //this.canvasy = this.canvasy + this.#downSpeed
         if (this.checkCollisions() || this.positiony < 0 || this.positiony + this.canvash > this.#bordery) {
             this.positiony = this.positiony - this.#downSpeed
-            //this.canvasy = this.canvasy - this.#downSpeed
             this.#downSpeed = 0
         }
         
@@ -63,22 +61,17 @@ export default class extends AnimatedSprite {
         
         if (this.#controlls[this.keymap.left]) {
             this.positionx = this.positionx - movementSpeed
-            //this.canvasx = this.canvasx - movementSpeed
             moving = true
             if (this.checkCollisions() || this.canvasx < 0) {
                 this.positionx = this.positionx + movementSpeed
-                //this.canvasx = this.canvasx + movementSpeed
             }
             this.setFlipx(true)
         }
         if (this.#controlls[this.keymap.right]) {
             this.positionx = this.positionx + movementSpeed
-            //this.canvasx = this.canvasx + movementSpeed
             moving = true
-            console.log(this.canvasx + ' vs '+ this.#borderx)
-            if (this.checkCollisions() || this.canvasx + this.canvasw > this.#borderx) {
+            if (this.checkCollisions()) {
                 this.positionx = this.positionx - movementSpeed
-                //this.canvasx = this.canvasx - movementSpeed
             }
             this.setFlipx(false)
         }
