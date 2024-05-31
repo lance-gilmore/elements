@@ -49,8 +49,6 @@ export default class extends Level {
         await g.load()
         this.girl = g
 
-
-        //this.viewx = 50
     }
 
     draw() {
@@ -62,6 +60,9 @@ export default class extends Level {
         this.foreground.draw()
         if (this.bunny.positionx - this.viewx < 0) {
             this.bunny.positionx = this.viewx
+        }
+        if (this.girl.positionx - this.viewx < 0) {
+            this.girl.positionx = this.viewx
         }
         if (this.bunny.positionx - this.viewx > this.viewWidth) {
             this.bunny.positionx = this.viewx + this.viewWidth
