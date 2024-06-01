@@ -8,8 +8,8 @@ export default class extends Drawable {
     playerCharicters = []
     layers = []
 
-    levelWidth = 0
-    levelHeight = 0
+    levelWidth
+    levelHeight
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
