@@ -21,7 +21,6 @@ export default class extends Drawable {
 
     draw() {
         for (const layer of this.layers) {
-            console.log('drawing layer')
             layer.move(-this.viewx, this.viewy)
             layer.draw()
         }

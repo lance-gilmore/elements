@@ -9,9 +9,15 @@ export default class extends Level {
 
     levelWidth = 800
     levelHeight = 600
+
+    viewWidth = 800
+    viewHeight = 600
     
     controlls
     #ctx
+
+    playerCharicters = []
+    layers = []
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
@@ -41,6 +47,38 @@ export default class extends Level {
         this.playerCharicters.push(s)
         this.playerCharicters.push(g)
 
+    }
+
+    draw() {
+        for (const layer of this.layers) {
+            layer.move(-this.viewx, this.viewy)
+            layer.draw()
+        }
+
+        for (const charicter of this.playerCharicters) {
+            if (charicter.positionx - this.viewx < 0) {
+                charicter.positionx = this.viewx
+            }
+            if (charicter.positionx - this.viewx > this.viewWidth - charicter.canvasw) {
+                charicter.positionx = this.viewx + this.viewWidth - charicter.canvasw
+            }
+            charicter.move(charicter.positionx - this.viewx, charicter.positiony - this.viewy)
+            charicter.draw()
+        }
+
+    }
+
+    update() {
+        let charictersCenter = 0
+        for (const charicter of this.playerCharicters) {
+            charictersCenter += charicter.positionx + (charicter.canvasw / 2)
+        }
+        const centerPoint = charictersCenter / 2
+        this.viewx = centerPoint - (this.viewWidth / 2)
+
+        for (const charicter of this.playerCharicters) {
+            charicter.update()
+        }
     }
 
 }
