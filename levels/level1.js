@@ -16,9 +16,6 @@ export default class extends Level {
     controlls
     #ctx
 
-    platforms
-    foreground
-    background
     playerCharicters = []
     layers = []
 
@@ -31,17 +28,14 @@ export default class extends Level {
     async load() {
         const b = new Background(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await b.load()
-        this.background = b
         this.layers.push(b)
 
         const p = new Platforms(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await p.load()
-        this.platforms = p
         this.layers.push(p)
 
         const h = new Foreground(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await h.load()
-        this.foreground = h
         this.layers.push(h)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
@@ -60,12 +54,6 @@ export default class extends Level {
             layer.move(-this.viewx, this.viewy)
             layer.draw()
         }
-        // this.background.move(-this.viewx, this.viewy)
-        // this.background.draw()
-        // this.platforms.move(-this.viewx, this.viewy)
-        // this.platforms.draw()
-        // this.foreground.move(-this.viewx, this.viewy)
-        // this.foreground.draw()
 
         for (const charicter of this.playerCharicters) {
             if (charicter.positionx - this.viewx < 0) {
