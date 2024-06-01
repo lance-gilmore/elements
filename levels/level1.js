@@ -19,9 +19,8 @@ export default class extends Level {
     platforms
     foreground
     background
-    bunny
-    girl
     playerCharicters = []
+    layers = []
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
@@ -33,22 +32,23 @@ export default class extends Level {
         const b = new Background(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await b.load()
         this.background = b
+        this.layers.push(b)
 
         const p = new Platforms(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await p.load()
         this.platforms = p
+        this.layers.push(p)
 
         const h = new Foreground(this.#ctx,0,0,this.levelWidth,this.levelHeight,this.controlls)
         await h.load()
         this.foreground = h
+        this.layers.push(h)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
         await s.load()
-        this.bunny = s
 
         const g = new Girl(this.#ctx, this.controlls, [p], this.levelWidth,this.levelHeight)
         await g.load()
-        this.girl = g
 
         this.playerCharicters.push(s)
         this.playerCharicters.push(g)
@@ -56,12 +56,16 @@ export default class extends Level {
     }
 
     draw() {
-        this.background.move(-this.viewx, this.viewy)
-        this.background.draw()
-        this.platforms.move(-this.viewx, this.viewy)
-        this.platforms.draw()
-        this.foreground.move(-this.viewx, this.viewy)
-        this.foreground.draw()
+        for (const layer of this.layers) {
+            layer.move(-this.viewx, this.viewy)
+            layer.draw()
+        }
+        // this.background.move(-this.viewx, this.viewy)
+        // this.background.draw()
+        // this.platforms.move(-this.viewx, this.viewy)
+        // this.platforms.draw()
+        // this.foreground.move(-this.viewx, this.viewy)
+        // this.foreground.draw()
 
         for (const charicter of this.playerCharicters) {
             if (charicter.positionx - this.viewx < 0) {
@@ -74,22 +78,6 @@ export default class extends Level {
             charicter.draw()
         }
 
-        // if (this.bunny.positionx - this.viewx < 0) {
-        //     this.bunny.positionx = this.viewx
-        // }
-        //  if (this.girl.positionx - this.viewx < 0) {
-        //      this.girl.positionx = this.viewx
-        // }
-        // if (this.bunny.positionx - this.viewx > this.viewWidth - this.bunny.canvasw) {
-        //     this.bunny.positionx = this.viewx + this.viewWidth - this.bunny.canvasw
-        // }
-        // if (this.girl.positionx - this.viewx > this.viewWidth - this.girl.canvasw) {
-        //     this.girl.positionx = this.viewx + this.viewWidth - this.girl.canvasw
-        // }
-        // this.bunny.move(this.bunny.positionx - this.viewx, this.bunny.positiony - this.viewy)
-        // this.bunny.draw()
-        // this.girl.move(this.girl.positionx - this.viewx, this.girl.positiony - this.viewy)
-        // this.girl.draw()
     }
 
     update() {
@@ -97,17 +85,12 @@ export default class extends Level {
         for (const charicter of this.playerCharicters) {
             charictersCenter += charicter.positionx + (charicter.canvasw / 2)
         }
-        // const bunnyCenter = this.bunny.positionx + (this.bunny.canvasw / 2)
-        // const girlCenter = this.girl.positionx + (this.girl.canvasw / 2)
-        // const centerPoint = (bunnyCenter + girlCenter) / 2
         const centerPoint = charictersCenter / 2
         this.viewx = centerPoint - (this.viewWidth / 2)
 
         for (const charicter of this.playerCharicters) {
             charicter.update()
         }
-        // this.bunny.update()
-        // this.girl.update()
     }
 
 }
