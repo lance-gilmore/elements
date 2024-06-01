@@ -49,24 +49,7 @@ export default class extends Level {
 
     }
 
-    draw() {
-        for (const layer of this.layers) {
-            layer.move(-this.viewx, this.viewy)
-            layer.draw()
-        }
 
-        for (const charicter of this.playerCharicters) {
-            if (charicter.positionx - this.viewx < 0) {
-                charicter.positionx = this.viewx
-            }
-            if (charicter.positionx - this.viewx > this.viewWidth - charicter.canvasw) {
-                charicter.positionx = this.viewx + this.viewWidth - charicter.canvasw
-            }
-            charicter.move(charicter.positionx - this.viewx, charicter.positiony - this.viewy)
-            charicter.draw()
-        }
-
-    }
 
     update() {
         let charictersCenter = 0
