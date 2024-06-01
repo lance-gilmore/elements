@@ -49,19 +49,4 @@ export default class extends Level {
 
     }
 
-
-
-    update() {
-        let charictersCenter = 0
-        for (const charicter of this.playerCharicters) {
-            charictersCenter += charicter.positionx + (charicter.canvasw / 2)
-        }
-        const centerPoint = charictersCenter / 2
-        this.viewx = centerPoint - (this.viewWidth / 2)
-
-        for (const charicter of this.playerCharicters) {
-            charicter.update()
-        }
-    }
-
 }
