@@ -16,9 +16,6 @@ export default class extends Level {
     controlls
     #ctx
 
-    playerCharicters = []
-    layers = []
-
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
