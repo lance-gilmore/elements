@@ -23,9 +23,9 @@ export default class extends Drawable {
         let imagew = this.spriteLocation[2]
         const imageh = this.spriteLocation[3]
 
-         this.ctx.beginPath();
-         this.ctx.rect(this.canvasx-1, this.canvasy-1, this.canvasw+1, this.canvash+1);
-         this.ctx.stroke();
+         //this.ctx.beginPath();
+         //this.ctx.rect(this.canvasx-1, this.canvasy-1, this.canvasw+1, this.canvash+1);
+         //this.ctx.stroke();
 
          let canvasx = this.canvasx
 
