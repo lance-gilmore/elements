@@ -21,6 +21,7 @@ export default class extends Level {
     background
     bunny
     girl
+    playerCharicters = []
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
@@ -49,6 +50,9 @@ export default class extends Level {
         await g.load()
         this.girl = g
 
+        this.playerCharicters.push(s)
+        this.playerCharicters.push(g)
+
     }
 
     draw() {
@@ -58,32 +62,52 @@ export default class extends Level {
         this.platforms.draw()
         this.foreground.move(-this.viewx, this.viewy)
         this.foreground.draw()
-        if (this.bunny.positionx - this.viewx < 0) {
-            this.bunny.positionx = this.viewx
+
+        for (const charicter of this.playerCharicters) {
+            if (charicter.positionx - this.viewx < 0) {
+                charicter.positionx = this.viewx
+            }
+            if (charicter.positionx - this.viewx > this.viewWidth - charicter.canvasw) {
+                charicter.positionx = this.viewx + this.viewWidth - charicter.canvasw
+            }
+            charicter.move(charicter.positionx - this.viewx, charicter.positiony - this.viewy)
+            charicter.draw()
         }
-         if (this.girl.positionx - this.viewx < 0) {
-             this.girl.positionx = this.viewx
-        }
-        if (this.bunny.positionx - this.viewx > this.viewWidth - this.bunny.canvasw) {
-            this.bunny.positionx = this.viewx + this.viewWidth - this.bunny.canvasw
-        }
-        if (this.girl.positionx - this.viewx > this.viewWidth - this.girl.canvasw) {
-            this.girl.positionx = this.viewx + this.viewWidth - this.girl.canvasw
-        }
-        this.bunny.move(this.bunny.positionx - this.viewx, this.bunny.positiony - this.viewy)
-        this.bunny.draw()
-        this.girl.move(this.girl.positionx - this.viewx, this.girl.positiony - this.viewy)
-        this.girl.draw()
+
+        // if (this.bunny.positionx - this.viewx < 0) {
+        //     this.bunny.positionx = this.viewx
+        // }
+        //  if (this.girl.positionx - this.viewx < 0) {
+        //      this.girl.positionx = this.viewx
+        // }
+        // if (this.bunny.positionx - this.viewx > this.viewWidth - this.bunny.canvasw) {
+        //     this.bunny.positionx = this.viewx + this.viewWidth - this.bunny.canvasw
+        // }
+        // if (this.girl.positionx - this.viewx > this.viewWidth - this.girl.canvasw) {
+        //     this.girl.positionx = this.viewx + this.viewWidth - this.girl.canvasw
+        // }
+        // this.bunny.move(this.bunny.positionx - this.viewx, this.bunny.positiony - this.viewy)
+        // this.bunny.draw()
+        // this.girl.move(this.girl.positionx - this.viewx, this.girl.positiony - this.viewy)
+        // this.girl.draw()
     }
 
     update() {
-        const bunnyCenter = this.bunny.positionx + (this.bunny.canvasw / 2)
-        const girlCenter = this.girl.positionx + (this.girl.canvasw / 2)
-        const centerPoint = (bunnyCenter + girlCenter) / 2
+        let charictersCenter = 0
+        for (const charicter of this.playerCharicters) {
+            charictersCenter += charicter.positionx + (charicter.canvasw / 2)
+        }
+        // const bunnyCenter = this.bunny.positionx + (this.bunny.canvasw / 2)
+        // const girlCenter = this.girl.positionx + (this.girl.canvasw / 2)
+        // const centerPoint = (bunnyCenter + girlCenter) / 2
+        const centerPoint = charictersCenter / 2
         this.viewx = centerPoint - (this.viewWidth / 2)
 
-        this.bunny.update()
-        this.girl.update()
+        for (const charicter of this.playerCharicters) {
+            charicter.update()
+        }
+        // this.bunny.update()
+        // this.girl.update()
     }
 
 }
