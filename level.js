@@ -20,8 +20,8 @@ export default class extends Drawable {
     }
 
     draw() {
-        console.log('drawing')
         for (const layer of this.layers) {
+            console.log('drawing layer')
             layer.move(-this.viewx, this.viewy)
             layer.draw()
         }
@@ -40,7 +40,6 @@ export default class extends Drawable {
     }
 
     update() {
-        console.log('updating')
         let charictersCenter = 0
         for (const charicter of this.playerCharicters) {
             charictersCenter += charicter.positionx + (charicter.canvasw / 2)
