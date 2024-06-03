@@ -6,9 +6,6 @@ import Platforms from '../layers/platforms.js'
 import Foreground from '../layers/forground_static.js'
 
 export default class extends Level {
-
-    viewWidth = 800
-    viewHeight = 600
     
     controlls
     #ctx

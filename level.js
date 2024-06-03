@@ -13,7 +13,8 @@ export default class extends Drawable {
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
-        
+        this.viewWidth = w
+        this.viewHeight = h
     }
 
     moveView(x) {
