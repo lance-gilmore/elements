@@ -8,11 +8,12 @@ export default class extends Drawable {
     playerCharicters = []
     layers = []
 
-    levelWidth
-    levelHeight
+    viewWidth
+    viewHeight
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
+        
     }
 
     moveView(x) {
