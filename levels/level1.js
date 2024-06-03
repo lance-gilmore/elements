@@ -17,15 +17,15 @@ export default class extends Level {
     }
 
     async load() {
-        const b = new Background(this.#ctx,0,0,this.viewWidth,this.viewHeight,this.controlls)
+        const b = new Background(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await b.load()
         this.layers.push(b)
 
-        const p = new Platforms(this.#ctx,0,0,this.viewWidth,this.viewHeight,this.controlls)
+        const p = new Platforms(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await p.load()
         this.layers.push(p)
 
-        const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight,this.controlls)
+        const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await h.load()
         this.layers.push(h)
 

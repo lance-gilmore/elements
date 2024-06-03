@@ -3,8 +3,8 @@ import Mountains from '../sprites/mountains.js'
 
 export default class extends Drawable {
 
-    constructor(ctx, x, y, w, h, controlls) {
-        super(ctx, x, y, w, h, controlls)
+    constructor(ctx, x, y, w, h) {
+        super(ctx, x, y, w, h)
     }
 
     async load() {
