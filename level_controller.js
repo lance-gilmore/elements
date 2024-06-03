@@ -15,7 +15,7 @@ export default class extends Drawable {
 
     async load() {
         
-        const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, controlls)
+        const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
 
         this.currentLevel = l
