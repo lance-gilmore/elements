@@ -1,6 +1,6 @@
 import GameLoop from './game_loop.js'
 import Controlls from './controlls.js'
-import Level1 from './levels/level1.js'
+import LevelController from './level_controller.js'
 
 export default class {
     #ctx
@@ -11,10 +11,12 @@ export default class {
     }
 
     async run() {
+        const canvasW = 800
+        const canvasH = 600
 
         const controlls = new Controlls()
 
-        const l = new Level1(this.#ctx, 0, 0, 800, 600, controlls)
+        const l = new LevelController(this.#ctx, 0, 0, canvasW, canvasH, controlls)
         await l.load()
 
         const loop = new GameLoop(this.#ctx, controlls)

@@ -2,12 +2,10 @@ import Drawable from './drawable.js'
 import Level1 from 'levels/level1.js'
 
 export default class extends Drawable {
-
-    viewWidth = 800
-    viewHeight = 600
     
     controlls
     #ctx
+    currentLevel
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
@@ -17,9 +15,19 @@ export default class extends Drawable {
 
     async load() {
         
-        const l = new Level1(this.#ctx, 0, 0, 800, 600, controlls)
+        const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, controlls)
         await l.load()
 
+        this.currentLevel = l
+
+    }
+
+    draw() {
+        this.currentLevel.draw()
+    }
+
+    update() {
+        this.currentLevel.update()
     }
 
 }
