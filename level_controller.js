@@ -1,4 +1,4 @@
-import Drawable from './drawable.js'
+import Drawable from './engine/drawable.js'
 import Level1 from './levels/level1.js'
 
 export default class extends Drawable {

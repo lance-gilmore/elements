@@ -1,4 +1,4 @@
-import PlayerCharicter from '../player_charicter.js'
+import PlayerCharicter from '../engine/player_charicter.js'
 import Girl1 from '../sprites/girl1.js'
 import Girl2 from '../sprites/girl2.js'
 

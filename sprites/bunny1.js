@@ -1,5 +1,5 @@
 
-import Sprite from '../sprite_drawable.js'
+import Sprite from '../engine/sprite_drawable.js'
 
 export default class extends Sprite {
     imageLocation = "bunny_sprites.png"

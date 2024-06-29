@@ -1,5 +1,5 @@
-import GameLoop from './game_loop.js'
-import Controlls from './controlls.js'
+import GameLoop from './engine/game_loop.js'
+import Controlls from './engine/controlls.js'
 import LevelController from './level_controller.js'
 
 export default class {

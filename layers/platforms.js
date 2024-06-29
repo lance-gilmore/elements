@@ -1,4 +1,4 @@
-import Drawable from '../layer.js'
+import Drawable from '../engine/layer.js'
 import Platform from '../sprites/platform.js'
 
 export default class extends Drawable {

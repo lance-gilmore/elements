@@ -1,4 +1,4 @@
-import AnimatedSprite from '../animated_sprite.js'
+import AnimatedSprite from '../engine/animated_sprite.js'
 import Girl1 from '../sprites/girl1.js'
 import Girl2 from '../sprites/girl2.js'
 

@@ -1,4 +1,4 @@
-import Drawable from '../layer.js'
+import Drawable from '../engine/layer.js'
 import House from '../sprites/house.js'
 import Mushroom from '../sprites/mushroom.js'
 

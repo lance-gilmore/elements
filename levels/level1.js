@@ -1,4 +1,4 @@
-import Level from '../level.js'
+import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import Background from '../layers/background.js'

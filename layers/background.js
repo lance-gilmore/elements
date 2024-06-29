@@ -1,4 +1,4 @@
-import Drawable from '../layer.js'
+import Drawable from '../engine/layer.js'
 import Mountains from '../sprites/mountains.js'
 
 export default class extends Drawable {
