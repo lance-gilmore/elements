@@ -40,4 +40,12 @@ export default class extends Level {
 
     }
 
+    update() {
+        super.update()
+        
+       // for (const pc of this.playerCharicters) {
+       //     if (pc.x)
+       // }
+    }
+
 }
