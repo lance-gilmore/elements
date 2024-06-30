@@ -8,7 +8,7 @@ export default class extends Drawable {
     }
 
     async load() {
-        const m1 = new InsideHouse(this.ctx, 100, 100, 700, 600)
+        const m1 = new InsideHouse(this.ctx, 100, 100, 200, 500)
         await m1.load()
         this.elements.push(m1)
 
