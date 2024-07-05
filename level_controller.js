@@ -16,15 +16,15 @@ export default class extends Drawable {
 
     async load() {
         
-       // const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-       // await l.load()
+        const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+        await l.load()
 
-      //  this.currentLevel = l
+        this.currentLevel = l
 
-        const lh = new LevelHouse(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-        await lh.load()
+     //   const lh = new LevelHouse(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+     //   await lh.load()
 
-        this.currentLevel = lh
+     //   this.currentLevel = lh
 
     }
 
