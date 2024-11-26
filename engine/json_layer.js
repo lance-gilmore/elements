@@ -12,7 +12,7 @@ export default class extends Layer {
 
         for (const image of json) {
             const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
-            layerImage.imageLocation = image.image
+            layerImage.imageLocation = image.img
             await layerImage.load()
             this.elements.push(layerImage)
         }
