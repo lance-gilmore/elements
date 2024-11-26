@@ -8,7 +8,7 @@ export default class extends Layer {
     }
 
     async load(json) {
-        // let json = [{x,y,w,h,img}]
+        // const json = [{x,y,w,h,img}]
 
         for (const image of json) {
             const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
