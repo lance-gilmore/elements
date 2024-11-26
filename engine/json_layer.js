@@ -1,5 +1,5 @@
-import Layer from '../engine/layer.js'
-import ImageDrawable from 'image_drawable.js'
+import Layer from './layer.js'
+import ImageDrawable from './image_drawable.js'
 
 export default class extends Layer {
 
