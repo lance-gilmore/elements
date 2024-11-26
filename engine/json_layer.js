@@ -11,7 +11,7 @@ export default class extends Layer {
         // let json = [{x,y,w,h,img}]
 
         for (const image of json) {
-            const layerImage = new ImageDrawable(ctx,image.x,image.y,image.w,image.h)
+            const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
             layerImage.imageLocation = image.image
             await layerImage.load()
             this.elements.push(layerImage)
