@@ -23,9 +23,24 @@
 
     <script>
       function loadImage() {
-        const imageUrl = document.getElementById('image_url').value
+        const imageUrlInput = document.getElementById('image_url')
+        const imageUrl = imageUrlInput.value
         const imageList = document.getElementById('images')
-        imageList.insertAdjacentHTML('afterbegin','<img style="display:block;padding-top:5px;" src="'+imageUrl+'" width="100" height="100">')
+        imageList.insertAdjacentHTML('afterbegin',
+        `<div style="display:block;padding-top:5px;">
+          <img src="`+imageUrl+`" width="100" height="100">
+          <div>
+            <label>w:</label>
+            <input class="image_width" type="number" value="100">  
+          </div>
+          <div>
+            <label>h:</label>
+            <input class="image_height" type="number" value="100">  
+          </div>
+        </div>
+        `
+        )
+        imageUrlInput.value = ''
       }
     </script>
 
