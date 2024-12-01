@@ -8,25 +8,32 @@
     <canvas id="mainCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
 
 
-    <div>
+    <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
       <form>
         <h4>Add image</h4>
         <div>
           <label for="image_url">Url</label>
           <input id="image_url" type="text">
-          <button type="button">Add</button>
+          <button type="button" onclick="loadImage()">Add</button>
         </div>
       </form>
       <div id="images"></div>
     </div>
+
+    <script>
+      function loadImage() {
+        const imageUrl = document.getElementById('image_url').value
+        const imageList = document.getElementById('images')
+        imageList.insertAdjacentHTML('afterbegin','<img src="'+imageUrl+'" width="100" height="100">')
+      }
+    </script>
 
     <script type="module">
       import MainRunner from './main_runner.js'
       const c = document.getElementById("mainCanvas")
       const runner = new MainRunner(c)
       runner.run()
-      
     </script>
 
   </body>
