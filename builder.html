@@ -7,6 +7,20 @@
     
     <canvas id="mainCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
 
+
+    <div>
+      <h2>Images</h2>
+      <form>
+        <h4>Add image</h4>
+        <div>
+          <label for="image_url">Url</label>
+          <input id="image_url" type="text">
+          <button type="button">Add</button>
+        </div>
+      </form>
+      <div id="images"></div>
+    </div>
+
     <script type="module">
       import MainRunner from './main_runner.js'
       const c = document.getElementById("mainCanvas")
