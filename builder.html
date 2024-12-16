@@ -66,10 +66,10 @@
       function addImageDrop() {
         console.log('dropping')
         let e = window.event;
-        let posx = e.clientX;
-        let posy = e.clientY;
-        console.log(posx)
-        console.log(posy)
+        
+        var rect = target.getBoundingClientRect(); 
+        var posx = e.clientX - rect.left; 
+        var posy = e.clientY - rect.top;
 
         if (addingImage) {
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
