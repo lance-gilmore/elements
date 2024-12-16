@@ -63,8 +63,8 @@
 
       function addImageDrop() {
         let e = window.event;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        let posx = e.clientX;
+        let posy = e.clientY;
 
         e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
 
