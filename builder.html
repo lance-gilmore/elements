@@ -65,6 +65,11 @@
         let e = window.event;
         pos3 = e.clientX;
         pos4 = e.clientY;
+
+        e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+
+
+        addingImage = null
       }
       
     </script>
