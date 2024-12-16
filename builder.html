@@ -63,20 +63,24 @@
         event.preventDefault();
       });
 
-      function addImageDrop() {
+      target.addEventListener('drop', (e) => {
         console.log('dropping')
-        let e = window.event;
+        console.log('x',e.clientX)
+        console.log('y',e.clientY)
         
         var rect = target.getBoundingClientRect(); 
         var posx = e.clientX - rect.left; 
         var posy = e.clientY - rect.top;
+
+        console.log('rl',rect.left)
+        console.log('rt',rect.top)
 
         if (addingImage) {
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
         }
 
         addingImage = null
-      }
+      })
       
     </script>
 
