@@ -30,7 +30,7 @@
         const imageList = document.getElementById('images')
         imageList.insertAdjacentHTML('afterbegin',
         `<div style="display:block;padding-top:5px;">
-          <img src="`+imageUrl+`" width="100" height="100">
+          <img src="`+imageUrl+`" width="100" height="100" onmousedown="addImageDrag()">
           <div>
             <label>w:</label>
             <input class="image_width" type="number" value="100">  
@@ -43,6 +43,13 @@
         `
         )
         imageUrlInput.value = ''
+      }
+
+      function addImageDrag() {
+        let e = e || window.event;
+        console.log(e.target)
+        console.log(e.target.src)
+        console.log(e.target.parentNode.getElementsByClassName('image_width').value)
       }
     </script>
 
