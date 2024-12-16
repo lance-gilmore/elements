@@ -5,7 +5,9 @@
   <body>
     <h1>Elements</h1>
     
-    <canvas id="mainCanvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
+    <div id="builderFrame" width="800" height="600" style="border:1px solid #000000;overflow:scroll">
+      <div id="builderCanvas" style="position: relative; width:4000px"></div>
+    </div>
 
 
     <div style="display:inline-block; border: 1px solid black;">
@@ -44,12 +46,6 @@
       }
     </script>
 
-    <script type="module">
-      import MainRunner from './main_runner.js'
-      const c = document.getElementById("mainCanvas")
-      const runner = new MainRunner(c)
-      runner.run()
-    </script>
 
   </body>
 </html>
