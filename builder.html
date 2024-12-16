@@ -6,7 +6,7 @@
     <h1>Elements</h1>
     
     <div id="builderFrame" style="border:1px solid #000000;overflow:scroll;width:800px;height:600px;display:inline-block">
-      <div id="builderCanvas" ondrop="addImageDrop()" ondragover="imageDragOver()" style="position: relative; width:4000px; height:600px"></div>
+      <div id="builderCanvas" ondrop="addImageDrop()" ondragover="imageDragOver(event)" style="position: relative; width:4000px; height:600px"></div>
     </div>
 
 
@@ -57,8 +57,7 @@
         }
       }
 
-      function imageDragOver() {
-        let e = window.event;
+      function imageDragOver(e) {
         e.preventDefault
       }
 
