@@ -69,10 +69,10 @@
         let posx = e.clientX;
         let posy = e.clientY;
         console.log(posx)
-        console.log(poxy)
+        console.log(posy)
 
         if (addingImage) {
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+';top:'+posy+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
         }
 
         addingImage = null
