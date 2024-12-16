@@ -6,7 +6,7 @@
     <h1>Elements</h1>
     
     <div id="builderFrame" style="border:1px solid #000000;overflow:scroll;width:800px;height:600px;display:inline-block">
-      <div id="builderCanvas" ondrop="addImageDrop()" style="position: relative; width:4000px; height:600px"></div>
+      <div id="builderCanvas" style="position: relative; width:4000px; height:600px"></div>
     </div>
 
 
@@ -74,6 +74,9 @@
 
         console.log('rl',rect.left)
         console.log('rt',rect.top)
+
+        console.log('posx',posx)
+        console.log('posy',posy)
 
         if (addingImage) {
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
