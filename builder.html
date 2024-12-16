@@ -50,18 +50,22 @@
 
       function addImageDrag() {
         let e = window.event;
+
+        var rect = e.target.getBoundingClientRect(); 
+        var posx = e.clientX - rect.left; 
+        var posy = e.clientY - rect.top;
+
         addingImage = {
           src: e.target.src,
           width: e.target.parentNode.getElementsByClassName('image_width')[0].value,
           height: e.target.parentNode.getElementsByClassName('image_height')[0].value,
-          offsetx: e.clientX,
-          offsety: e.clientY
+          offsetx: posx,
+          offsety: posy
         }
       }
 
       const target = document.getElementById("builderCanvas");
       target.addEventListener("dragover", (event) => {
-        // prevent default to allow drop
         event.preventDefault();
       });
 
