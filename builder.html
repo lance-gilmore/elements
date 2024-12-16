@@ -72,7 +72,7 @@
         console.log(posy)
 
         if (addingImage) {
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+';top:'+posy+';position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
         }
 
         addingImage = null
