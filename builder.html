@@ -70,6 +70,10 @@
           offsetx: posx,
           offsety: posy
         }
+
+        if (e.target.classList.contains('img_tile')) {
+          e.target.remove()
+        }
       }
 
       function moveImageDrag() {
