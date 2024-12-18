@@ -50,7 +50,6 @@
       }
 
       function heightChange() {
-        console.log('heightChange')
         let e = window.event;
         e.target.parentNode.parentNode.getElementsByClassName('list_img')[0].height = e.target.value
       }
@@ -66,8 +65,8 @@
 
         addingImage = {
           src: e.target.src,
-          width: e.target.parentNode.getElementsByClassName('image_width')[0].value,
-          height: e.target.parentNode.getElementsByClassName('image_height')[0].value,
+          width: e.target.width,
+          height: e.target.height,
           offsetx: posx,
           offsety: posy
         }
@@ -98,7 +97,7 @@
         console.log('posy',posy)
 
         if (addingImage) {
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="moveImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
         }
 
         addingImage = null
