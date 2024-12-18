@@ -31,19 +31,27 @@
         const imageList = document.getElementById('images')
         imageList.insertAdjacentHTML('afterbegin',
         `<div style="display:block;padding-top:5px;">
-          <img src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()">
+          <img class="list_img" src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()">
           <div>
             <label>w:</label>
-            <input oninput="" class="image_width" type="number" step="10" value="100">  
+            <input oninput="widthChange()" class="image_width" type="number" step="10" value="100">  
           </div>
           <div>
             <label>h:</label>
-            <input class="image_height" type="number" step="10" value="100">  
+            <input oninput="heightChange()" class="image_height" type="number" step="10" value="100">  
           </div>
-        </div>
-        `
-        )
+        </div>`)
         imageUrlInput.value = ''
+      }
+
+      function widthChange() {
+        console.log('widthChange')
+        let e = window.event;
+        e.target.parentNode.parentNode.getElementsByClassName('list_img')[0].width = e.target.value
+      }
+
+      function heightChange() {
+        let e = window.event;
       }
 
       let addingImage = null
