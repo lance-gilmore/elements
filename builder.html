@@ -34,11 +34,11 @@
           <img src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()">
           <div>
             <label>w:</label>
-            <input class="image_width" type="number" value="100">  
+            <input oninput="" class="image_width" type="number" step="10" value="100">  
           </div>
           <div>
             <label>h:</label>
-            <input class="image_height" type="number" value="100">  
+            <input class="image_height" type="number" step="10" value="100">  
           </div>
         </div>
         `
@@ -64,6 +64,10 @@
         }
       }
 
+      function moveImageDrag() {
+        console.log('moving')
+      }
+
       const target = document.getElementById("builderCanvas");
       target.addEventListener("dragover", (event) => {
         event.preventDefault();
@@ -85,7 +89,7 @@
         console.log('posy',posy)
 
         if (addingImage) {
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="moveImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
         }
 
         addingImage = null
