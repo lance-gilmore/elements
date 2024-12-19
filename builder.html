@@ -11,7 +11,7 @@
 
     <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
-      <p>https://opengameart.org/sites/default/files/2dplatform_0.png</p>
+      <p>https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg</p>
       <form>
         <h4>Add image</h4>
         <div>
@@ -53,6 +53,8 @@
         let output = []
         for (element of builderCanvas.children) {
           const elementRect = element.getBoundingClientRect();
+          const left = elementRect.left + builderCanvas.parentElement.scrollLeft
+          const right = elementRect.top + builderCanvas.parentElement.scrollTop
           output.push({w:element.width,h:element.height,x:elementRect.left,y:elementRect.top,img:element.src})
         }
         const outputBox = document.getElementById("generated");
@@ -101,19 +103,10 @@
       });
 
       target.addEventListener('drop', (e) => {
-        console.log('dropping')
-        console.log('x',e.clientX)
-        console.log('y',e.clientY)
         
         var rect = target.getBoundingClientRect(); 
         var posx = e.clientX - rect.left - addingImage.offsetx; 
         var posy = e.clientY - rect.top - addingImage.offsety;
-
-        console.log('rl',rect.left)
-        console.log('rt',rect.top)
-
-        console.log('posx',posx)
-        console.log('posy',posy)
 
         if (addingImage) {
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
