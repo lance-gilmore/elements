@@ -11,12 +11,14 @@
 
     <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
-      <p>https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg</p>
+      <p>
+        <a href="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">lava</a>
+      </p>
       <form>
         <h4>Add image</h4>
         <div>
           <label for="image_url">Url</label>
-          <input id="image_url" type="text">
+          <input id="image_url" type="text" value="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">
           <button type="button" onclick="loadImage()">Add</button>
         </div>
       </form>
@@ -54,8 +56,8 @@
         for (element of builderCanvas.children) {
           const elementRect = element.getBoundingClientRect();
           const left = elementRect.left + builderCanvas.parentElement.scrollLeft
-          const right = elementRect.top + builderCanvas.parentElement.scrollTop
-          output.push({w:element.width,h:element.height,x:elementRect.left,y:elementRect.top,img:element.src})
+          const top = elementRect.top + builderCanvas.parentElement.scrollTop
+          output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
         }
         const outputBox = document.getElementById("generated");
         outputBox.textContent = JSON.stringify(output)
