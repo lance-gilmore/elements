@@ -52,7 +52,8 @@
         const builderCanvas = document.getElementById("builderCanvas");
         let output = []
         for (element of builderCanvas.children) {
-          output.push({w:element.width,h:element.height,x:element.left,y:element.top,img:element.src})
+          const elementRect = element.getBoundingClientRect();
+          output.push({w:element.width,h:element.height,x:elementRect.left,y:elementRect.top,img:element.src})
         }
         const outputBox = document.getElementById("generated");
         outputBox.textContent = JSON.stringify(output)
