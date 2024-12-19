@@ -55,8 +55,7 @@
           output.push({w:element.width,h:element.height,x:element.left,y:element.top,img:element.src})
         }
         const outputBox = document.getElementById("generated");
-        outputBox.appendChild(JSON.stringify(output))
-       
+        outputBox.textContent = JSON.stringify(output)
       }
 
       function widthChange() {
