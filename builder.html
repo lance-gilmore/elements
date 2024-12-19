@@ -68,12 +68,11 @@
           width: e.target.width,
           height: e.target.height,
           offsetx: posx,
-          offsety: posy
+          offsety: posy,
         }
 
         if (e.target.classList.contains('img_tile')) {
-          console.log(addingImage)
-          e.target.remove()
+          addingImage.moveElement = e.target
         }
       }
 
@@ -103,6 +102,9 @@
 
         if (addingImage) {
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          if (addingImage.moveElement) {
+            addingImage.moveElement.remove()
+          }
         }
 
         addingImage = null
