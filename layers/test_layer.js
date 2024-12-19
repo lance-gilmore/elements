@@ -8,9 +8,10 @@ export default class extends JsonLayer {
 
     async load() {
         const json = 
-        [{"w":100,"h":100,"x":-1346.612548828125,"y":69.2249984741211,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":-1347.5875244140625,"y":549.2374877929688,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":-665.6000366210938,"y":68.2249984741211,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":-667.6000366210938,"y":547.2374877929688,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":17.80000114440918,"y":69.2249984741211,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":15.800000190734863,"y":547.2374877929688,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":691.4000244140625,"y":67.23750305175781,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":690.4000244140625,"y":548.2374877929688,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"}]        
+        [{"w":100,"h":100,"x":-0.3874998092651367,"y":0.3874969482421875,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":678.9999876022339,"y":3.375,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":3.6000003814697266,"y":479.39998626708984,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"},{"w":100,"h":100,"x":681.6000242233276,"y":482.39998626708984,"img":"https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg"}]        
         
         
+
         
         super.load(json)
     }
