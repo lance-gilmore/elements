@@ -9,6 +9,10 @@
       <div id="builderCanvas" style="position: relative; width:4000px; height:600px"></div>
     </div>
 
+    <div style="display: inline-block; border: 1px solid black;">
+      <button type="button" onclick="getOutput()">Get output</button>
+      <div id="generated"></div>
+    </div>
 
     <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
@@ -42,6 +46,17 @@
           </div>
         </div>`)
         imageUrlInput.value = ''
+      }
+
+      function getOutput() {
+        const builderCanvas = document.getElementById("builderCanvas");
+        let output = []
+        for (element of builderCanvas.children) {
+          output.push({w:element.width,h:element.height,x:element.left,y:element.top,img:element.src})
+        }
+        const outputBox = document.getElementById("gennerated");
+        outputBox.appendChild( JSON.stringify(output))
+       
       }
 
       function widthChange() {
