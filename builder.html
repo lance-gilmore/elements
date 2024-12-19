@@ -51,12 +51,13 @@
       }
 
       function getOutput() {
-        const builderCanvas = document.getElementById("builderCanvas");
+        const builderCanvas = document.getElementById("builderCanvas")
+        const parentRect = builderCanvas.getBoundingClientRect()
         let output = []
         for (element of builderCanvas.children) {
           const elementRect = element.getBoundingClientRect();
-          const left = elementRect.left + builderCanvas.parentElement.scrollLeft
-          const top = elementRect.top + builderCanvas.parentElement.scrollTop
+          const left = elementRect.left + builderCanvas.parentElement.scrollLeft - parentRect.left
+          const top = elementRect.top + builderCanvas.parentElement.scrollTop - parentRect.top
           output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
         }
         const outputBox = document.getElementById("generated");
