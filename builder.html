@@ -149,9 +149,8 @@
           selectedTile = e.target.lastChild
           const posInputx = document.getElementById("xpos");
           const posInputy = document.getElementById("ypos");
-          const elementRect = selectedTile.getBoundingClientRect();
-          posInputx.value = elementRect.left
-          posInputy.value = elementRect.top
+          posInputx.value = posx
+          posInputy.value = posy
         }
 
         addingImage = null
