@@ -10,6 +10,15 @@
     </div>
 
     <div style="display:inline-block; border: 1px solid black;">
+      <h2>Position</h2>
+      <label for="xpos">x:</label>
+      <input id="xpos" type="number" step="10" oninput="xChange()">
+      <label for="ypos">y:</label>
+      <input id="ypos" type="number" step="10" oninput="yChange()">
+    </div>
+
+
+    <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
       <p>
         <a href="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">lava</a>
@@ -39,15 +48,31 @@
         `<div style="display:block;padding-top:5px;">
           <img class="list_img" src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()" style="border:1px solid black;">
           <div>
-            <label>w:</label>
+            <label>width:</label>
             <input oninput="widthChange()" class="image_width" type="number" step="10" value="100">  
           </div>
           <div>
-            <label>h:</label>
+            <label>height:</label>
             <input oninput="heightChange()" class="image_height" type="number" step="10" value="100">  
           </div>
         </div>`)
         imageUrlInput.value = ''
+      }
+
+      let selectedTile = null
+
+      function xChange() {
+        let e = window.event;
+        if (selectedTile) {
+          selectedTile.left = e.target.value
+        }
+      }
+
+      function yChange() {
+        let e = window.event;
+        if (selectedTile) {
+          selectedTile.top = e.target.value
+        }
       }
 
       function getOutput() {
@@ -116,6 +141,7 @@
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
+          selectedTile = e.target.lastChild
         }
 
         addingImage = null
