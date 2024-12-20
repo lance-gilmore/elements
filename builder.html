@@ -65,15 +65,14 @@
         console.log('cx')
         let e = window.event;
         if (selectedTile) {
-          selectedTile.left = e.target.value
+          selectedTile.style.left = e.target.value
         }
       }
 
       function yChange() {
-        console.log('cy')
         let e = window.event;
         if (selectedTile) {
-          selectedTile.top = e.target.value
+          selectedTile.style.top = e.target.value
         }
       }
 
