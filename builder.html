@@ -43,9 +43,10 @@
       <div id="generated"></div>
     </div>
 
-    <div>
+    <div style="display: block; border: 1px solid black; padding: 10px;">
       <h4>Layers</h4>
       <button type="button" id="load_layers">Load</button>
+      <div id="other_layers"></div>
     </div>
 
     <script type="module">
@@ -53,6 +54,7 @@
       const ld = new LayerData()
       const ll = document.getElementById("load_layers")
       ll.onclick = function(){
+        console.log(ld.getOwnPropertyNames)
         console.log(ld.layer1)
       }
     </script>
