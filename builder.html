@@ -62,6 +62,7 @@
       let selectedTile = null
 
       function xChange() {
+        console.log('cx')
         let e = window.event;
         if (selectedTile) {
           selectedTile.left = e.target.value
@@ -69,6 +70,7 @@
       }
 
       function yChange() {
+        console.log('cy')
         let e = window.event;
         if (selectedTile) {
           selectedTile.top = e.target.value
@@ -142,7 +144,6 @@
             addingImage.moveElement.remove()
           }
           selectedTile = e.target.lastChild
-          console.log(selectedTile)
           const posInputx = document.getElementById("xpos");
           const posInputy = document.getElementById("ypos");
           const elementRect = selectedTile.getBoundingClientRect();
