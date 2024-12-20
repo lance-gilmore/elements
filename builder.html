@@ -142,6 +142,10 @@
             addingImage.moveElement.remove()
           }
           selectedTile = e.target.lastChild
+          const posInputx = document.getElementById("xpos");
+          const posInputy = document.getElementById("ypos");
+          posInputx.value = selectedTile.left
+          posInputy.value = selectedTile.top
         }
 
         addingImage = null
