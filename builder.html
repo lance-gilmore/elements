@@ -50,11 +50,12 @@
 
     <script type="module">
       import LayerData from './layers/layer_data.js'
+      const ld = new LayerData()
     </script>
 
     <script>
       function loadLayers() {
-        console.log(LayerData.layer1)
+        console.log(ld.layer1)
       }
 
       function loadImage() {
