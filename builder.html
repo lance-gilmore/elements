@@ -45,18 +45,19 @@
 
     <div>
       <h4>Layers</h4>
-      <button type="button" onclick="loadLayers()">Load</button>
+      <button type="button" id="load_layers">Load</button>
     </div>
 
     <script type="module">
       import LayerData from './layers/layer_data.js'
       const ld = new LayerData()
+      const ll = document.getElementById("load_layers")
+      ll.onclick = function(){
+        console.log(ld.layer1)
+      }
     </script>
 
     <script>
-      function loadLayers() {
-        console.log(ld.layer1)
-      }
 
       function loadImage() {
         const imageUrlInput = document.getElementById('image_url')
