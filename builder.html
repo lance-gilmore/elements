@@ -142,10 +142,12 @@
             addingImage.moveElement.remove()
           }
           selectedTile = e.target.lastChild
+          console.log(selectedTile)
           const posInputx = document.getElementById("xpos");
           const posInputy = document.getElementById("ypos");
-          posInputx.value = selectedTile.left
-          posInputy.value = selectedTile.top
+          const elementRect = selectedTile.getBoundingClientRect();
+          posInputx.value = elementRect.left
+          posInputy.value = elementRect.top
         }
 
         addingImage = null
