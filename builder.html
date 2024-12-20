@@ -54,7 +54,7 @@
       const ld = new LayerData()
       const ll = document.getElementById("load_layers")
       ll.onclick = function(){
-        console.log(ld.getOwnPropertyNames)
+        console.log(Object.getOwnPropertyNames(ld))
         console.log(ld.layer1)
       }
     </script>
