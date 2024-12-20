@@ -43,7 +43,20 @@
       <div id="generated"></div>
     </div>
 
+    <div>
+      <h4>Layers</h4>
+      <button type="button" onclick="loadLayers()">Load</button>
+    </div>
+
+    <script type="module">
+      import LayerData from './layers/layer_data.js'
+    </script>
+
     <script>
+      function loadLayers() {
+        console.log(LayerData.layer1)
+      }
+
       function loadImage() {
         const imageUrlInput = document.getElementById('image_url')
         const imageUrl = imageUrlInput.value
