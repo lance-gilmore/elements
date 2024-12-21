@@ -160,7 +160,9 @@
 
       function addImageDrag() {
         let e = window.event;
-
+        if (e.target.classList.contains('img_tile') && !e.target.classList.contains('layer_'+active_layer)) {
+          return;
+        }
         var rect = e.target.getBoundingClientRect(); 
         var posx = e.clientX - rect.left; 
         var posy = e.clientY - rect.top;
@@ -177,9 +179,6 @@
           addingImage.moveElement = e.target
         }
       }
-
-      function moveImageDrag() {
-        console.log('moving')
       }
 
       const target = document.getElementById("builderCanvas");
@@ -194,7 +193,7 @@
         var posy = e.clientY - rect.top - addingImage.offsety;
 
         if (addingImage) {
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
