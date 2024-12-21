@@ -62,12 +62,23 @@
         `)
       }
 
+      const builderCanvas = document.getElementById("builderCanvas")
+
       const showLayers = document.getElementsByClassName('showLayer')
       for (const showLayer of showLayers) {
         showLayer.oninput = function(e) {
           if (e.target.checked) {
-            console.log("checked "+e.target.value)
+            const layerImages = ld[e.target.value]
+            for (const li of layerImages) {
+              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+posx+`px;top:`+posy+`px;position:absolute" src="`+addingImage.src+`" width="`+addingImage.width+`" height="`+addingImage.height+`">`)
+            }
           } else {
+            for (const builderImage of builderCanvas.children) {
+              if (builderImage.classList.contains('layer_'+e.target.value)) {
+                builderImage.remove()
+              }
+            }
+            
             console.log("unchecked "+e.target.value)
           }
         }
