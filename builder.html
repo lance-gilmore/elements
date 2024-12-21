@@ -137,10 +137,12 @@
         const parentRect = builderCanvas.getBoundingClientRect()
         let output = []
         for (element of builderCanvas.children) {
-          const elementRect = element.getBoundingClientRect();
-          const left = elementRect.left + builderCanvas.parentElement.scrollLeft - parentRect.left
-          const top = elementRect.top + builderCanvas.parentElement.scrollTop - parentRect.top
-          output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
+          if (element.classList.contains('layer_'+active_layer)) {
+            const elementRect = element.getBoundingClientRect();
+            const left = elementRect.left + builderCanvas.parentElement.scrollLeft - parentRect.left
+            const top = elementRect.top + builderCanvas.parentElement.scrollTop - parentRect.top
+            output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
+          }
         }
         const outputBox = document.getElementById("generated");
         outputBox.textContent = JSON.stringify(output)
