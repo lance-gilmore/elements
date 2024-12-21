@@ -52,11 +52,14 @@
       import LayerData from './layers/layer_data.js'
       const ld = new LayerData()
       const ll = document.getElementById("other_layers")
-      for (const layerName of Object.getOwnPropertyNames(ld)) {
+      const layerNames = Object.getOwnPropertyNames(ld)
+      console.log(layerNames)
+      for (const layerName of layerNames) {
         ll.insertAdjacentHTML('beforeend',`
         <input type="checkbox" id="`+layerName+`" value="`+layerName+`">
         <label for="`+layerName+`">`+layerName+`</label>
         <input type="radio" name="active_layer" value="`+layerName+`">
+        <br>
         `)
       }
     </script>
