@@ -78,6 +78,7 @@
             }
           } else {
             for (const builderImage of builderCanvas.children) {
+              console.log(builderImage.classList)
               if (builderImage.classList.contains('layer_'+e.target.value)) {
                 builderImage.remove()
               }
