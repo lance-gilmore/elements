@@ -188,11 +188,11 @@
 
       target.addEventListener('drop', (e) => {
         
-        var rect = target.getBoundingClientRect(); 
-        var posx = e.clientX - rect.left - addingImage.offsetx; 
-        var posy = e.clientY - rect.top - addingImage.offsety;
-
         if (addingImage) {
+          var rect = target.getBoundingClientRect(); 
+          var posx = e.clientX - rect.left - addingImage.offsetx; 
+          var posy = e.clientY - rect.top - addingImage.offsety;
+
           e.target.insertAdjacentHTML('beforeend', '<image class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
