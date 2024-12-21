@@ -79,7 +79,6 @@
           } else {
             const builderImages = builderCanvas.children
             for (let i=builderImages.length-1;i>=0;i--) {
-              console.log(builderImages[i].classList)
               if (builderImages[i].classList.contains('layer_'+e.target.value)) {
                 builderImages[i].remove()
               }
@@ -94,10 +93,6 @@
           console.log("radioed "+e.target.value)
         }
       }
-
-    </script>
-
-    <script>
 
       function loadImage() {
         const imageUrlInput = document.getElementById('image_url')
