@@ -70,7 +70,7 @@
           if (e.target.checked) {
             const layerImages = ld[e.target.value]
             for (const li of layerImages) {
-              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+posx+`px;top:`+posy+`px;position:absolute" src="`+addingImage.src+`" width="`+addingImage.width+`" height="`+addingImage.height+`">`)
+              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+li.x+`px;top:`+li.y+`px;position:absolute" src="`+li.img+`" width="`+li.w+`" height="`+li.h+`">`)
             }
           } else {
             for (const builderImage of builderCanvas.children) {
