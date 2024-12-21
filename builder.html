@@ -73,6 +73,13 @@
         }
       }
 
+      const activeToggles = document.getElementsByName('active_layer')
+      for (const activeToggle of activeToggles) {
+        activeToggle.oninput = function(e) {
+          console.log("radioed "+e.target.value)
+        }
+      }
+
     </script>
 
     <script>
