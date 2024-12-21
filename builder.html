@@ -53,7 +53,7 @@
       const ld = new LayerData()
       const ll = document.getElementById("other_layers")
       for (const layerName of Object.getOwnPropertyNames(ld)) {
-        ll.insertAdjacentHTML('beforeend','<p>'+layerName+'</p>')
+        ll.insertAdjacentHTML('beforeend','<input type="checkbox" id="'+layerName+'" value="'+layerName+'"> <label for="'+layerName+'">'+layerName+'</label>')
       }
     </script>
 
