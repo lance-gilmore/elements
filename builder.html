@@ -78,10 +78,11 @@
             }
           } else {
             const builderImages = builderCanvas.children
+            for (let i=builderImages.length;i>=0;i--)
             for (const builderImage of builderImages) {
-              console.log(builderImage.classList)
-              if (builderImage.classList.contains('layer_'+e.target.value)) {
-                builderImage.remove()
+              console.log(builderImages[i].classList)
+              if (builderImages[i].classList.contains('layer_'+e.target.value)) {
+                builderImage[i].remove()
               }
             }
           }
