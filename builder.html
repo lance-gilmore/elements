@@ -53,15 +53,26 @@
       const ld = new LayerData()
       const ll = document.getElementById("other_layers")
       const layerNames = Object.getOwnPropertyNames(ld)
-      console.log(layerNames)
       for (const layerName of layerNames) {
         ll.insertAdjacentHTML('beforeend',`
-        <input type="checkbox" id="`+layerName+`" value="`+layerName+`">
+        <input class="showLayer" type="checkbox" id="`+layerName+`" value="`+layerName+`">
         <label for="`+layerName+`">`+layerName+`</label>
         <input type="radio" name="active_layer" value="`+layerName+`">
         <br>
         `)
       }
+
+      const showLayers = document.getElementsByClassName('showLayer')
+      for (const showLayer of showLayers) {
+        showLayer.oninput = function(e) {
+          if (e.target.checked) {
+            
+          } else {
+
+          }
+        }
+      }
+
     </script>
 
     <script>
