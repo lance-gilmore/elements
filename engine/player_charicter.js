@@ -40,7 +40,7 @@ export default class extends AnimatedSprite {
         const gravity = 2;
         const jumpSpeed = -20;
         const terminalVelocity = 20
-        const bounceSpeed = -60
+        const bounceSpeed = -50
 
         this.#downSpeed = this.#downSpeed + gravity
 
