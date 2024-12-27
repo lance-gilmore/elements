@@ -5,7 +5,7 @@ import Background from '../layers/background.js'
 import Platforms from '../layers/platforms.js'
 import Foreground from '../layers/forground_static.js'
 import TestLayer from '../layers/test_layer.js'
-import ExitLayer from '../layers/test_layer.js'
+import ExitLayer from '../layers/exit.js'
 
 export default class extends Level {
     
