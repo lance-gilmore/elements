@@ -143,9 +143,9 @@
         for (element of builderCanvas.children) {
           if (element.classList.contains('layer_'+active_layer)) {
             const elementRect = element.getBoundingClientRect();
-            const left = elementRect.left + builderCanvas.parentElement.scrollLeft - parentRect.left
-            console.log(left)
-            console.log(elementRect.left - parentRect.left)
+            //const left = elementRect.left + builderCanvas.parentElement.scrollLeft - parentRect.left
+            const left = elementRect.left - parentRect.left
+            
             const top = elementRect.top + builderCanvas.parentElement.scrollTop - parentRect.top
             output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
           }
