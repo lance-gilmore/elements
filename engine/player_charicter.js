@@ -9,8 +9,9 @@ export default class extends AnimatedSprite {
     keymap
     positionx
     positiony
+    #bounce
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -18,6 +19,7 @@ export default class extends AnimatedSprite {
         this.#bordery = bordery
         this.positionx = x
         this.positiony = y
+        this.#bounce = bounce
     }
 
     checkCollisions() {
@@ -38,6 +40,7 @@ export default class extends AnimatedSprite {
         const gravity = 2;
         const jumpSpeed = -20;
         const terminalVelocity = 20
+        const bounceSpeed = -60
 
         this.#downSpeed = this.#downSpeed + gravity
 
@@ -57,6 +60,10 @@ export default class extends AnimatedSprite {
                 this.#downSpeed = jumpSpeed
             }
              
+        }
+
+        if (this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            this.#downSpeed = bounceSpeed
         }
         
         if (this.#controlls[this.keymap.left]) {

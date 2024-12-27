@@ -10,7 +10,7 @@ export default class extends JsonLayer {
     async load() {
         const ld = new LayerData()
 
-        super.load(ld.background)
+        super.load(ld.layer1)
     }
 
     update() {
