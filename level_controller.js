@@ -27,7 +27,7 @@ export default class extends Drawable {
 
     loadLevel2() {
        const lh = new LevelHouse(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-       await lh.load()
+       lh.load()
 
        this.currentLevel = lh
     }
