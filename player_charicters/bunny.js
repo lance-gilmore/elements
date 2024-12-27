@@ -9,8 +9,8 @@ export default class extends PlayerCharicter {
         right: 'rightPressed'
     }
 
-    constructor(ctx, controlls, collidables, borderx, bordery, bounce) {
-        super(ctx, 150, 100, controlls, collidables, borderx, bordery, bounce)
+    constructor(ctx, controlls, collidables, borderx, bordery, bounce, levelExit) {
+        super(ctx, 150, 100, controlls, collidables, borderx, bordery, bounce, levelExit)
     }
 
     async load() {

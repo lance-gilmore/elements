@@ -39,11 +39,17 @@ export default class extends Level {
         await exit.load()
         this.layers.push(exit)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce)
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
         await s.load()
+        s.addExitLevelListener(() => {
+            this.triggerExitLevel()
+          })
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce)
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
         await g.load()
+        g.addExitLevelListener(() => {
+            this.triggerExitLevel()
+          })
 
         this.playerCharicters.push(s)
         this.playerCharicters.push(g)

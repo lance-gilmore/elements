@@ -10,8 +10,10 @@ export default class extends AnimatedSprite {
     positionx
     positiony
     #bounce
+    #levelExit
+    #exitLevelListeners = []
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -20,6 +22,7 @@ export default class extends AnimatedSprite {
         this.positionx = x
         this.positiony = y
         this.#bounce = bounce
+        this.#levelExit = levelExit
     }
 
     checkCollisions() {
@@ -66,6 +69,10 @@ export default class extends AnimatedSprite {
         if (this.#bounce && this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.#downSpeed = bounceSpeed
         }
+
+        if (this.#levelExit && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            this.triggerExitLevelListeners()
+        }
         
         if (this.#controlls[this.keymap.left]) {
             this.positionx = this.positionx - movementSpeed
@@ -90,6 +97,16 @@ export default class extends AnimatedSprite {
             super.update()
         } else {
             this.currentSprite = 0
+        }
+    }
+
+    addExitLevelListener(listener) {
+        this.#exitLevelListeners.push(listener)
+    }
+
+    triggerExitLevelListeners(info) {
+        for (const listener of this.#exitLevelListeners) {
+            listener(info)
         }
     }
 
