@@ -9,8 +9,8 @@ export default class extends PlayerCharicter {
         right: 'dPressed'
     }
 
-    constructor(ctx, controlls, collidables, borderx, bordery) {
-        super(ctx, 200, 100, controlls, collidables, borderx, bordery)
+    constructor(ctx, controlls, collidables, borderx, bordery, bounce) {
+        super(ctx, 200, 100, controlls, collidables, borderx, bordery, bounce)
     }
 
     async load() {

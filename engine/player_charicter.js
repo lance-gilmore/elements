@@ -62,7 +62,8 @@ export default class extends AnimatedSprite {
              
         }
 
-        if (this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+        
+        if (this.#bounce && this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.#downSpeed = bounceSpeed
         }
         
