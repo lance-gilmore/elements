@@ -10,7 +10,7 @@ export default class extends PlayerCharicter {
     }
 
     constructor(ctx, controlls, collidables, borderx, bordery) {
-        super(ctx, 150, 350, controlls, collidables, borderx, bordery)
+        super(ctx, 150, 100, controlls, collidables, borderx, bordery)
     }
 
     async load() {
