@@ -71,6 +71,7 @@ export default class extends AnimatedSprite {
         }
 
         if (this.#levelExit && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            console.log('end level touch')
             this.triggerExitLevelListeners()
         }
         
