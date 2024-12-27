@@ -18,14 +18,18 @@ export default class extends Drawable {
         
         const l = new Level1(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
-
         this.currentLevel = l
+        l.addExitLevelListener(() => {
+            this.loadLevel2();
+          })
 
-     //   const lh = new LevelHouse(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-     //   await lh.load()
+    }
 
-     //   this.currentLevel = lh
+    loadLevel2() {
+       const lh = new LevelHouse(this.#ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+       await lh.load()
 
+       this.currentLevel = lh
     }
 
     draw() {

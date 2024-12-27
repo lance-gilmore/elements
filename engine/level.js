@@ -11,6 +11,8 @@ export default class extends Drawable {
     viewWidth
     viewHeight
 
+    exitLevelListeners = []
+
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
         this.viewWidth = w
@@ -50,6 +52,16 @@ export default class extends Drawable {
 
         for (const charicter of this.playerCharicters) {
             charicter.update()
+        }
+    }
+
+    addExitLevelListener(listener) {
+        this.exitLevelListeners.push(listener)
+    }
+
+    triggerExitLevel(info) {
+        for (const listener of this.exitLevelListeners) {
+            listener(info)
         }
     }
 
