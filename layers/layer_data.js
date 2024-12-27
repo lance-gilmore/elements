@@ -10,5 +10,6 @@ export default class {
 
     foreground = [{"w":200,"h":200,"x":769.9999847412109,"y":130,"img":"https://lance-gilmore.github.io/elements/images/small_brick.png"}]
 
-    
+    exit = [{"w":60,"h":70,"x":938.0499877929688,"y":180,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
+
 }
