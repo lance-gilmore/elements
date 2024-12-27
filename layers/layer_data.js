@@ -8,4 +8,7 @@ export default class {
 
     layer1 = [{"w":60,"h":50,"x":770.0000381469727,"y":280.387508392334,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"},{"w":60,"h":50,"x":1559.9999771118164,"y":350.00000762939453,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"}]
 
+    foreground = [{"w":200,"h":200,"x":769.9999847412109,"y":130,"img":"https://lance-gilmore.github.io/elements/images/small_brick.png"}]
+
+    
 }

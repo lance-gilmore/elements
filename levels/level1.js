@@ -26,18 +26,18 @@ export default class extends Level {
          await p.load()
          this.layers.push(p)
 
-        // const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        // await h.load()
-        // this.layers.push(h)
+        const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await h.load()
+        this.layers.push(h)
 
-        const test = new TestLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await test.load()
-        this.layers.push(test)
+        const bounce = new TestLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await bounce.load()
+        this.layers.push(bounce)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, test)
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce)
         await s.load()
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, test)
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce)
         await g.load()
 
         this.playerCharicters.push(s)

@@ -1,21 +1,16 @@
-import Drawable from '../engine/layer.js'
-import House from '../sprites/house.js'
-import Mushroom from '../sprites/mushroom.js'
+import JsonLayer from '../engine/json_layer.js'
+import LayerData from '../layers/layer_data.js'
 
-export default class extends Drawable {
+export default class extends JsonLayer {
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
     }
 
     async load() {
-        const h = new House(this.ctx)
-        await h.load()
-        this.elements.push(h)
+        const ld = new LayerData()
 
-        const m = new Mushroom(this.ctx)
-        await m.load()
-        this.elements.push(m)
+        super.load(ld.foreground)
     }
 
     update() {
@@ -23,3 +18,29 @@ export default class extends Drawable {
     }
 
 }
+
+// import Drawable from '../engine/layer.js'
+// import House from '../sprites/house.js'
+// import Mushroom from '../sprites/mushroom.js'
+
+// export default class extends Drawable {
+
+//     constructor(ctx, x, y, w, h) {
+//         super(ctx, x, y, w, h)
+//     }
+
+//     async load() {
+//         const h = new House(this.ctx)
+//         await h.load()
+//         this.elements.push(h)
+
+//         const m = new Mushroom(this.ctx)
+//         await m.load()
+//         this.elements.push(m)
+//     }
+
+//     update() {
+        
+//     }
+
+// }
