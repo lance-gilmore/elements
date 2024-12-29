@@ -49,7 +49,7 @@ export default class extends Level {
         await health.load()
         this.layers.push(health)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p,lava], this.viewWidth,this.viewHeight, bounce, exit,[lava])
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
         await s.load()
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
