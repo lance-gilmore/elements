@@ -8,9 +8,8 @@ export default class {
 
     layer1 = [{"w":60,"h":50,"x":770.0000381469727,"y":280.387508392334,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"},{"w":60,"h":50,"x":1559.9999771118164,"y":350.00000762939453,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"}]
 
-    foreground = [{"w":200,"h":200,"x":769.9999847412109,"y":130,"img":"https://lance-gilmore.github.io/elements/images/small_brick.png"}]
+    foreground = [{"w":180,"h":240,"x":3339.9999389648438,"y":170.00000762939453,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
 
-    exit = [{"w":60,"h":70,"x":938.0499877929688,"y":180,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"},{"w":100,"h":100,"x":976.0499877929688,"y":227.4000015258789,"img":"https://lance-gilmore.github.io/elements/images/lava.png"}]
-
+    exit = [{"w":40,"h":60,"x":3429.999969482422,"y":350.0000228881836,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
 
 }
