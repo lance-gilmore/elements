@@ -58,7 +58,7 @@ export default class extends Level {
             health.reduceHealth()
         })
 
-        const g = new Girl(this.#ctx, this.controlls, [p,lava], this.viewWidth,this.viewHeight, bounce, exit,[lava])
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()
