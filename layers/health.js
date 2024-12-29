@@ -31,7 +31,13 @@ export default class extends Drawable {
 
     reduceHealth() {
         if (!this.#hitCooldown) {
-            
+            this.#hitCooldown = true
+
+            this.elements.pop()
+
+            setTimeout(() => { 
+                this.#hitCooldown = false
+            },4000)
         }
     }
 

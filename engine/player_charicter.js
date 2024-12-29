@@ -12,8 +12,10 @@ export default class extends AnimatedSprite {
     #bounce
     #levelExit
     #exitLevelListeners = []
+    #damages
+    #damageListeners = []
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -23,6 +25,7 @@ export default class extends AnimatedSprite {
         this.positiony = y
         this.#bounce = bounce
         this.#levelExit = levelExit
+        this.#damages = damages
     }
 
     checkCollisions() {
@@ -30,6 +33,20 @@ export default class extends AnimatedSprite {
             if (collidable.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
                 return true
             }
+        }
+        return false
+    }
+
+    checkDamages() {
+        let damage = false
+        for (const collidable of this.#damages) {
+            if (collidable.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+                damage = true
+            }
+        }
+        if (damage) {
+            this.triggerDamageListeners()
+            return true
         }
         return false
     }
@@ -44,6 +61,7 @@ export default class extends AnimatedSprite {
         const jumpSpeed = -20;
         const terminalVelocity = 20
         const bounceSpeed = -30
+        const damageSpeed = -10
 
         this.#downSpeed = this.#downSpeed + gravity
 
@@ -68,6 +86,10 @@ export default class extends AnimatedSprite {
         
         if (this.#bounce && this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.#downSpeed = bounceSpeed
+        }
+
+        if (this.checkDamages()) {
+            this.#downSpeed = damageSpeed
         }
 
         if (this.#levelExit && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
@@ -106,6 +128,16 @@ export default class extends AnimatedSprite {
 
     triggerExitLevelListeners(info) {
         for (const listener of this.#exitLevelListeners) {
+            listener(info)
+        }
+    }
+
+    addDamageListener(listener) {
+        this.#damageListeners.push(listener)
+    }
+
+    triggerDamageListeners(info) {
+        for (const listener of this.#damageListeners) {
             listener(info)
         }
     }

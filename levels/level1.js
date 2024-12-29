@@ -45,21 +45,27 @@ export default class extends Level {
         await lava.load()
         this.layers.push(lava)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
-        await s.load()
-        s.addExitLevelListener(() => {
-            this.triggerExitLevel()
-          })
-
         const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await health.load()
         this.layers.push(health)
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
+        const s = new Bunny(this.#ctx, this.controlls, [p,lava], this.viewWidth,this.viewHeight, bounce, exit,[lava])
+        await s.load()
+        s.addExitLevelListener(() => {
+            this.triggerExitLevel()
+        })
+        s.addDamageListener(() => {
+            health.reduceHealth()
+        })
+
+        const g = new Girl(this.#ctx, this.controlls, [p,lava], this.viewWidth,this.viewHeight, bounce, exit,[lava])
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()
-          })
+        })
+        g.addDamageListener(() => {
+            health.reduceHealth()
+        })
 
         this.playerCharicters.push(s)
         this.playerCharicters.push(g)
