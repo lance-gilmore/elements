@@ -20,7 +20,7 @@ export default class extends Drawable {
         await layerImage2.load()
         this.elements.push(layerImage2)
 
-        const layerImage3 = new ImageDrawable(this.ctx,60,10,10,20)
+        const layerImage3 = new ImageDrawable(this.ctx,50,10,10,20)
         layerImage3.imageLocation = carrotImg
         await layerImage3.load()
         this.elements.push(layerImage3)
