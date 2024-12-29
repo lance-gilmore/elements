@@ -10,10 +10,20 @@ export default class extends Drawable {
     async load() {
         const carrotImg = "https://lance-gilmore.github.io/elements/images/carrot.png"
 
-        const layerImage = new ImageDrawable(this.ctx,10,10,50,100)
-        layerImage.imageLocation = carrotImg
-        await layerImage.load()
-        this.elements.push(layerImage)
+        const layerImage1 = new ImageDrawable(this.ctx,10,10,10,20)
+        layerImage1.imageLocation = carrotImg
+        await layerImage1.load()
+        this.elements.push(layerImage1)
+
+        const layerImage2 = new ImageDrawable(this.ctx,30,10,10,20)
+        layerImage2.imageLocation = carrotImg
+        await layerImage2.load()
+        this.elements.push(layerImage2)
+
+        const layerImage3 = new ImageDrawable(this.ctx,60,10,10,20)
+        layerImage3.imageLocation = carrotImg
+        await layerImage3.load()
+        this.elements.push(layerImage3)
 
     }
 
