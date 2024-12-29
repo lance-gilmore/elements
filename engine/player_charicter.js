@@ -12,7 +12,7 @@ export default class extends AnimatedSprite {
     #bounce
     #levelExit
     #exitLevelListeners = []
-    #damages
+    #damages = []
     #damageListeners = []
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages) {
