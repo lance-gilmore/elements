@@ -1,4 +1,5 @@
 import Drawable from '../engine/layer.js'
+import ImageDrawable from '../engine/image_drawable.js'
 
 export default class extends Drawable {
 
