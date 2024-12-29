@@ -12,4 +12,6 @@ export default class {
 
     exit = [{"w":40,"h":60,"x":3429.999969482422,"y":350.0000228881836,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
 
+    lava = [{"w":210,"h":40,"x":100,"y":560,"img":"https://lance-gilmore.github.io/elements/images/lava.png"},{"w":210,"h":40,"x":310.00000762939453,"y":560,"img":"https://lance-gilmore.github.io/elements/images/lava.png"},{"w":210,"h":40,"x":520.0000076293945,"y":560,"img":"https://lance-gilmore.github.io/elements/images/lava.png"},{"w":210,"h":40,"x":730,"y":560,"img":"https://lance-gilmore.github.io/elements/images/lava.png"},{"w":210,"h":40,"x":926,"y":560,"img":"https://lance-gilmore.github.io/elements/images/lava.png"}]
+
 }

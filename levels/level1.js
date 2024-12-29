@@ -6,6 +6,7 @@ import Platforms from '../layers/platforms.js'
 import Foreground from '../layers/forground_static.js'
 import Bounce from '../layers/bounce.js'
 import ExitLayer from '../layers/exit.js'
+import LavaLayer from '../layers/lava.js'
 
 export default class extends Level {
     
@@ -38,6 +39,10 @@ export default class extends Level {
         const exit = new ExitLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await exit.load()
         this.layers.push(exit)
+
+        const lava = new LavaLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await lava.load()
+        this.layers.push(lava)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
         await s.load()
