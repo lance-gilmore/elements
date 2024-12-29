@@ -4,7 +4,7 @@ import Girl from '../player_charicters/girl.js'
 import Background from '../layers/background.js'
 import Platforms from '../layers/platforms.js'
 import Foreground from '../layers/forground_static.js'
-import TestLayer from '../layers/test_layer.js'
+import Bounce from '../layers/bounce.js'
 import ExitLayer from '../layers/exit.js'
 
 export default class extends Level {
@@ -31,7 +31,7 @@ export default class extends Level {
         await h.load()
         this.layers.push(h)
 
-        const bounce = new TestLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const bounce = new Bounce(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load()
         this.layers.push(bounce)
 
@@ -58,10 +58,6 @@ export default class extends Level {
 
     update() {
         super.update()
-        
-       // for (const pc of this.playerCharicters) {
-       //     if (pc.x)
-       // }
     }
 
 }
