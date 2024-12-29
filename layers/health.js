@@ -3,6 +3,8 @@ import ImageDrawable from '../engine/image_drawable.js'
 
 export default class extends Drawable {
 
+    #hitCooldown = false
+
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
     }
@@ -27,12 +29,18 @@ export default class extends Drawable {
 
     }
 
+    reduceHealth() {
+        if (!this.#hitCooldown) {
+            
+        }
+    }
+
     update() {
         
     }
 
     move(x, y) {
-
+        // overwrite to make it not move
     }
 
 }
