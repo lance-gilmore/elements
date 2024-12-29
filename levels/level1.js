@@ -7,6 +7,7 @@ import Foreground from '../layers/forground_static.js'
 import Bounce from '../layers/bounce.js'
 import ExitLayer from '../layers/exit.js'
 import LavaLayer from '../layers/lava.js'
+import HealthLayer from '../layers/health.js'
 
 export default class extends Level {
     
@@ -49,6 +50,10 @@ export default class extends Level {
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
           })
+
+        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await health.load()
+        this.layers.push(health)
 
         const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit)
         await g.load()
