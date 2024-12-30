@@ -50,7 +50,7 @@ export default class extends Level {
         this.layers.push(health)
 
         const health2 = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        await health.load()
+        await health2.load()
         this.layers.push(health2)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
