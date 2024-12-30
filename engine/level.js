@@ -44,11 +44,12 @@ export default class extends Drawable {
 
     update() {
         let charictersCenter = 0
+        const numCharicters = this.playerCharicters.length + 1
         for (const charicter of this.playerCharicters) {
-            charictersCenter += charicter.positionx + (charicter.canvasw / 2)
+            charictersCenter += charicter.positionx + (charicter.canvasw / numCharicters)
         }
-        const centerPoint = charictersCenter / 2
-        this.viewx = centerPoint - (this.viewWidth / 2)
+        const centerPoint = charictersCenter / numCharicters
+        this.viewx = centerPoint - (this.viewWidth / numCharicters)
 
         for (const charicter of this.playerCharicters) {
             charicter.update()
