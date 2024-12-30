@@ -45,9 +45,13 @@ export default class extends Level {
         await lava.load()
         this.layers.push(lava)
 
-        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,1)
         await health.load()
         this.layers.push(health)
+
+        const health2 = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
+        await health.load()
+        this.layers.push(health2)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
         await s.load()
@@ -64,7 +68,7 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         g.addDamageListener(() => {
-            health.reduceHealth()
+            health2.reduceHealth()
         })
 
         this.playerCharicters.push(s)
