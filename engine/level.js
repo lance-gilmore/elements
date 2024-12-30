@@ -45,7 +45,7 @@ export default class extends Drawable {
     update() {
         let charictersCenter = 0
         const numCharicters = this.playerCharicters.length
-        console.log(numCharicters)
+        
         for (const charicter of this.playerCharicters) {
             charictersCenter += charicter.positionx + (charicter.canvasw / numCharicters)
         }
