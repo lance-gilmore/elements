@@ -20,10 +20,10 @@ export default class extends Level {
         this.layers.push(b)
 
 
-        const s = new Bunny(this.#ctx, this.controlls, [], this.viewWidth,this.viewHeight)
+        const s = new Bunny(this.#ctx, this.controlls, [], this.viewWidth,this.viewHeight, null, null, [])
         await s.load()
 
-        const g = new Girl(this.#ctx, this.controlls, [], this.viewWidth,this.viewHeight)
+        const g = new Girl(this.#ctx, this.controlls, [], this.viewWidth,this.viewHeight, null, null [])
         await g.load()
 
         this.playerCharicters.push(s)
