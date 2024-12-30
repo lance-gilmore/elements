@@ -60,6 +60,12 @@ export default class extends Level {
         })
         s.addDamageListener(() => {
             health.reduceHealth()
+            if (health.currentHealth < 1) {
+                const index = this.playerCharicters.indexOf(s);
+                if (index > -1) {
+                    this.playerCharicters.splice(index, 1)
+                }
+            }
         })
 
         const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
@@ -69,6 +75,12 @@ export default class extends Level {
         })
         g.addDamageListener(() => {
             health2.reduceHealth()
+            if (health2.currentHealth < 1) {
+                const index = this.playerCharicters.indexOf(g);
+                if (index > -1) {
+                    this.playerCharicters.splice(index, 1)
+                }
+            }
         })
 
         this.playerCharicters.push(s)
