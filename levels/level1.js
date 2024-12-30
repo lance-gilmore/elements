@@ -8,6 +8,7 @@ import Bounce from '../layers/bounce.js'
 import ExitLayer from '../layers/exit.js'
 import LavaLayer from '../layers/lava.js'
 import HealthLayer from '../layers/health.js'
+import CoinsLayer from '../layers/coins.js'
 
 export default class extends Level {
     
@@ -44,6 +45,10 @@ export default class extends Level {
         const lava = new LavaLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await lava.load()
         this.layers.push(lava)
+
+        const coins = new CoinsLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await coins.load()
+        this.layers.push(coins)
 
         const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,1)
         await health.load()
