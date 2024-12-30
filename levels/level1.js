@@ -68,7 +68,7 @@ export default class extends Level {
         })
 
         this.playerCharicters.push(s)
-        //this.playerCharicters.push(g)
+        this.playerCharicters.push(g)
 
     }
 
