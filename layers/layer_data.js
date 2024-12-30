@@ -15,4 +15,5 @@ export default class {
 
     lava = [{"w":100,"h":80,"x":500.000018119812,"y":520,"img":"https://lance-gilmore.github.io/elements/images/lava.png"}]
 
+    
 }
