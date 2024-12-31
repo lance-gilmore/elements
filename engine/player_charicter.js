@@ -15,6 +15,7 @@ export default class extends AnimatedSprite {
     #damages = []
     #damageListeners = []
     #coins
+    #coinListeners = []
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins) {
         super(ctx, x, y, 40, 70)
@@ -144,6 +145,16 @@ export default class extends AnimatedSprite {
 
     triggerDamageListeners(info) {
         for (const listener of this.#damageListeners) {
+            listener(info)
+        }
+    }
+
+    addCoinListener(listener) {
+        this.#coinListeners.push(listener)
+    }
+
+    triggerCoinListeners(info) {
+        for (const listener of this.#coinListeners) {
             listener(info)
         }
     }
