@@ -14,7 +14,7 @@ export default class extends Drawable {
     async load() {
         const carrotImg = "https://lance-gilmore.github.io/elements/images/coin.png"
 
-        const layerImage1 = new ImageDrawable(this.ctx,80+this.#offset,10,10,20)
+        const layerImage1 = new ImageDrawable(this.ctx,90+this.#offset,10,20,20)
         layerImage1.imageLocation = carrotImg
         await layerImage1.load()
         this.elements.push(layerImage1)
@@ -24,14 +24,15 @@ export default class extends Drawable {
     }
 
     addPoints() {
+        console.log('points added')
         this.currentPoints++
     }
 
     draw() {
         super.draw()
 
-        this.ctx.font = "50px Arial";
-        this.ctx.fillText(this.currentPoints,100+this.#offset,10);
+        this.ctx.font = "20px Arial";
+        this.ctx.fillText(this.currentPoints,110+this.#offset,30);
     }
 
     update() {
