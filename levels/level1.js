@@ -58,7 +58,7 @@ export default class extends Level {
         await health2.load()
         this.layers.push(health2)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava],coins)
         await s.load()
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
@@ -73,7 +73,7 @@ export default class extends Level {
             }
         })
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava])
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava],coins)
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()

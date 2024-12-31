@@ -14,8 +14,9 @@ export default class extends AnimatedSprite {
     #exitLevelListeners = []
     #damages = []
     #damageListeners = []
+    #coins
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -26,6 +27,7 @@ export default class extends AnimatedSprite {
         this.#bounce = bounce
         this.#levelExit = levelExit
         this.#damages = damages
+        this.#coins = coins
     }
 
     checkCollisions() {
@@ -81,6 +83,10 @@ export default class extends AnimatedSprite {
                 this.#downSpeed = jumpSpeed
             }
              
+        }
+
+        if (this.#coins && this.#coins.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            // TODO: throw points event
         }
 
         
