@@ -24,7 +24,6 @@ export default class extends Drawable {
     }
 
     addPoints() {
-        console.log('points added')
         this.currentPoints++
     }
 

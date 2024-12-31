@@ -64,7 +64,7 @@ export default class extends Level {
         await coinScore.load()
         this.layers.push(coinScore)
 
-        const coinScore2 = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,550)
+        const coinScore2 = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,530)
         await coinScore2.load()
         this.layers.push(coinScore2)
 
