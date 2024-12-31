@@ -52,7 +52,7 @@ export default class extends Level {
         await coins.load()
         this.layers.push(coins)
 
-        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,1)
+        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
         await health.load()
         this.layers.push(health)
 
@@ -64,7 +64,7 @@ export default class extends Level {
         await coinScore.load()
         this.layers.push(coinScore)
 
-        const coinScore2 = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,600)
+        const coinScore2 = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,550)
         await coinScore2.load()
         this.layers.push(coinScore2)
 

@@ -87,7 +87,7 @@ export default class extends AnimatedSprite {
         }
 
         if (this.#coins && this.#coins.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
-            // TODO: throw points event
+            this.triggerCoinListeners()
         }
 
         

@@ -32,7 +32,7 @@ export default class extends Drawable {
         super.draw()
 
         this.ctx.font = "20px Arial";
-        this.ctx.fillText(this.currentPoints,110+this.#offset,30);
+        this.ctx.fillText(this.currentPoints,120+this.#offset,28);
     }
 
     update() {
