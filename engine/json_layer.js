@@ -18,8 +18,5 @@ export default class extends Layer {
         }
     }
 
-    update() {
-        
-    }
 
 }

@@ -58,7 +58,6 @@ export default class extends Drawable {
         }
 
         for (const layer of this.layers) {
-            console.log('level updating layers loop')
             layer.update()
         }
     }
