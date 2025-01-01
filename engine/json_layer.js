@@ -11,10 +11,21 @@ export default class extends Layer {
         // const json = [{x,y,w,h,img}]
 
         for (const image of json) {
-            const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
-            layerImage.imageLocation = image.img
-            await layerImage.load()
-            this.elements.push(layerImage)
+            if (Array.isArray(json.img)) {
+                const as = new AnimatedSprite(this.ctx,image.x,image.y,image.w,image.h)
+                for (const frame of json.img) {
+                    const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h0)
+                    layerImage.imageLocation = frame
+                    await layerImage.load()
+                    as.images.push(layerImage)
+                }
+                this.elements.push(as)
+            } else {
+                const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
+                layerImage.imageLocation = image.img
+                await layerImage.load()
+                this.elements.push(layerImage)
+            }
         }
     }
 
