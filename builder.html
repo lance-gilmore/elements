@@ -37,9 +37,9 @@
       <a href="/elements/images/background_blue.png">Background Blue</a><br>
       <a href="/elements/images/carrot.png">Carrot</a><br>
       <a href="/elements/images/coin.png">Coin</a><br>
-      <a href="/elements/images/coin2.png">Coin</a><br>
-      <a href="/elements/images/coin3.png">Coin</a><br>
-      <a href="/elements/images/coin4.png">Coin</a><br>
+      <a href="/elements/images/coin2.png">Coin2</a><br>
+      <a href="/elements/images/coin3.png">Coin3</a><br>
+      <a href="/elements/images/coin4.png">Coin4</a><br>
       
       <form>
         <h4>Add image</h4>
@@ -220,6 +220,10 @@
           offsety: posy,
         }
 
+        if (e.target.dataset.frames) {
+          addingImage.frames = frames
+        }
+
         if (e.target.classList.contains('img_tile')) {
           addingImage.moveElement = e.target
         }
@@ -238,7 +242,7 @@
           var posx = e.clientX - rect.left - addingImage.offsetx; 
           var posy = e.clientY - rect.top - addingImage.offsety;
 
-          e.target.insertAdjacentHTML('beforeend', '<image class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
