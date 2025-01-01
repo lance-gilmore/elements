@@ -175,7 +175,16 @@
             const left = elementRect.left - parentRect.left
             
             const top = elementRect.top + builderCanvas.parentElement.scrollTop - parentRect.top
-            output.push({w:element.width,h:element.height,x:left,y:top,img:element.src})
+            let imgSrc = ''
+            if (element.dataset.frames) {
+              imgSrc = [element.src]
+              for (const frameSrc of element.dataset.frames.split(',')) {
+                imgSrc.push(frameSrc)
+              }
+            } else {
+              imgSrc = element.src
+            }
+            output.push({w:element.width,h:element.height,x:left,y:top,img:imgSrc})
           }
         }
         const outputBox = document.getElementById("generated");
