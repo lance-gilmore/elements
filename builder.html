@@ -90,8 +90,12 @@
             const layerImages = ld[e.target.value]
             for (const li of layerImages) {
               let limage = ''
+              let frames = ''
               if (Array.isArray(li.img)) {
                 limage = li.img[0]
+                li.img.shift()
+                frames = li.img.join(',')
+
               } else {
                 limage = li.img
               }
