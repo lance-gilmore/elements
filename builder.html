@@ -44,6 +44,7 @@
           <label for="image_url">Url</label>
           <input id="image_url" type="text" value="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">
           <button type="button" onclick="loadImage()">Add</button>
+          <button type="button" onclick="addFrame()">Add Frame</button>
         </div>
       </form>
       <div id="images"></div>
@@ -131,6 +132,17 @@
           </div>
         </div>`)
         imageUrlInput.value = ''
+      }
+
+      function addFrame() {
+        const imageUrlInput = document.getElementById('image_url')
+        const imageUrl = imageUrlInput.value
+        const lastImage = document.getElementsByClassName('list_img')[0]
+        if (lastImage.dataset.frames) {
+          lastImage.dataset.frames = lastImage.dataset.frames + ',' + imageUrlInput
+        } else {
+          lastImage.dataset.frames = imageUrlInput
+        }
       }
 
       let selectedTile = null
