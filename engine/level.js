@@ -43,6 +43,7 @@ export default class extends Drawable {
     }
 
     update() {
+        console.log('level updating')
         let charictersCenter = 0
         const numCharicters = this.playerCharicters.length
         

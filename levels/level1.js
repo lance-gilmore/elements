@@ -110,6 +110,7 @@ export default class extends Level {
     }
 
     update() {
+        console.log('level1 updating')
         super.update()
     }
 
