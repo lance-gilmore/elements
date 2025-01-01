@@ -99,7 +99,7 @@
               } else {
                 limage = li.img
               }
-              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+li.x+`px;top:`+li.y+`px;position:absolute" src="`+limage+`" width="`+li.w+`" height="`+li.h+`">`)
+              builderCanvas.insertAdjacentHTML('beforeend',`<image data-frames="`+frames+`" class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+li.x+`px;top:`+li.y+`px;position:absolute" src="`+limage+`" width="`+li.w+`" height="`+li.h+`">`)
             }
           } else {
             const builderImages = builderCanvas.children
