@@ -37,6 +37,9 @@
       <a href="/elements/images/background_blue.png">Background Blue</a><br>
       <a href="/elements/images/carrot.png">Carrot</a><br>
       <a href="/elements/images/coin.png">Coin</a><br>
+      <a href="/elements/images/coin2.png">Coin</a><br>
+      <a href="/elements/images/coin3.png">Coin</a><br>
+      <a href="/elements/images/coin4.png">Coin</a><br>
       
       <form>
         <h4>Add image</h4>
@@ -139,9 +142,9 @@
         const imageUrl = imageUrlInput.value
         const lastImage = document.getElementsByClassName('list_img')[0]
         if (lastImage.dataset.frames) {
-          lastImage.dataset.frames = lastImage.dataset.frames + ',' + imageUrlInput
+          lastImage.dataset.frames = lastImage.dataset.frames + ',' + imageUrl
         } else {
-          lastImage.dataset.frames = imageUrlInput
+          lastImage.dataset.frames = imageUrl
         }
       }
 
