@@ -55,6 +55,10 @@ export default class extends Drawable {
         for (const charicter of this.playerCharicters) {
             charicter.update()
         }
+
+        for (const layer of this.layers) {
+            layer.update()
+        }
     }
 
     addExitLevelListener(listener) {

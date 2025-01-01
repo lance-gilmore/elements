@@ -35,7 +35,9 @@ export default class extends Drawable {
     }
 
     update() {
-        
+        for (const element of this.elements) {
+            element.update()
+        }
     }
 
     move(x,y) {

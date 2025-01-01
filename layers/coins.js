@@ -36,10 +36,6 @@ export default class extends JsonLayer {
         this.elements.push(as)
     }
 
-    update() {
-        
-    }
-
     checkCollision(x,y,r,b) {
         for (const element of this.elements) {
 
