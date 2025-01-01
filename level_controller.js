@@ -37,7 +37,6 @@ export default class extends Drawable {
     }
 
     update() {
-        console.log('level controller updating')
         this.currentLevel.update()
     }
 
