@@ -35,7 +35,6 @@ export default class extends Drawable {
     }
 
     update() {
-        console.log('layer updating elements')
         for (const element of this.elements) {
             element.update()
         }
