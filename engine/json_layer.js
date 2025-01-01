@@ -1,5 +1,6 @@
 import Layer from './layer.js'
 import ImageDrawable from './image_drawable.js'
+import AnimatedSprite from '../engine/animated_sprite.js'
 
 export default class extends Layer {
 

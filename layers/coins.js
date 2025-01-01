@@ -1,7 +1,5 @@
 import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/layer_data.js'
-import AnimatedSprite from '../engine/animated_sprite.js'
-import ImageDrawable from '../engine/image_drawable.js'
 
 
 export default class extends JsonLayer {
