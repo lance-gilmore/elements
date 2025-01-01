@@ -85,7 +85,13 @@
           if (e.target.checked) {
             const layerImages = ld[e.target.value]
             for (const li of layerImages) {
-              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+li.x+`px;top:`+li.y+`px;position:absolute" src="`+li.img+`" width="`+li.w+`" height="`+li.h+`">`)
+              let limage = ''
+              if (Array.isArray(li.img)) {
+                limage = li.img[0]
+              } else {
+                limage = li.img
+              }
+              builderCanvas.insertAdjacentHTML('beforeend',`<image class="img_tile layer_`+e.target.value+`" onmousedown="addImageDrag()" draggable="true" style="left:`+li.x+`px;top:`+li.y+`px;position:absolute" src="`+limage+`" width="`+li.w+`" height="`+li.h+`">`)
             }
           } else {
             const builderImages = builderCanvas.children
