@@ -10,6 +10,7 @@ export default class extends Layer {
 
     async load(json) {
         // const json = [{x,y,w,h,img}]
+        // const json = [{x,y,w,h,img:[]}]
 
         for (const image of json) {
             if (Array.isArray(image.img)) {
