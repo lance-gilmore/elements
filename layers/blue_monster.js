@@ -27,7 +27,7 @@ export default class extends JsonLayer {
         const movementSpeed = 4
 
         for (const element of this.elements) {
-            if (this.getFlipx) {
+            if (element.getFlipx()) {
                 element.startx = element.startx-movementSpeed
             } else {
                 element.startx = element.startx+movementSpeed
