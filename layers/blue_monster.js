@@ -17,7 +17,7 @@ export default class extends JsonLayer {
 
     checkCollisions(element) {
         for (const collidable of this.#collidables) {
-            if (collidable.checkCollision(element.canvasx, element.canvasy, element.canvasx + element.canvasw, element.canvasy + element.canvash)) {
+            if (collidable.checkCollision(element.startx, element.starty, element.startx + element.canvasw, element.starty + element.canvash)) {
                 return true
             }
         }
