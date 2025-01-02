@@ -15,9 +15,9 @@ export default class extends JsonLayer {
         super.load(ld.blueMonsters)
     }
 
-    checkCollisions() {
+    checkCollisions(element) {
         for (const collidable of this.#collidables) {
-            if (collidable.checkCollision(this.canvasx, this.canvasy, this.canvasx + this.canvasw, this.canvasy + this.canvash)) {
+            if (collidable.checkCollision(element.canvasx, element.canvasy, element.canvasx + element.canvasw, element.canvasy + element.canvash)) {
                 return true
             }
         }
@@ -26,14 +26,16 @@ export default class extends JsonLayer {
 
     update() {
         const movementSpeed = 5
-        if (this.#movingLeft) {
-            this.move(this.canvasx-movementSpeed, this.canvasy)
-        } else {
-            this.move(this.canvasx+movementSpeed, this.canvasy)
-        }
+        for (const element in this.elements) {
+            if (this.#movingLeft) {
+                this.move(element.canvasx-movementSpeed, element.canvasy)
+            } else {
+                this.move(element.canvasx+movementSpeed, element.canvasy)
+            }
 
-        if (this.checkCollisions) {
-            this.#movingLeft = !this.#movingLeft
+            if (this.checkCollisions) {
+                this.#movingLeft = !this.#movingLeft
+            }
         }
 
         super.update()
