@@ -79,7 +79,7 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         s.addCoinListener(() => {
-            score.addPoints()
+            score.addNeutron()
         })
         s.addDamageListener(() => {
             health.reduceHealth()
@@ -97,7 +97,7 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         g.addCoinListener(() => {
-            score2.addPoints()
+            score2.addNeutron()
         })
         g.addDamageListener(() => {
             health2.reduceHealth()
