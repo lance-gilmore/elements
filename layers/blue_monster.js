@@ -34,7 +34,7 @@ export default class extends JsonLayer {
             }
 
             if (this.checkCollisions(element)) {
-                element.setFlipx(!getFlipx)
+                element.setFlipx(!element.getFlipx())
             }
         }
 
