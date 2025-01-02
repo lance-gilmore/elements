@@ -53,7 +53,7 @@ export default class extends Drawable {
 
         this.ctx.fillText(this.protons,170+this.#offset,28);
 
-        this.ctx.fillText(this.electrons,220+this.#offset,28);
+        this.ctx.fillText(this.electrons,217+this.#offset,28);
     }
 
     update() {
