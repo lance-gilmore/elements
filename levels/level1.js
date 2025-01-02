@@ -74,7 +74,7 @@ export default class extends Level {
         await coinScore2.load()
         this.layers.push(coinScore2)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava],coins)
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await s.load()
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
@@ -92,7 +92,7 @@ export default class extends Level {
             }
         })
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava],coins)
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()
