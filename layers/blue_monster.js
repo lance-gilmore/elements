@@ -3,7 +3,6 @@ import LayerData from '../layers/layer_data.js'
 
 export default class extends JsonLayer {
     #collidables
-    #movingLeft = false
 
     constructor(ctx, x, y, w, h, collidables) {
         super(ctx, x, y, w, h)
@@ -28,15 +27,14 @@ export default class extends JsonLayer {
         const movementSpeed = 4
 
         for (const element of this.elements) {
-            if (this.#movingLeft) {
+            if (this.getFlipx) {
                 element.startx = element.startx-movementSpeed
             } else {
                 element.startx = element.startx+movementSpeed
             }
 
             if (this.checkCollisions(element)) {
-                this.#movingLeft = !this.#movingLeft
-                element.setFlipx(this.#movingLeft)
+                element.setFlipx(!getFlipx)
             }
         }
 

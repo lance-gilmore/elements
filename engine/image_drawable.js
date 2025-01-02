@@ -34,4 +34,8 @@ export default class extends Drawable {
         this.#flipx = flipx
     }
 
+    getFlipx() {
+        return this.#flipx
+    }
+
 }
