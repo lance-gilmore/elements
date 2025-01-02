@@ -9,9 +9,8 @@ import ExitLayer from '../layers/exit.js'
 import LavaLayer from '../layers/lava.js'
 import HealthLayer from '../layers/health.js'
 import CoinsLayer from '../layers/coins.js'
-import CoinScore from '../layers/coin_score.js'
+import Scores from '../layers/scores.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
-
 
 
 export default class extends Level {
@@ -66,13 +65,13 @@ export default class extends Level {
         await health2.load()
         this.layers.push(health2)
 
-        const coinScore = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
-        await coinScore.load()
-        this.layers.push(coinScore)
+        const scores = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
+        await scores.load()
+        this.layers.push(scores)
 
-        const coinScore2 = new CoinScore(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        await coinScore2.load()
-        this.layers.push(coinScore2)
+        const score2 = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
+        await score2.load()
+        this.layers.push(score2)
 
         const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await s.load()
@@ -80,7 +79,7 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         s.addCoinListener(() => {
-            coinScore.addPoints()
+            score.addPoints()
         })
         s.addDamageListener(() => {
             health.reduceHealth()
@@ -98,7 +97,7 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         g.addCoinListener(() => {
-            coinScore2.addPoints()
+            score2.addPoints()
         })
         g.addDamageListener(() => {
             health2.reduceHealth()

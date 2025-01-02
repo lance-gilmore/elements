@@ -12,15 +12,12 @@ export default class extends Drawable {
     }
 
     async load() {
-        const carrotImg = "https://lance-gilmore.github.io/elements/images/coin.png"
+        const img = "https://lance-gilmore.github.io/elements/images/yellow_sphere.png"
 
         const layerImage1 = new ImageDrawable(this.ctx,90+this.#offset,10,20,20)
-        layerImage1.imageLocation = carrotImg
+        layerImage1.imageLocation = img
         await layerImage1.load()
         this.elements.push(layerImage1)
-
-        
-
     }
 
     addPoints() {
