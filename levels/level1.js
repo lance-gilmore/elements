@@ -54,7 +54,7 @@ export default class extends Level {
         await coins.load()
         this.layers.push(coins)
 
-        const bmobs = new BlueMonsterLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
+        const bmobs = new BlueMonsterLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,[p])
         await bmobs.load()
         this.layers.push(bmobs)
 
