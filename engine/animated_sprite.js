@@ -36,4 +36,8 @@ export default class extends Drawable {
         }
     }
 
+    getFlipx() {
+        return this.images[0].getFlipx()
+    }
+
 }
