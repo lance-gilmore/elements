@@ -29,9 +29,9 @@ export default class extends JsonLayer {
 
         for (const element of this.elements) {
             if (this.#movingLeft) {
-                element.move(element.startx-movementSpeed, element.starty)
+                element.startx = element.startx-movementSpeed
             } else {
-                element.move(element.startx+movementSpeed, element.starty)
+                element.startx = element.startx+movementSpeed
             }
 
             if (this.checkCollisions(element)) {
