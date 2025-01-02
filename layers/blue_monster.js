@@ -26,7 +26,7 @@ export default class extends JsonLayer {
 
     update() {
         const movementSpeed = 5
-        for (const element in this.elements) {
+        for (const element of this.elements) {
             console.log(element)
             if (this.#movingLeft) {
                 element.move(element.canvasx-movementSpeed, element.canvasy)
