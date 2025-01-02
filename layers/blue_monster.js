@@ -3,7 +3,7 @@ import LayerData from '../layers/layer_data.js'
 
 export default class extends JsonLayer {
     #collidables
-    #movingLeft = true
+    #movingLeft = false
 
     constructor(ctx, x, y, w, h, collidables) {
         super(ctx, x, y, w, h)
