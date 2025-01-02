@@ -25,17 +25,18 @@ export default class extends JsonLayer {
     }
 
     update() {
-        const movementSpeed = 5
+        const movementSpeed = 4
 
         for (const element of this.elements) {
             if (this.#movingLeft) {
-                element.move(element.canvasx-movementSpeed, element.canvasy)
+                element.move(element.startx-movementSpeed, element.starty)
             } else {
-                element.move(element.canvasx+movementSpeed, element.canvasy)
+                element.move(element.startx+movementSpeed, element.starty)
             }
 
             if (this.checkCollisions(element)) {
                 this.#movingLeft = !this.#movingLeft
+                element.setFlipx(this.#movingLeft)
             }
         }
 
