@@ -10,6 +10,8 @@ import LavaLayer from '../layers/lava.js'
 import HealthLayer from '../layers/health.js'
 import CoinsLayer from '../layers/coins.js'
 import CoinScore from '../layers/coin_score.js'
+import BlueMonsterLayer from '../layers/blue_monster.js'
+
 
 
 export default class extends Level {
@@ -51,6 +53,10 @@ export default class extends Level {
         const coins = new CoinsLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await coins.load()
         this.layers.push(coins)
+
+        const bmobs = new BlueMonsterLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
+        await bmobs.load()
+        this.layers.push(bmobs)
 
         const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
         await health.load()
