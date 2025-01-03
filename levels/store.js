@@ -62,14 +62,14 @@ export default class extends Level {
         await score2.load()
         this.layers.push(score2)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],null)
         await s.load()
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
         })
 
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],null)
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()
