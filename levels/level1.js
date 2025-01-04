@@ -5,6 +5,7 @@ import HealthLayer from '../layers/health.js'
 import CoinsLayer from '../layers/coins.js'
 import Scores from '../layers/scores.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
+import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level1_layer_data.js'
 
 
