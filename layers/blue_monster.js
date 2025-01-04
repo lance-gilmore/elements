@@ -1,5 +1,5 @@
 import JsonLayer from '../engine/json_layer.js'
-import LayerData from '../layers/layer_data.js'
+import LayerData from '../layers/level1_layer_data.js'
 
 export default class extends JsonLayer {
     #collidables

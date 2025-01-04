@@ -1,16 +1,11 @@
 import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
-import Background from '../layers/background.js'
-import Platforms from '../layers/platforms.js'
-import Foreground from '../layers/forground_static.js'
-import Bounce from '../layers/bounce.js'
-import ExitLayer from '../layers/exit.js'
-import LavaLayer from '../layers/lava.js'
 import HealthLayer from '../layers/health.js'
 import CoinsLayer from '../layers/coins.js'
 import Scores from '../layers/scores.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
+import LayerData from '../layers/level1_layer_data.js'
 
 
 export default class extends Level {
@@ -25,29 +20,55 @@ export default class extends Level {
     }
 
     async load() {
-        const b = new Background(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await b.load()
-        this.layers.push(b)
+        const layerData = new LayerData()
 
-         const p = new Platforms(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-         await p.load()
+        const background = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await background.load(layerData.background)
+        this.layers.push(background)
+
+         const p = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+         await p.load(layerData.platforms)
          this.layers.push(p)
 
-        const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await h.load()
+        const h = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await h.load(layerData.foreground)
         this.layers.push(h)
 
-        const bounce = new Bounce(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await bounce.load()
+        const bounce = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const exit = new ExitLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await exit.load()
+        const exit = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        const lava = new LavaLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await lava.load()
+        const lava = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        await lava.load(layerData.lava)
         this.layers.push(lava)
+
+        // const b = new Background(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        // await b.load()
+        // this.layers.push(b)
+
+        //  const p = new Platforms(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        //  await p.load()
+        //  this.layers.push(p)
+
+        // const h = new Foreground(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        // await h.load()
+        // this.layers.push(h)
+
+        // const bounce = new Bounce(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        // await bounce.load()
+        // this.layers.push(bounce)
+
+        // const exit = new ExitLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        // await exit.load()
+        // this.layers.push(exit)
+
+        // const lava = new LavaLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        // await lava.load()
+        // this.layers.push(lava)
 
         const coins = new CoinsLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await coins.load()
