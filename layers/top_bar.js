@@ -22,7 +22,7 @@ export default class extends Layer {
         const offset = 500
 
         for (let i = 0; i < this.#numPlayers; i++) {
-            const health = new HealthLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,offset*i)
+            const health = new Health(this.ctx,0,0,this.viewWidth,this.viewHeight,offset*i)
             await health.load()
             this.layers.push(health)
             this.healths.push(health)
