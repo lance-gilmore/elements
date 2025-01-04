@@ -66,8 +66,8 @@ export default class extends Level {
 
     }
 
-    setupPlayer(player, topBar) {
-        player.load()
+    async setupPlayer(player, topBar) {
+        await player.load()
         player.addExitLevelListener(() => {
             this.triggerExitLevel()
         })
