@@ -13,50 +13,48 @@ import TopBar from '../layers/top_bar.js'
 export default class extends Level {
     
     controlls
-    #ctx
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
-        this.#ctx = ctx
     }
 
     async load() {
         const layerData = new LayerData()
 
-        const background = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const background = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await background.load(layerData.background)
         this.layers.push(background)
 
-         const p = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+         const p = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
          await p.load(layerData.platforms)
          this.layers.push(p)
 
-        const h = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const h = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await h.load(layerData.foreground)
         this.layers.push(h)
 
-        const bounce = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const bounce = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const exit = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const exit = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        const lava = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const lava = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await lava.load(layerData.lava)
         this.layers.push(lava)
 
-        const coins = new CoinsLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const coins = new CoinsLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await coins.load()
         this.layers.push(coins)
 
-        const bmobs = new BlueMonsterLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,[p])
+        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[p])
         await bmobs.load()
         this.layers.push(bmobs)
 
-        const topBar = new TopBar(this.#ctx,0,0,this.viewWidth,this.viewHeight,2)
+        const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
 
         // const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
         // await health.load()
@@ -74,7 +72,7 @@ export default class extends Level {
         // await score2.load()
         // this.layers.push(score2)
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const s = new Bunny(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await s.load()
         s.addExitLevelListener(() => {
             this.triggerExitLevel()
@@ -92,7 +90,7 @@ export default class extends Level {
             }
         })
 
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const g = new Girl(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await g.load()
         g.addExitLevelListener(() => {
             this.triggerExitLevel()
