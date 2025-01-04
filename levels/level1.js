@@ -2,8 +2,6 @@ import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import HealthLayer from '../layers/health.js'
-import CoinsLayer from '../layers/coins.js'
-import Scores from '../layers/scores.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level1_layer_data.js'
@@ -26,13 +24,13 @@ export default class extends Level {
         await background.load(layerData.background)
         this.layers.push(background)
 
-         const p = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
-         await p.load(layerData.platforms)
-         this.layers.push(p)
+        const platforms = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await platforms.load(layerData.platforms)
+        this.layers.push(platforms)
 
-        const h = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
-        await h.load(layerData.foreground)
-        this.layers.push(h)
+        const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await foreground.load(layerData.foreground)
+        this.layers.push(foreground)
 
         const bounce = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load(layerData.bounce)
@@ -50,7 +48,7 @@ export default class extends Level {
         await coins.load()
         this.layers.push(coins)
 
-        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[p])
+        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
         await bmobs.load()
         this.layers.push(bmobs)
 
@@ -58,10 +56,10 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
         await this.setupPlayer(g, topBar)
 
     }

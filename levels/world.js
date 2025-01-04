@@ -3,6 +3,7 @@ import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import HealthLayer from '../layers/health.js'
 import Scores from '../layers/scores.js'
+import TopBar from '../layers/top_bar.js'
 import LayerData from '../layers/world_layer_data.js'
 import JsonLayer from '../engine/json_layer.js'
 
@@ -10,69 +11,67 @@ import JsonLayer from '../engine/json_layer.js'
 export default class extends Level {
     
     controlls
-    #ctx
 
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
-        this.#ctx = ctx
     }
 
     async load() {
         const layerData = new LayerData()
 
-        const background = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const background = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await background.load(layerData.background)
         this.layers.push(background)
 
-         const p = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-         await p.load(layerData.platforms)
-         this.layers.push(p)
+        const platforms = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await platforms.load(layerData.platforms)
+        this.layers.push(platforms)
 
-        const h = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
-        await h.load(layerData.foreground)
-        this.layers.push(h)
+        const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await foreground.load(layerData.foreground)
+        this.layers.push(foreground)
 
-        const bounce = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const bounce = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const exit = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
+        const exit = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
-        await health.load()
-        this.layers.push(health)
+        const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
+        await topBar.load()
+        this.layers.push(topBar)
 
-        const health2 = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        await health2.load()
-        this.layers.push(health2)
+        const s = new Bunny(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],coins)
+        await this.setupPlayer(s, topBar)
 
-        const scores = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
-        await scores.load()
-        this.layers.push(scores)
+        const g = new Girl(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],coins)
+        await this.setupPlayer(g, topBar)
 
-        const score2 = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        await score2.load()
-        this.layers.push(score2)
+    }
 
-        const s = new Bunny(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],null)
-        await s.load()
-        s.addExitLevelListener(() => {
+    async setupPlayer(player, topBar) {
+        await player.load()
+        player.addExitLevelListener(() => {
             this.triggerExitLevel()
         })
-
-
-        const g = new Girl(this.#ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[],null)
-        await g.load()
-        g.addExitLevelListener(() => {
-            this.triggerExitLevel()
+        player.addCoinListener(() => {
+            const index = this.playerCharicters.indexOf(player);
+            topBar.scores[index].addNeutron()
+        })
+        player.addDamageListener(() => {
+            const index = this.playerCharicters.indexOf(player);
+            topBar.healths[index].reduceHealth()
+            if (topBar.healths[index].currentHealth < 1) {
+                if (index > -1) {
+                    this.playerCharicters.splice(index, 1)
+                }
+            }
         })
 
-        this.playerCharicters.push(s)
-        this.playerCharicters.push(g)
-
+        this.playerCharicters.push(player)
     }
 
     update() {
