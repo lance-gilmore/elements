@@ -3,7 +3,7 @@ import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import HealthLayer from '../layers/health.js'
 import Scores from '../layers/scores.js'
-import StoreLayerData from '../layers/store_layer_data.js'
+import LayerData from '../layers/world_layer_data.js'
 import JsonLayer from '../engine/json_layer.js'
 
 
@@ -19,7 +19,7 @@ export default class extends Level {
     }
 
     async load() {
-        const layerData = new StoreLayerData()
+        const layerData = new LayerData()
 
         const background = new JsonLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight)
         await background.load(layerData.background)
