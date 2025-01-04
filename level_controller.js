@@ -27,6 +27,12 @@ export default class extends Drawable {
           })
     }
 
+    async loadStore() {
+        const lh = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+        await lh.load()
+        this.currentLevel = lh
+    }
+
     async loadLevel1() {
         const l = new Level1(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
@@ -36,11 +42,7 @@ export default class extends Drawable {
           })
     }
 
-    async loadStore() {
-       const lh = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-       await lh.load()
-       this.currentLevel = lh
-    }
+
 
     draw() {
         this.currentLevel.draw()
