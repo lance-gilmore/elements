@@ -19,7 +19,7 @@ export default class extends Layer {
     }
 
     async load() {
-        offset = 500
+        const offset = 500
 
         for (let i = 0; i < this.#numPlayers; i++) {
             const health = new HealthLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,offset*i)
