@@ -58,61 +58,34 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        // const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
-        // await health.load()
-        // this.layers.push(health)
-
-        // const health2 = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        // await health2.load()
-        // this.layers.push(health2)
-
-        // const scores = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
-        // await scores.load()
-        // this.layers.push(scores)
-
-        // const score2 = new Scores(this.#ctx,0,0,this.viewWidth,this.viewHeight,500)
-        // await score2.load()
-        // this.layers.push(score2)
-
         const s = new Bunny(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
-        await s.load()
-        s.addExitLevelListener(() => {
-            this.triggerExitLevel()
-        })
-        s.addCoinListener(() => {
-            topBar.scores[0].addNeutron()
-        })
-        s.addDamageListener(() => {
-            topBar.healths[0].reduceHealth()
-            if (topBar.healths[0].currentHealth < 1) {
-                const index = this.playerCharicters.indexOf(s);
-                if (index > -1) {
-                    this.playerCharicters.splice(index, 1)
-                }
-            }
-        })
+        this.setupPlayer(s, topBar)
 
         const g = new Girl(this.ctx, this.controlls, [p], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
-        await g.load()
-        g.addExitLevelListener(() => {
+        this.setupPlayer(g, topBar)
+
+    }
+
+    setupPlayer(player, topBar) {
+        await player.load()
+        player.addExitLevelListener(() => {
             this.triggerExitLevel()
         })
-        g.addCoinListener(() => {
-            topBar.scores[1].addNeutron()
+        player.addCoinListener(() => {
+            const index = this.playerCharicters.indexOf(player);
+            topBar.scores[index].addNeutron()
         })
-        g.addDamageListener(() => {
-            topBar.healths[1].reduceHealth()
-            if (topBar.healths[1].currentHealth < 1) {
-                const index = this.playerCharicters.indexOf(g);
+        player.addDamageListener(() => {
+            const index = this.playerCharicters.indexOf(player);
+            topBar.healths[index].reduceHealth()
+            if (topBar.healths[index].currentHealth < 1) {
                 if (index > -1) {
                     this.playerCharicters.splice(index, 1)
                 }
             }
         })
 
-        this.playerCharicters.push(s)
-        this.playerCharicters.push(g)
-
+        this.playerCharicters.push(player)
     }
 
     update() {
