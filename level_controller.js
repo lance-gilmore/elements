@@ -14,11 +14,11 @@ export default class extends Drawable {
     }
 
     async load() {
-        this.loadWorld()
+        await this.loadWorld()
     }
 
 
-    loadWorld() {
+    async loadWorld() {
         const l = new World(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
         this.currentLevel = l
@@ -27,7 +27,7 @@ export default class extends Drawable {
           })
     }
 
-    loadLevel1() {
+    async loadLevel1() {
         const l = new Level1(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
         this.currentLevel = l
@@ -36,9 +36,9 @@ export default class extends Drawable {
           })
     }
 
-    loadStore() {
+    async loadStore() {
        const lh = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-       lh.load()
+       await lh.load()
        this.currentLevel = lh
     }
 
