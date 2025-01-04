@@ -5,6 +5,7 @@ export default class {
 
     bounce = []
     foreground = []
-    exit = []
-    
+    exit = [{"w":90,"h":110,"x":610,"y":390,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
+
+
 }
