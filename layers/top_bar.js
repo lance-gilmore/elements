@@ -24,12 +24,12 @@ export default class extends Layer {
         for (let i = 0; i < this.#numPlayers; i++) {
             const health = new Health(this.ctx,0,0,this.viewWidth,this.viewHeight,offset*i)
             await health.load()
-            this.layers.push(health)
+            this.elements.push(health)
             this.healths.push(health)
 
             const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,offset*i)
             await scores.load()
-            this.layers.push(scores)
+            this.elements.push(scores)
             this.scores.push(scores)
         }
 
