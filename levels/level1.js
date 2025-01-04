@@ -55,6 +55,8 @@ export default class extends Level {
         this.layers.push(bmobs)
 
         const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
+        await topBar.load()
+        this.layers.push(topBar)
 
         // const health = new HealthLayer(this.#ctx,0,0,this.viewWidth,this.viewHeight,0)
         // await health.load()
