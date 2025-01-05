@@ -11,10 +11,10 @@ export default class extends Drawable {
     electrons = 0
     level
 
-    constructor(ctx, x, y, w, h, positionx, positiony, level) {
+    constructor(ctx, x, y, w, h, level) {
         super(ctx, x, y, w, h)
-        this.#positionx = positionx
-        this.#positiony = positiony
+        this.#positionx = x
+        this.#positiony = y
         this.level = level
     }
 

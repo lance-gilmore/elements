@@ -9,7 +9,7 @@ export default class extends Layer {
     }
 
     async load() {
-        const lvl1 = new Door(this.ctx,0,0,0,0,610,370,'Level1')
+        const lvl1 = new Door(this.ctx,610,370,130,130,'Level1')
         await lvl1.load()
         this.elements.push(lvl1)
         
@@ -18,7 +18,6 @@ export default class extends Layer {
     checkCollision(x,y,r,b) {
         this.level = ''
         for (const element of this.elements) {
-
             const ex = element.startx
             const ey = element.starty
             const er = element.startx + element.canvasw
