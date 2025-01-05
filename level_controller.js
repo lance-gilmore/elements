@@ -39,7 +39,7 @@ export default class extends Drawable {
     }
 
     async loadLevel(level) {
-        const l = new (dict.get(level))(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+        const l = new (this.levels.get(level))(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener(() => {
