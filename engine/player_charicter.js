@@ -99,7 +99,7 @@ export default class extends AnimatedSprite {
             this.#downSpeed = damageSpeed
         }
 
-        if (this.#levelExit && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+        if (this.#levelExit && this.#controlls[this.keymap.down] && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.triggerExitLevelListeners()
         }
         

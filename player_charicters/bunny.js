@@ -6,7 +6,8 @@ export default class extends PlayerCharicter {
     keymap = {
         up: 'upPressed',
         left: 'leftPressed',
-        right: 'rightPressed'
+        right: 'rightPressed',
+        down: 'downPressed'
     }
 
     constructor(ctx, controlls, collidables, borderx, bordery, bounce, levelExit, damages,coins) {
