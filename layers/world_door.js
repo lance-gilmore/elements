@@ -13,8 +13,7 @@ export default class extends Drawable {
 
     constructor(ctx, x, y, w, h, positionx, positiony, level) {
         super(ctx, x, y, w, h)
-        this.startx = positionx
-        this.starty = positiony
+       
         this.#positionx = positionx
         this.#positiony = positiony
         this.level = level
