@@ -8,6 +8,10 @@ export default class extends Drawable {
     controlls
     currentLevel
 
+    levels = new Map([
+        ['Level1', Level1]
+      ]);
+
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
@@ -24,7 +28,7 @@ export default class extends Drawable {
         this.currentLevel = l
         l.addExitLevelListener((level) => {
             console.log(level)
-            this.loadLevel1();
+            this.loadLevel(level);
           })
     }
 
@@ -33,6 +37,17 @@ export default class extends Drawable {
         await lh.load()
         this.currentLevel = lh
     }
+
+    async loadLevel(level) {
+        const l = new (dict.get(level))(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+        await l.load()
+        this.currentLevel = l
+        l.addExitLevelListener(() => {
+            this.loadStore();
+          })
+    }
+
+
 
     async loadLevel1() {
         const l = new Level1(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
