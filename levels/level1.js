@@ -75,7 +75,6 @@ export default class extends Level {
             this.triggerExitLevel()
         })
         player.addStoreListener(() => {
-            console.log('ts')
             this.triggerStore()
         })
         player.addCoinListener(() => {
