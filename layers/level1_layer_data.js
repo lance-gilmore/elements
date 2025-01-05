@@ -11,7 +11,8 @@ export default class {
 
     foreground = []
 
-    exit = [{"w":120,"h":120,"x":3429.999969482422,"y":350.0000228881836,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
+    exit = [{"w":140,"h":140,"x":3344.453125,"y":268,"img":"https://lance-gilmore.github.io/elements/images/portal.png"}]
+
 
     store = [{"w":90,"h":110,"x":100,"y":390,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
 
