@@ -17,7 +17,8 @@ export default class extends Layer {
 
     checkCollision(x,y,r,b) {
         this.level = ''
-        for (const element of this.elements) {
+        for (const e of this.elements) {
+            const element = e.elements[0]
             const ex = element.startx
             const ey = element.starty
             const er = element.startx + element.canvasw
