@@ -41,6 +41,10 @@ export default class extends Level {
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
+        const store = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await store.load(layerData.store)
+        this.layers.push(store)
+
         const lava = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await lava.load(layerData.lava)
         this.layers.push(lava)
@@ -57,10 +61,10 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins, store)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins, store)
         await this.setupPlayer(g, topBar)
 
     }
@@ -69,6 +73,9 @@ export default class extends Level {
         await player.load()
         player.addExitLevelListener(() => {
             this.triggerExitLevel()
+        })
+        player.addStoreListener(() => {
+            this.triggerStore()
         })
         player.addCoinListener(() => {
             const index = this.playerCharicters.indexOf(player);

@@ -16,6 +16,7 @@ export default class extends AnimatedSprite {
     #damageListeners = []
     #coins
     #coinListeners = []
+    #storeListeners = []
 
     constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins) {
         super(ctx, x, y, 40, 70)
@@ -135,6 +136,16 @@ export default class extends AnimatedSprite {
 
     triggerExitLevelListeners(info) {
         for (const listener of this.#exitLevelListeners) {
+            listener(info)
+        }
+    }
+
+    addStoreListener(listener) {
+        this.#storeListeners.push(listener)
+    }
+
+    triggerStoreListeners(info) {
+        for (const listener of this.#storeListeners) {
             listener(info)
         }
     }

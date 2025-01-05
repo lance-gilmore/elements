@@ -12,6 +12,7 @@ export default class extends Drawable {
     viewHeight
 
     exitLevelListeners = []
+    storeListeners = []
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
@@ -68,6 +69,16 @@ export default class extends Drawable {
 
     triggerExitLevel(info) {
         for (const listener of this.exitLevelListeners) {
+            listener(info)
+        }
+    }
+
+    addStoreListener(listener) {
+        this.storeListeners.push(listener)
+    }
+
+    triggerStore(info) {
+        for (const listener of this.storeListeners) {
             listener(info)
         }
     }

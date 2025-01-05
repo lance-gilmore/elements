@@ -9,9 +9,11 @@ export default class {
     bounce = [{"w":60,"h":50,"x":1560.0000610351562,"y":350.00001525878906,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"},{"w":60,"h":50,"x":731.0000305175781,"y":450,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"}]
 
 
-    foreground = [{"w":180,"h":240,"x":3339.9999389648438,"y":170.00000762939453,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
+    foreground = []
 
-    exit = [{"w":40,"h":60,"x":3429.999969482422,"y":350.0000228881836,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
+    exit = [{"w":120,"h":120,"x":3429.999969482422,"y":350.0000228881836,"img":"https://lance-gilmore.github.io/elements/images/transparent.png"}]
+
+    store = [{"w":90,"h":110,"x":100,"y":390,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
 
     lava = [{"w":100,"h":80,"x":500.000018119812,"y":520,"img":"https://lance-gilmore.github.io/elements/images/lava.png"}]
 
