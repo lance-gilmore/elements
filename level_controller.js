@@ -22,7 +22,8 @@ export default class extends Drawable {
         const l = new World(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
         await l.load()
         this.currentLevel = l
-        l.addExitLevelListener(() => {
+        l.addExitLevelListener((level) => {
+            console.log(level)
             this.loadLevel1();
           })
     }

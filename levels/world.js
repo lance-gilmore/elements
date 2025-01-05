@@ -35,10 +35,6 @@ export default class extends Level {
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const exit = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
-        await exit.load(layerData.exit)
-        this.layers.push(exit)
-
         const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await doors.load()
         this.layers.push(doors)
@@ -49,18 +45,18 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[],null)
-        await this.setupPlayer(s, topBar)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],null)
+        await this.setupPlayer(s, topBar, doors)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[],null)
-        await this.setupPlayer(g, topBar)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],null)
+        await this.setupPlayer(g, topBar, doors)
 
     }
 
-    async setupPlayer(player, topBar) {
+    async setupPlayer(player, topBar, doors) {
         await player.load()
         player.addExitLevelListener(() => {
-            this.triggerExitLevel()
+            this.triggerExitLevel(doors.level)
         })
         player.addCoinListener(() => {
             const index = this.playerCharicters.indexOf(player);

@@ -21,7 +21,7 @@ export default class extends Drawable {
     async load() {
 
         const doorimg = "https://lance-gilmore.github.io/elements/images/portal.png"
-        const door = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,110,110)
+        const door = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,130,130)
         door.imageLocation = doorimg
         await door.load()
         this.elements.push(door)
@@ -57,18 +57,6 @@ export default class extends Drawable {
         txt3.text = this.electrons
         this.elements.push(txt3)
     }
-
-
-    // draw() {
-    //     super.draw()
-
-    //     this.ctx.font = "20px Arial";
-    //     this.ctx.fillText(this.neutrons,30+this.#positionx,18+this.#positiony);
-
-    //     this.ctx.fillText(this.protons,80+this.#positionx,18+this.#positiony);
-
-    //     this.ctx.fillText(this.electrons,130+this.#positionx,18+this.#positiony);
-    // }
 
     update() {
         
