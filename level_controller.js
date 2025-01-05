@@ -26,15 +26,18 @@ export default class extends Drawable {
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener((level) => {
-            console.log(level)
             this.loadLevel(level);
           })
     }
 
-    async loadStore() {
-        const lh = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
-        await lh.load()
-        this.currentLevel = lh
+    async loadStore(level) {
+        const l = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, level)
+        await l.load()
+        this.currentLevel = l
+        l.addExitLevelListener(() => {
+            console.log(l.level)
+            this.loadLevel(l.level);
+          })
     }
 
     async loadLevel(level) {
@@ -42,7 +45,7 @@ export default class extends Drawable {
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener(() => {
-            this.loadStore();
+            this.loadStore(level);
           })
     }
 

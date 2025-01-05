@@ -9,10 +9,12 @@ import JsonLayer from '../engine/json_layer.js'
 export default class extends Level {
     
     controlls
+    level
 
-    constructor(ctx, x, y, w, h, controlls) {
+    constructor(ctx, x, y, w, h, controlls, level) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
+        this.level = level
     }
 
     async load() {
