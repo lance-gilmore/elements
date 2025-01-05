@@ -78,6 +78,7 @@ export default class extends Drawable {
     }
 
     triggerStore(info) {
+        console.log('tttss')
         for (const listener of this.storeListeners) {
             listener(info)
         }

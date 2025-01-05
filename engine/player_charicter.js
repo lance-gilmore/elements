@@ -107,6 +107,7 @@ export default class extends AnimatedSprite {
         }
 
         if (this.#store && this.#controlls[this.keymap.down] && this.#store.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            console.log('triggering store listeners player')
             this.triggerStoreListeners()
         }
         
