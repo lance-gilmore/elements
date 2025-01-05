@@ -17,8 +17,9 @@ export default class extends AnimatedSprite {
     #coins
     #coinListeners = []
     #storeListeners = []
+    #store
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins, store) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -30,6 +31,7 @@ export default class extends AnimatedSprite {
         this.#levelExit = levelExit
         this.#damages = damages
         this.#coins = coins
+        this.#store = store
     }
 
     checkCollisions() {
@@ -102,6 +104,10 @@ export default class extends AnimatedSprite {
 
         if (this.#levelExit && this.#controlls[this.keymap.down] && this.#levelExit.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.triggerExitLevelListeners()
+        }
+
+        if (this.#store && this.#controlls[this.keymap.down] && this.#store.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+            this.triggerStoreListeners()
         }
         
         if (this.#controlls[this.keymap.left]) {
