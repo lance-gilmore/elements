@@ -4,6 +4,7 @@ import Girl from '../player_charicters/girl.js'
 import TopBar from '../layers/top_bar.js'
 import LayerData from '../layers/world_layer_data.js'
 import JsonLayer from '../engine/json_layer.js'
+import Doors from '../layers/world_doors.js'
 
 
 export default class extends Level {
@@ -37,6 +38,12 @@ export default class extends Level {
         const exit = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await exit.load(layerData.exit)
         this.layers.push(exit)
+
+        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await doors.load()
+        this.layers.push(doors)
+
+
 
         const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
         await topBar.load()
