@@ -25,7 +25,7 @@ export default class extends Layer {
             const eb = element.starty + element.canvash
             
             if (x < er && r > ex && y < eb && b > ey) {
-                this.level = element.level
+                this.level = e.level
                 return true
             }
 
