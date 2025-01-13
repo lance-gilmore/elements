@@ -6,7 +6,8 @@ import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level1_layer_data.js'
 import TopBar from '../layers/top_bar.js'
-import CoinsLayer from '../layers/coins.js'
+import Neutrons from '../layers/neutrons.js'
+import Electrons from '../layers/electrons.js'
 
 
 export default class extends Level {
@@ -49,9 +50,13 @@ export default class extends Level {
         await lava.load(layerData.lava)
         this.layers.push(lava)
 
-        const coins = new CoinsLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
-        await coins.load()
-        this.layers.push(coins)
+        const neutrons = new Neutrons(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await neutrons.load()
+        this.layers.push(neutrons)
+
+        const electrons = new Electrons(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await electrons.load()
+        this.layers.push(electrons)
 
         const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
         await bmobs.load()
@@ -61,10 +66,10 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins, store)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],coins, store)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
         await this.setupPlayer(g, topBar)
 
     }
@@ -77,9 +82,13 @@ export default class extends Level {
         player.addStoreListener(() => {
             this.triggerStore()
         })
-        player.addCoinListener(() => {
+        player.addPickupListener((type) => {
             const index = this.playerCharicters.indexOf(player);
-            topBar.scores[index].addNeutron()
+            if (type === Neutrons.type) {
+                topBar.scores[index].addNeutron()
+            } else if (type === Electrons.type) {
+                topBar.scores[index].addElectron()
+            }
         })
         player.addDamageListener(() => {
             const index = this.playerCharicters.indexOf(player);

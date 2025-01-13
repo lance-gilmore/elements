@@ -3,6 +3,7 @@ import LayerData from '../layers/level1_layer_data.js'
 
 
 export default class extends JsonLayer {
+    type = 'neutron'
 
     constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)

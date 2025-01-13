@@ -10,8 +10,8 @@ export default class extends PlayerCharicter {
         down: 'downPressed'
     }
 
-    constructor(ctx, controlls, collidables, borderx, bordery, bounce, levelExit, damages,coins, store) {
-        super(ctx, 150, 100, controlls, collidables, borderx, bordery, bounce, levelExit, damages,coins, store)
+    constructor(ctx, controlls, collidables, borderx, bordery, bounce, levelExit, damages,pickups, store) {
+        super(ctx, 150, 100, controlls, collidables, borderx, bordery, bounce, levelExit, damages,pickups, store)
     }
 
     async load() {

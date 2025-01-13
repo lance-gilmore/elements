@@ -14,12 +14,12 @@ export default class extends AnimatedSprite {
     #exitLevelListeners = []
     #damages = []
     #damageListeners = []
-    #coins
-    #coinListeners = []
+    #pickups = []
+    #pickupListeners = []
     #storeListeners = []
     #store
 
-    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, coins, store) {
+    constructor(ctx, x, y, controlls, collidables, borderx, bordery, bounce, levelExit, damages, pickups, store) {
         super(ctx, x, y, 40, 70)
         this.#controlls = controlls
         this.#collidables = collidables
@@ -30,7 +30,7 @@ export default class extends AnimatedSprite {
         this.#bounce = bounce
         this.#levelExit = levelExit
         this.#damages = damages
-        this.#coins = coins
+        this.#pickups = pickups
         this.#store = store
     }
 
@@ -55,6 +55,14 @@ export default class extends AnimatedSprite {
             return true
         }
         return false
+    }
+
+    checkPickups() {
+        for (const collidable of this.#pickups) {
+            if (collidable.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+                this.triggerPickupListeners(collidable.type)
+            }
+        }
     }
 
     async load() {
@@ -89,9 +97,10 @@ export default class extends AnimatedSprite {
              
         }
 
-        if (this.#coins && this.#coins.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
-            this.triggerCoinListeners()
-        }
+        this.checkPickups()
+        // if (this.#pickups && this.#pickups.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
+        //     this.triggerPickupListeners()
+        // }
 
         
         if (this.#bounce && this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
@@ -166,12 +175,12 @@ export default class extends AnimatedSprite {
         }
     }
 
-    addCoinListener(listener) {
-        this.#coinListeners.push(listener)
+    addPickupListener(listener) {
+        this.#pickupListeners.push(listener)
     }
 
-    triggerCoinListeners(info) {
-        for (const listener of this.#coinListeners) {
+    triggerPickupListeners(info) {
+        for (const listener of this.#pickupListeners) {
             listener(info)
         }
     }
