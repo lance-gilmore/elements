@@ -14,7 +14,7 @@ export default class extends Drawable {
     }
 
     async load() {
-        const img = "https://lance-gilmore.github.io/elements/images/yellow_sphere.png"
+        const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
         const layerImage1 = new ImageDrawable(this.ctx,90+this.#offset,10,20,20)
         layerImage1.imageLocation = img
         await layerImage1.load()
@@ -26,7 +26,7 @@ export default class extends Drawable {
         await layerImage2.load()
         this.elements.push(layerImage2)
 
-        const img3 = "https://lance-gilmore.github.io/elements/images/blue_sphere.png"
+        const img3 = "https://lance-gilmore.github.io/elements/images/electron1.png"
         const layerImage3 = new ImageDrawable(this.ctx,200+this.#offset,15,10,10)
         layerImage3.imageLocation = img3
         await layerImage3.load()

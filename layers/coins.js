@@ -10,7 +10,7 @@ export default class extends JsonLayer {
 
     async load() {
         const ld = new LayerData()
-        super.load(ld.coins)
+        super.load(ld.neutrons)
     }
 
     checkCollision(x,y,r,b) {
