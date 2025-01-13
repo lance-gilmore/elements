@@ -58,7 +58,7 @@ export default class extends Level {
         player.addExitLevelListener(() => {
             this.triggerExitLevel(doors.level)
         })
-        player.addCoinListener(() => {
+        player.addPickupListener(() => {
             const index = this.playerCharicters.indexOf(player);
             topBar.scores[index].addNeutron()
         })
