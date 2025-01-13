@@ -84,9 +84,9 @@ export default class extends Level {
         })
         player.addPickupListener((type) => {
             const index = this.playerCharicters.indexOf(player);
-            if (type === Neutrons.type) {
+            if (type === 'neutron') {
                 topBar.scores[index].addNeutron()
-            } else if (type === Electrons.type) {
+            } else if (type === 'electron') {
                 topBar.scores[index].addElectron()
             }
         })
