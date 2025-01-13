@@ -45,10 +45,10 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],null)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[])
         await this.setupPlayer(s, topBar, doors)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],null)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[])
         await this.setupPlayer(g, topBar, doors)
 
     }
