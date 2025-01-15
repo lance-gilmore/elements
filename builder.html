@@ -139,7 +139,7 @@
         const imageList = document.getElementById('images')
         imageList.insertAdjacentHTML('afterbegin',
         `<div style="display:block;padding-top:5px;">
-          <img class="list_img" src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()" ontouchstart="addImageDrag()" style="border:1px solid black;">
+          <img class="list_img" src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()" onpointerdown="addImageDrag()" style="border:1px solid black;">
           <div>
             <label>width:</label>
             <input oninput="widthChange()" class="image_width" type="number" step="10" value="100">  
@@ -251,13 +251,13 @@
         event.preventDefault();
       });
 
-      target.addEventListener('touchend', (e) => {
+      target.addEventListener('pointerup', (e) => {
         if (addingImage) {
           var rect = target.getBoundingClientRect(); 
           var posx = e.clientX - rect.left - addingImage.offsetx; 
           var posy = e.clientY - rect.top - addingImage.offsety;
 
-          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" ontouchstart="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" onpointerdown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
@@ -277,7 +277,7 @@
           var posx = e.clientX - rect.left - addingImage.offsetx; 
           var posy = e.clientY - rect.top - addingImage.offsety;
 
-          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" ontouchstart="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" onpointerdown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
