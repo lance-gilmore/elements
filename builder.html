@@ -24,26 +24,28 @@
 
     <div style="display:inline-block; border: 1px solid black;">
       <h2>Images</h2>
-      <a href="/elements/images/platform_brick.png">Platform Brick</a><br>
-      <a href="/elements/images/platform_dirt.png">Platform Dirt</a><br>
-      <a href="/elements/images/platfrom_crystal.png">Platform Crystal</a><br>
-      <a href="/elements/images/mountan_background.png">Mountain Background</a><br>
-      <a href="/elements/images/exclamation_box.png">Exclamation Box</a><br>
-      <a href="/elements/images/mushroom.png">Mushroom</a><br>
-      <a href="/elements/images/lava.png">Lava</a><br>
-      <a href="/elements/images/transparent.png">Transparent</a><br>
-      <a href="/elements/images/small_brick.png">Small Brick</a><br>
-      <a href="/elements/images/carrot_house.png">Carrot House</a><br>
-      <a href="/elements/images/background_blue.png">Background Blue</a><br>
-      <a href="/elements/images/carrot.png">Carrot</a><br>
-      <a href="/elements/images/blue_monster.png">Blue Monster</a><br>
-      <a href="/elements/images/blue_monster2.png">Blue Monster2</a><br>
-      <a href="/elements/images/neutron1.png">Neutron1</a><br>
-      <a href="/elements/images/neutron2.png">Neutron2</a><br>
-      <a href="/elements/images/neutron3.png">Neutron2</a><br>
-      <a href="/elements/images/electron1.png">Electron1</a><br>
-      <a href="/elements/images/electron2.png">Electron2</a><br>
-      <a href="/elements/images/electron3.png">Electron3</a><br>
+      <select id="image_list">
+      <option value="/elements/images/platform_brick.png">Platform Brick</option>
+      <option value="/elements/images/platform_dirt.png">Platform Dirt</option>
+      <option value="/elements/images/platfrom_crystal.png">Platform Crystal</option>
+      <option value="/elements/images/mountan_background.png">Mountain Background</option>
+      <option value="/elements/images/exclamation_box.png">Exclamation Box</option>
+      <option value="/elements/images/mushroom.png">Mushroom</option>
+      <option value="/elements/images/lava.png">Lava</option>
+      <option value="/elements/images/transparent.png">Transparent</option>
+      <option value="/elements/images/small_brick.png">Small Brick</option>
+      <option value="/elements/images/carrot_house.png">Carrot House</option>
+      <option value="/elements/images/background_blue.png">Background Blue</option>
+      <option value="/elements/images/carrot.png">Carrot</option>
+      <option value="/elements/images/blue_monster.png">Blue Monster</option>
+      <option value="/elements/images/blue_monster2.png">Blue Monster2</option>
+      <option value="/elements/images/neutron1.png">Neutron1</option>
+      <option value="/elements/images/neutron2.png">Neutron2</option>
+      <option value="/elements/images/neutron3.png">Neutron2</option>
+      <option value="/elements/images/electron1.png">Electron1</option>
+      <option value="/elements/images/electron2.png">Electron2</option>
+      <option value="/elements/images/electron3.png">Electron3</option>
+      </select>
       
       <form>
         <h4>Add image</h4>
@@ -119,6 +121,11 @@
     </script>
 
     <script>
+      const imageList = document.getElementById('image_list')
+      imageList.onchange = function() {
+        document.getElementById('image_url').value = imageList.value
+      }
+
       let active_layer = 'new_layer'
 
       function changeActiveLayer() {
