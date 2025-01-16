@@ -1,17 +1,16 @@
 import JsonLayer from '../engine/json_layer.js'
-import LayerData from '../layers/level1_layer_data.js'
-
 
 export default class extends JsonLayer {
     type = 'electron'
+    layerData
 
-    constructor(ctx, x, y, w, h) {
+    constructor(ctx, x, y, w, h, layerData) {
         super(ctx, x, y, w, h)
+        this.layerData = layerData
     }
 
     async load() {
-        const ld = new LayerData()
-        super.load(ld.electrons)
+        super.load(this.layerData)
     }
 
     checkCollision(x,y,r,b) {

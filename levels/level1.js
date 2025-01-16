@@ -50,11 +50,11 @@ export default class extends Level {
         await lava.load(layerData.lava)
         this.layers.push(lava)
 
-        const neutrons = new Neutrons(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        const neutrons = new Neutrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.neutrons)
         await neutrons.load()
         this.layers.push(neutrons)
 
-        const electrons = new Electrons(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        const electrons = new Electrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons)
         await electrons.load()
         this.layers.push(electrons)
 
