@@ -2,6 +2,7 @@ import Drawable from './engine/drawable.js'
 import Store from './levels/store.js'
 import World from './levels/world.js'
 import Level1 from './levels/level1.js'
+import Level2 from './levels/level2.js'
 
 export default class extends Drawable {
     
@@ -9,7 +10,8 @@ export default class extends Drawable {
     currentLevel
 
     levels = new Map([
-        ['Level1', Level1]
+        ['Level1', Level1],
+        ['Level2', Level2]
       ]);
 
     constructor(ctx, x, y, w, h, controlls) {
