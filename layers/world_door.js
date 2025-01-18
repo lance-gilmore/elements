@@ -34,33 +34,37 @@ export default class extends Drawable {
         this.elements.push(arc)
 
 
+        const infoOffsetTop = 10
+
         const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
-        const layerImage1 = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,20,20)
+        const layerImage1 = new ImageDrawable(this.ctx,10+this.#positionx,infoOffsetTop+this.#positiony,20,20)
         layerImage1.imageLocation = img
         await layerImage1.load()
         this.elements.push(layerImage1)
 
         const img2 = "https://lance-gilmore.github.io/elements/images/proton1.png"
-        const layerImage2 = new ImageDrawable(this.ctx,50+this.#positionx,this.#positiony,20,20)
+        const layerImage2 = new ImageDrawable(this.ctx,60+this.#positionx,infoOffsetTop+this.#positiony,20,20)
         layerImage2.imageLocation = img2
         await layerImage2.load()
         this.elements.push(layerImage2)
 
         const img3 = "https://lance-gilmore.github.io/elements/images/electron1.png"
-        const layerImage3 = new ImageDrawable(this.ctx,100+this.#positionx,this.#positiony,10,10)
+        const layerImage3 = new ImageDrawable(this.ctx,100+this.#positionx,infoOffsetTop+this.#positiony,10,10)
         layerImage3.imageLocation = img3
         await layerImage3.load()
         this.elements.push(layerImage3)
 
-        const txt1 = new TextDrawable(this.ctx,30+this.#positionx,18+this.#positiony)
+        const textOffsetTop = 28
+
+        const txt1 = new TextDrawable(this.ctx,30+this.#positionx,textOffsetTop+this.#positiony)
         txt1.text = this.neutrons
         this.elements.push(txt1)
 
-        const txt2 = new TextDrawable(this.ctx,80+this.#positionx,18+this.#positiony)
+        const txt2 = new TextDrawable(this.ctx,80+this.#positionx,textOffsetTop+this.#positiony)
         txt2.text = this.protons
         this.elements.push(txt2)
 
-        const txt3 = new TextDrawable(this.ctx,130+this.#positionx,18+this.#positiony)
+        const txt3 = new TextDrawable(this.ctx,130+this.#positionx,textOffsetTop+this.#positiony)
         txt3.text = this.electrons
         this.elements.push(txt3)
     }
