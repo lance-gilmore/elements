@@ -20,7 +20,7 @@ export default class extends Drawable {
         await layerImage1.load()
         this.elements.push(layerImage1)
 
-        const img2 = "https://lance-gilmore.github.io/elements/images/red_sphere.png"
+        const img2 = "https://lance-gilmore.github.io/elements/images/proton1.png"
         const layerImage2 = new ImageDrawable(this.ctx,145+this.#offset,10,20,20)
         layerImage2.imageLocation = img2
         await layerImage2.load()

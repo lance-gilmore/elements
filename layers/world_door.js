@@ -22,7 +22,7 @@ export default class extends Drawable {
     async load() {
 
         const doorimg = "https://lance-gilmore.github.io/elements/images/portal.png"
-        const door = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,140,140)
+        const door = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,160,180)
         door.imageLocation = doorimg
         await door.load()
         this.elements.push(door)
