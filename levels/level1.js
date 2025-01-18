@@ -6,7 +6,6 @@ import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level1_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import Particles from '../layers/particle.js'
-import Electrons from '../layers/electrons.js'
 
 
 export default class extends Level {
@@ -69,10 +68,10 @@ export default class extends Level {
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(g, topBar)
 
     }
@@ -91,6 +90,8 @@ export default class extends Level {
                 topBar.scores[index].addNeutron()
             } else if (type === 'electron') {
                 topBar.scores[index].addElectron()
+            } else if (type === 'proton') {
+                topBar.scores[index].addProton()
             }
         })
         player.addDamageListener(() => {

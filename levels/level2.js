@@ -5,8 +5,7 @@ import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level2_layer_data.js'
 import TopBar from '../layers/top_bar.js'
-import Neutrons from '../layers/neutrons.js'
-import Electrons from '../layers/electrons.js'
+import Particles from '../layers/particle.js'
 
 
 export default class extends Level {
@@ -49,26 +48,30 @@ export default class extends Level {
         await lava.load(layerData.lava)
         this.layers.push(lava)
 
-        const neutrons = new Neutrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.neutrons)
+        const neutrons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.neutrons, 'neutron')
         await neutrons.load()
         this.layers.push(neutrons)
 
-        const electrons = new Electrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons)
+        const electrons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons, 'electron')
         await electrons.load()
         this.layers.push(electrons)
 
-        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
-        await bmobs.load()
-        this.layers.push(bmobs)
+        const protons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons, 'proton')
+        await protons.load()
+        this.layers.push(protons)
+
+        // const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
+        // await bmobs.load()
+        // this.layers.push(bmobs)
 
         const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava],[neutrons,electrons,protons], store)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons], store)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava],[neutrons,electrons,protons], store)
         await this.setupPlayer(g, topBar)
 
     }
@@ -87,6 +90,8 @@ export default class extends Level {
                 topBar.scores[index].addNeutron()
             } else if (type === 'electron') {
                 topBar.scores[index].addElectron()
+            } else if (type === 'proton') {
+                topBar.scores[index].addProton()
             }
         })
         player.addDamageListener(() => {
