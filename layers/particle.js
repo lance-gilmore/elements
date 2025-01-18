@@ -1,12 +1,13 @@
 import JsonLayer from '../engine/json_layer.js'
 
 export default class extends JsonLayer {
-    type = 'neutron'
+    type
     layerData
 
-    constructor(ctx, x, y, w, h, layerData) {
+    constructor(ctx, x, y, w, h, layerData, type) {
         super(ctx, x, y, w, h)
         this.layerData = layerData
+        this.type = type
     }
 
     async load() {

@@ -1,12 +1,11 @@
 import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
-import HealthLayer from '../layers/health.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import LayerData from '../layers/level1_layer_data.js'
 import TopBar from '../layers/top_bar.js'
-import Neutrons from '../layers/neutrons.js'
+import Particles from '../layers/particle.js'
 import Electrons from '../layers/electrons.js'
 
 
@@ -50,13 +49,17 @@ export default class extends Level {
         await lava.load(layerData.lava)
         this.layers.push(lava)
 
-        const neutrons = new Neutrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.neutrons)
+        const neutrons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.neutrons, 'neutron')
         await neutrons.load()
         this.layers.push(neutrons)
 
-        const electrons = new Electrons(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons)
+        const electrons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons, 'electron')
         await electrons.load()
         this.layers.push(electrons)
+
+        const protons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons, 'proton')
+        await protons.load()
+        this.layers.push(protons)
 
         const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
         await bmobs.load()
