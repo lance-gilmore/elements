@@ -7,6 +7,7 @@ export default class extends Drawable {
 
     playerCharicters = []
     layers = []
+    foregroundLayers = []
 
     viewWidth
     viewHeight
@@ -41,6 +42,11 @@ export default class extends Drawable {
             charicter.draw()
         }
 
+        for (const layer of this.foregroundLayers) {
+            layer.move(-this.viewx, this.viewy)
+            layer.draw()
+        }
+
     }
 
     update() {
@@ -59,6 +65,10 @@ export default class extends Drawable {
         }
 
         for (const layer of this.layers) {
+            layer.update()
+        }
+
+        for (const layer of this.foregroundLayers) {
             layer.update()
         }
     }

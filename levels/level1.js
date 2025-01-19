@@ -28,9 +28,7 @@ export default class extends Level {
         await platforms.load(layerData.platforms)
         this.layers.push(platforms)
 
-        const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
-        await foreground.load(layerData.foreground)
-        this.layers.push(foreground)
+        
 
         const bounce = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load(layerData.bounce)
@@ -73,6 +71,10 @@ export default class extends Level {
 
         const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(g, topBar)
+
+        const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await foreground.load(layerData.foreground)
+        this.foregroundLayers.push(foreground)
 
     }
 
