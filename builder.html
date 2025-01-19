@@ -14,7 +14,7 @@
       <div style="text-align: center;">
         <button type="button" onclick="posUp()">^</button><br>
         <button type="button" onclick="posLeft()">&lt;</button>
-        <button type="button" onclick="posdown()">v</button>
+        <button type="button" onclick="posDown()">v</button>
         <button type="button" onclick="posRight()">&gt;</button>
       </div>
       <div>
@@ -188,22 +188,22 @@
       const yPos = document.getElementById("ypos")
 
       function posUp() {
-        yPos.value = Math.floor((yPos.value-1) / 10) * 10
-        selectedTile.style.top = ypPos.value
+        yPos.value = Math.floor((parseFloat(yPos.value)-1) / 10) * 10
+        selectedTile.style.top = yPos.value
       }
 
       function posDown() {
-        yPos.value = Math.ceil((yPos.value+1) / 10) * 10
+        yPos.value = Math.ceil((parseFloat(yPos.value)+1) / 10) * 10
         selectedTile.style.top = yPos.value
       }
 
       function posLeft() {
-        xPos.value = Math.ceil((xPos.value+1) / 10) * 10
+        xPos.value = Math.ceil((parseFloat(xPos.value)+1) / 10) * 10
         selectedTile.style.left = xPos.value
       }
 
       function posRight() {
-        xPos.value = Math.ceil((xPos.value+1) / 10) * 10
+        xPos.value = Math.ceil((parseFloat(xPos.value)+1) / 10) * 10
         selectedTile.style.left = xPos.value
       }
 
