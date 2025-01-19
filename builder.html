@@ -198,7 +198,7 @@
       }
 
       function posLeft() {
-        xPos.value = Math.ceil((parseFloat(xPos.value)+1) / 10) * 10
+        xPos.value = Math.floor((parseFloat(xPos.value)-1) / 10) * 10
         selectedTile.style.left = xPos.value
       }
 
