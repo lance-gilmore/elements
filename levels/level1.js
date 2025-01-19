@@ -54,7 +54,7 @@ export default class extends Level {
         await electrons.load()
         this.layers.push(electrons)
 
-        const protons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.electrons, 'proton')
+        const protons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.protons, 'proton')
         await protons.load()
         this.layers.push(protons)
 
