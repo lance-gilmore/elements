@@ -15,17 +15,17 @@ export default class extends Drawable {
     async load() {
         const healthImg = "https://lance-gilmore.github.io/elements/images/heart.png"
 
-        const layerImage1 = new ImageDrawable(this.ctx,10+this.#offset,10,10,20)
+        const layerImage1 = new ImageDrawable(this.ctx,10+this.#offset,10,15,20)
         layerImage1.imageLocation = healthImg
         await layerImage1.load()
         this.elements.push(layerImage1)
 
-        const layerImage2 = new ImageDrawable(this.ctx,30+this.#offset,10,10,20)
+        const layerImage2 = new ImageDrawable(this.ctx,30+this.#offset,10,15,20)
         layerImage2.imageLocation = healthImg
         await layerImage2.load()
         this.elements.push(layerImage2)
 
-        const layerImage3 = new ImageDrawable(this.ctx,50+this.#offset,10,10,20)
+        const layerImage3 = new ImageDrawable(this.ctx,50+this.#offset,10,15,20)
         layerImage3.imageLocation = healthImg
         await layerImage3.load()
         this.elements.push(layerImage3)
