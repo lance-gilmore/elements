@@ -1,17 +1,17 @@
 import JsonLayer from '../engine/json_layer.js'
-import LayerData from '../layers/level1_layer_data.js'
 
 export default class extends JsonLayer {
     #collidables
+    #layerData
 
-    constructor(ctx, x, y, w, h, collidables) {
+    constructor(ctx, x, y, w, h, collidables, layerData) {
         super(ctx, x, y, w, h)
         this.#collidables = collidables
+        this.#layerData = layerData
     }
 
     async load() {
-        const ld = new LayerData()
-        super.load(ld.blueMonsters)
+        super.load(this.#layerData)
     }
 
     checkCollisions(element) {

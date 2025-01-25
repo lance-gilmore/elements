@@ -60,18 +60,18 @@ export default class extends Level {
         await protons.load()
         this.layers.push(protons)
 
-        // const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
-        // await bmobs.load()
-        // this.layers.push(bmobs)
+        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms], layerData.blueMonsters)
+        await bmobs.load()
+        this.layers.push(bmobs)
 
         const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
         await topBar.load()
         this.layers.push(topBar)
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava],[neutrons,electrons,protons], store)
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(s, topBar)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava],[neutrons,electrons,protons], store)
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(g, topBar)
 
     }

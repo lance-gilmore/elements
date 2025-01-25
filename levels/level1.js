@@ -58,7 +58,7 @@ export default class extends Level {
         await protons.load()
         this.layers.push(protons)
 
-        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms])
+        const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms], layerData.blueMonsters)
         await bmobs.load()
         this.layers.push(bmobs)
 
