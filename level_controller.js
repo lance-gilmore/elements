@@ -67,7 +67,6 @@ export default class extends Drawable {
                 electrons: 0
             }
         })
-        console.log(this.levelScores)
     }
 
     #updateScores(level, topBar) {

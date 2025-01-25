@@ -23,6 +23,7 @@ export default class extends Drawable {
         this.protons = levelData.protons.length
         this.neutrons = levelData.neutrons.length
         this.electrons = levelData.electrons.length
+        this.scores = scores
     }
 
     async load() {
