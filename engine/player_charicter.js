@@ -86,9 +86,12 @@ export default class extends AnimatedSprite {
 
         this.positiony = this.positiony + this.#downSpeed
         if (this.checkCollisions() || this.positiony < 0 || this.positiony + this.canvash > this.#bordery) {
+            if (this.#downSpeed > 0) {
+                touchingGround = true;
+            }
             this.positiony = this.positiony - this.#downSpeed
             this.#downSpeed = 0
-            touchingGround = true;
+            
         }
         
         let moving = false
@@ -100,10 +103,6 @@ export default class extends AnimatedSprite {
         }
 
         this.checkPickups()
-        // if (this.#pickups && this.#pickups.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
-        //     this.triggerPickupListeners()
-        // }
-
         
         if (this.#bounce && this.#bounce.checkCollision(this.positionx, this.positiony, this.positionx + this.canvasw, this.positiony + this.canvash)) {
             this.#downSpeed = bounceSpeed
