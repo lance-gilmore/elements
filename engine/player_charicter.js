@@ -76,6 +76,7 @@ export default class extends AnimatedSprite {
         const terminalVelocity = 20
         const bounceSpeed = -30
         const damageSpeed = -15
+        let touchingGround = false
 
         this.#downSpeed = this.#downSpeed + gravity
 
@@ -87,11 +88,12 @@ export default class extends AnimatedSprite {
         if (this.checkCollisions() || this.positiony < 0 || this.positiony + this.canvash > this.#bordery) {
             this.positiony = this.positiony - this.#downSpeed
             this.#downSpeed = 0
+            touchingGround = true;
         }
         
         let moving = false
         if (this.#controlls[this.keymap.up]) {
-            if (this.#downSpeed == 0) {
+            if (touchingGround) {
                 this.#downSpeed = jumpSpeed
             }
              
