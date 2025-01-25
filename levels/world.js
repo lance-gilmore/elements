@@ -11,11 +11,13 @@ export default class extends Level {
     
     controlls
     levels
+    levelScores
 
-    constructor(ctx, x, y, w, h, controlls, levels) {
+    constructor(ctx, x, y, w, h, controlls, levels, levelScores) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
         this.levels = levels
+        this.levelScores = levelScores
     }
 
     async load() {
@@ -37,7 +39,7 @@ export default class extends Level {
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight, this.levels)
+        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight, this.levels, this.levelScores)
         await doors.load()
         this.layers.push(doors)
 

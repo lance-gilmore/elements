@@ -11,6 +11,7 @@ export default class extends Level {
     
     controlls
     #layerData
+    topBar
 
     constructor(ctx, x, y, w, h, controlls, layerData) {
         super(ctx, x, y, w, h)
@@ -61,9 +62,9 @@ export default class extends Level {
         await bmobs.load()
         this.layers.push(bmobs)
 
-        const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
-        await topBar.load()
-        this.layers.push(topBar)
+        this.topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
+        await this.topBar.load()
+        this.layers.push(this.topBar)
 
         const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
         await this.setupPlayer(s, topBar)

@@ -11,8 +11,9 @@ export default class extends Drawable {
     electrons = 0
     level
     levelData
+    scores
 
-    constructor(ctx, x, y, w, h, positionx, positiony, level, levelData) {
+    constructor(ctx, x, y, w, h, positionx, positiony, level, levelData, scores) {
         super(ctx, x, y, w, h)
        
         this.#positionx = positionx
@@ -62,15 +63,15 @@ export default class extends Drawable {
         const textOffsetTop = 48
 
         const txt1 = new TextDrawable(this.ctx,50+this.#positionx,textOffsetTop+this.#positiony)
-        txt1.text = this.neutrons
+        txt1.text = this.scores.neutrons + "/" + this.neutrons
         this.elements.push(txt1)
 
         const txt2 = new TextDrawable(this.ctx,100+this.#positionx,textOffsetTop+this.#positiony)
-        txt2.text = this.protons
+        txt2.text = this.scores.protons + "/" + this.protons
         this.elements.push(txt2)
 
         const txt3 = new TextDrawable(this.ctx,130+this.#positionx,textOffsetTop+this.#positiony)
-        txt3.text = this.electrons
+        txt3.text = this.scores.electrons + "/" + this.electrons
         this.elements.push(txt3)
     }
 

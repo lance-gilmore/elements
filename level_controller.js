@@ -9,15 +9,18 @@ export default class extends Drawable {
     
     controlls
     currentLevel
+    levelScores = {}
 
     levels = new Map([
         ['Level1', Level1],
         ['Level2', Level2]
       ]);
 
+
     constructor(ctx, x, y, w, h, controlls) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
+        this.#initScores()
     }
 
     async load() {
@@ -25,7 +28,7 @@ export default class extends Drawable {
     }
 
     async loadWorld() {
-        const l = new World(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, this.levels)
+        const l = new World(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, this.levels, levelScores)
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener((level) => {
@@ -51,8 +54,31 @@ export default class extends Drawable {
             this.loadStore(level);
           })
         l.addExitLevelListener(() => {
+            this.#updateScores(level,l.topBar)
             this.loadWorld();
           })
+    }
+
+    #initScores() {
+        this.levels.forEach((_value, level) => {
+            this.levelScores[level] = {
+                protons: 0,
+                neutrons: 0,
+                electrons: 0
+            }
+        })
+    }
+
+    #updateScores(level, topBar) {
+        if (topBar.neutrons > this.levelScores[level].neutrons) {
+            this.levelScores[level].neutrons = topBar.neutrons
+        }
+        if (topBar.protons > this.levelScores[level].protons) {
+            this.levelScores[level].protons = topBar.protons
+        }
+        if (topBar.electrons > this.levelScores[level].electrons) {
+            this.levelScores[level].electrons = topBar.electrons
+        }
     }
 
     draw() {
