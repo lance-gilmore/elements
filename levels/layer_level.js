@@ -3,7 +3,6 @@ import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
-import LayerData from '../layers/level1_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import Particles from '../layers/particle.js'
 
@@ -11,14 +10,16 @@ import Particles from '../layers/particle.js'
 export default class extends Level {
     
     controlls
+    #layerData
 
-    constructor(ctx, x, y, w, h, controlls) {
+    constructor(ctx, x, y, w, h, controlls, layerData) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
+        this.#layerData = layerData
     }
 
     async load() {
-        const layerData = new LayerData()
+        const layerData = this.#layerData
 
         const background = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await background.load(layerData.background)

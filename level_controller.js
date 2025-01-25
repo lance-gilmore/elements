@@ -1,8 +1,9 @@
 import Drawable from './engine/drawable.js'
+import LayerLevel from './levels/layer_level.js'
 import Store from './levels/store.js'
 import World from './levels/world.js'
-import Level1 from './levels/level1.js'
-import Level2 from './levels/level2.js'
+import Level1 from './levels/level1_layer_data.js'
+import Level2 from './levels/level1_layer_data.js'
 
 export default class extends Drawable {
     
@@ -42,7 +43,8 @@ export default class extends Drawable {
     }
 
     async loadLevel(level) {
-        const l = new (this.levels.get(level))(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls)
+        const layerData = new (this.levels.get(level))()
+        const l = new LayerLevel(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, layerData)
         await l.load()
         this.currentLevel = l
         l.addStoreListener(() => {
