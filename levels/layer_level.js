@@ -67,10 +67,10 @@ export default class extends Level {
         this.layers.push(this.topBar)
 
         const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
-        await this.setupPlayer(s, topBar)
+        await this.setupPlayer(s, this.topBar)
 
         const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[lava,bmobs],[neutrons,electrons,protons], store)
-        await this.setupPlayer(g, topBar)
+        await this.setupPlayer(g, this.topBar)
 
         const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await foreground.load(layerData.foreground)
