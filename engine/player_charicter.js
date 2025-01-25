@@ -70,7 +70,7 @@ export default class extends AnimatedSprite {
     }
 
     update() {
-        const movementSpeed = 8
+        const movementSpeed = 9
         const gravity = 2;
         const jumpSpeed = -20;
         const terminalVelocity = 20
