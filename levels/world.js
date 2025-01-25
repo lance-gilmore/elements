@@ -10,10 +10,12 @@ import Doors from '../layers/world_doors.js'
 export default class extends Level {
     
     controlls
+    levels
 
-    constructor(ctx, x, y, w, h, controlls) {
+    constructor(ctx, x, y, w, h, controlls, levels) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
+        this.levels = levels
     }
 
     async load() {
@@ -35,7 +37,7 @@ export default class extends Level {
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight, levels)
         await doors.load()
         this.layers.push(doors)
 

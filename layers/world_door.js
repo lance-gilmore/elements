@@ -10,13 +10,18 @@ export default class extends Drawable {
     protons = 0
     electrons = 0
     level
+    levelData
 
-    constructor(ctx, x, y, w, h, positionx, positiony, level) {
+    constructor(ctx, x, y, w, h, positionx, positiony, level, levelData) {
         super(ctx, x, y, w, h)
        
         this.#positionx = positionx
         this.#positiony = positiony
         this.level = level
+        this.levelData = levelData
+        this.protons = levelData.protons.length
+        this.neutrons = levelData.neutrons.length
+        this.electrons = levelData.electrons.length
     }
 
     async load() {
