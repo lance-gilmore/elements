@@ -37,7 +37,7 @@ export default class extends Level {
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
 
-        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight, levels)
+        const doors = new Doors(this.ctx,0,0,this.viewWidth,this.viewHeight, this.levels)
         await doors.load()
         this.layers.push(doors)
 
