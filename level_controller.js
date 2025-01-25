@@ -70,14 +70,23 @@ export default class extends Drawable {
     }
 
     #updateScores(level, topBar) {
-        if (topBar.neutrons > this.levelScores[level].neutrons) {
-            this.levelScores[level].neutrons = topBar.neutrons
+        let totalNeutrons = 0
+        let totalProtons = 0
+        let totalElectrons = 0
+        for (const scores of topBar.scores) {
+            totalNeutrons += scores.neutrons
+            totalProtons += scores.protons
+            totalElectrons += scores.electrons
         }
-        if (topBar.protons > this.levelScores[level].protons) {
-            this.levelScores[level].protons = topBar.protons
+
+        if (totalNeutrons > this.levelScores[level].neutrons) {
+            this.levelScores[level].neutrons = totalNeutrons
         }
-        if (topBar.electrons > this.levelScores[level].electrons) {
-            this.levelScores[level].electrons = topBar.electrons
+        if (totalProtons > this.levelScores[level].protons) {
+            this.levelScores[level].protons = totalProtons
+        }
+        if (totalElectrons > this.levelScores[level].electrons) {
+            this.levelScores[level].electrons = totalElectrons
         }
     }
 

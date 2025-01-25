@@ -6,9 +6,6 @@ import Scores from '../layers/scores.js'
 export default class extends Layer {
 
     #offset = 0
-    neutrons = 0
-    protons = 0
-    electrons = 0
     #numPlayers
     healths = []
     scores = []
