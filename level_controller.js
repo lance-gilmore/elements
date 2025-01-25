@@ -60,13 +60,14 @@ export default class extends Drawable {
     }
 
     #initScores() {
-        this.levels.forEach((_value, level) => {
-            this.levelScores[level] = {
+        this.levels.forEach((_value, key) => {
+            this.levelScores[key] = {
                 protons: 0,
                 neutrons: 0,
                 electrons: 0
             }
         })
+        console.log(this.levelScores)
     }
 
     #updateScores(level, topBar) {
