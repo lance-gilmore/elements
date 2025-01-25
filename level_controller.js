@@ -3,7 +3,7 @@ import LayerLevel from './levels/layer_level.js'
 import Store from './levels/store.js'
 import World from './levels/world.js'
 import Level1 from './layer_data/level1_layer_data.js'
-import Level2 from './layer_data/level1_layer_data.js'
+import Level2 from './layer_data/level2_layer_data.js'
 
 export default class extends Drawable {
     
