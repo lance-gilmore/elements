@@ -11,11 +11,11 @@ export default class extends Layer {
     }
 
     async load() {
-        const lvl1 = new Door(this.ctx,0,0,0,0,610,320,'Level1',this.levels.get('Level1'))
+        const lvl1 = new Door(this.ctx,0,0,0,0,610,320,'Level1',new this.levels.get('Level1')())
         await lvl1.load()
         this.elements.push(lvl1)
 
-        const lvl2 = new Door(this.ctx,0,0,0,0,1110,320,'Level2',this.levels.get('Level1'))
+        const lvl2 = new Door(this.ctx,0,0,0,0,1110,320,'Level2',new this.levels.get('Level2')())
         await lvl2.load()
         this.elements.push(lvl2)
         
