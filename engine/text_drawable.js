@@ -4,9 +4,8 @@ export default class extends Drawable {
     text = ''
     fontSize
 
-    constructor(ctx, x, y, w, h,text, fontSize) {
+    constructor(ctx, x, y, w, h,fontSize) {
         super(ctx, x, y, w, h)
-        this.text = text
         this.fontSize = fontSize
     }
 
