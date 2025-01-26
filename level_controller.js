@@ -37,7 +37,7 @@ export default class extends Drawable {
     }
 
     async loadStore(level) {
-        const l = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, level)
+        const l = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, level, this.levelScores[level])
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener(() => {
@@ -51,6 +51,7 @@ export default class extends Drawable {
         await l.load()
         this.currentLevel = l
         l.addStoreListener(() => {
+            this.#updateScores(level,l.topBar)
             this.loadStore(level);
           })
         l.addExitLevelListener(() => {

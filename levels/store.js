@@ -4,17 +4,20 @@ import Girl from '../player_charicters/girl.js'
 import StoreLayerData from '../layers/store_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import JsonLayer from '../engine/json_layer.js'
+import Scores from '../layers/scores.js'
 
 
 export default class extends Level {
     
     controlls
     level
+    scores
 
-    constructor(ctx, x, y, w, h, controlls, level) {
+    constructor(ctx, x, y, w, h, controlls, level, scores) {
         super(ctx, x, y, w, h)
         this.controlls = controlls
         this.level = level
+        this.scores = scores
     }
 
     async load() {
@@ -40,35 +43,25 @@ export default class extends Level {
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        const topBar = new TopBar(this.ctx,0,0,this.viewWidth,this.viewHeight,2)
-        await topBar.load()
-        this.layers.push(topBar)
+        const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,400)
+        scores.neutrons = this.scores.neutrons
+        scores.protons = this.scores.protons
+        scores.electrons = this.scores.electrons
+        await scores.load()
+        this.layers.push(scores)
 
         const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[],[])
-        await this.setupPlayer(s, topBar)
+        await this.setupPlayer(s)
 
         const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, exit,[],[])
-        await this.setupPlayer(g, topBar)
+        await this.setupPlayer(g)
 
     }
 
-    async setupPlayer(player, topBar) {
+    async setupPlayer(player) {
         await player.load()
         player.addExitLevelListener(() => {
             this.triggerExitLevel()
-        })
-        player.addPickupListener(() => {
-            const index = this.playerCharicters.indexOf(player);
-            topBar.scores[index].addNeutron()
-        })
-        player.addDamageListener(() => {
-            const index = this.playerCharicters.indexOf(player);
-            topBar.healths[index].reduceHealth()
-            if (topBar.healths[index].currentHealth < 1) {
-                if (index > -1) {
-                    this.playerCharicters.splice(index, 1)
-                }
-            }
         })
 
         this.playerCharicters.push(player)
