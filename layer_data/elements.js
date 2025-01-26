@@ -112,5 +112,40 @@ export default class {
             'neutrons': 16,
             'electrons': 16
         },
+        {
+            'name': 'Chlorine',
+            'symbol': 'Cl',
+            'protons': 17,
+            'neutrons': 18,
+            'electrons': 17
+        },
+        {
+            'name': 'Argon',
+            'symbol': 'AR',
+            'protons': 18,
+            'neutrons': 22,
+            'electrons': 18
+        },
+        {
+            'name': 'Potassium',
+            'symbol': 'K',
+            'protons': 19,
+            'neutrons': 20,
+            'electrons': 19
+        },
+        {
+            'name': 'Calcium',
+            'symbol': 'Ca',
+            'protons': 20,
+            'neutrons': 20,
+            'electrons': 20
+        },
+        {
+            'name': 'Scandium',
+            'symbol': 'SC',
+            'protons': 21,
+            'neutrons': 24,
+            'electrons': 21
+        },
     ]
 }
