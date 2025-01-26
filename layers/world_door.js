@@ -41,7 +41,7 @@ export default class extends Drawable {
         this.elements.push(arc)
 
 
-        const infoOffsetTop = 30
+        const infoOffsetTop = 25
 
         const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
         const layerImage1 = new ImageDrawable(this.ctx,15+this.#positionx,infoOffsetTop+this.#positiony,20,20)
@@ -56,7 +56,7 @@ export default class extends Drawable {
         this.elements.push(layerImage2)
 
         const img3 = "https://lance-gilmore.github.io/elements/images/electron1.png"
-        const layerImage3 = new ImageDrawable(this.ctx,115+this.#positionx,infoOffsetTop+this.#positiony,10,10)
+        const layerImage3 = new ImageDrawable(this.ctx,115+this.#positionx,5+infoOffsetTop+this.#positiony,10,10)
         layerImage3.imageLocation = img3
         await layerImage3.load()
         this.elements.push(layerImage3)
