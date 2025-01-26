@@ -69,7 +69,7 @@ export default class extends Drawable {
         txt1.text = this.scores.neutrons + "/" + this.neutrons
         this.elements.push(txt1)
 
-        const txt2 = new TextDrawable(this.ctx,75+this.#positionx,-15+textOffsetTop+this.#positiony,fontSize)
+        const txt2 = new TextDrawable(this.ctx,75+this.#positionx,-14+textOffsetTop+this.#positiony,fontSize)
         txt2.text = this.scores.electrons + "/" + this.electrons
         this.elements.push(txt2)
 
