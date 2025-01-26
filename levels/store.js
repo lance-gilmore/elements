@@ -43,7 +43,7 @@ export default class extends Level {
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,400)
+        const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,300)
         scores.neutrons = this.scores.neutrons
         scores.protons = this.scores.protons
         scores.electrons = this.scores.electrons
