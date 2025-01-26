@@ -9,4 +9,6 @@ export default class {
     exit = [{"w":80,"h":100,"x":3210,"y":400,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"},{"w":80,"h":100,"x":120,"y":400,"img":"https://lance-gilmore.github.io/elements/images/carrot_house.png"}]
 
     elements = []
+
+    store_items = []
 }
