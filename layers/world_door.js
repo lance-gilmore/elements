@@ -62,14 +62,14 @@ export default class extends Drawable {
         this.elements.push(layerImage2)
 
 
-        const textOffsetTop = 63
+        const textOffsetTop = 61
         const fontSize = "16"
 
         const txt1 = new TextDrawable(this.ctx,10+this.#positionx,textOffsetTop+this.#positiony,fontSize)
         txt1.text = this.scores.neutrons + "/" + this.neutrons
         this.elements.push(txt1)
 
-        const txt2 = new TextDrawable(this.ctx,75+this.#positionx,-5+textOffsetTop+this.#positiony,fontSize)
+        const txt2 = new TextDrawable(this.ctx,75+this.#positionx,-15+textOffsetTop+this.#positiony,fontSize)
         txt2.text = this.scores.electrons + "/" + this.electrons
         this.elements.push(txt2)
 
