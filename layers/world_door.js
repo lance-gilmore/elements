@@ -61,8 +61,8 @@ export default class extends Drawable {
         await layerImage3.load()
         this.elements.push(layerImage3)
 
-        const textOffsetTop = 68
-        const fontSize = "12"
+        const textOffsetTop = 75
+        const fontSize = "14"
 
         const txt1 = new TextDrawable(this.ctx,10+this.#positionx,textOffsetTop+this.#positiony,fontSize)
         txt1.text = this.scores.neutrons + "/" + this.neutrons
