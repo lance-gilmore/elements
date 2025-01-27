@@ -147,5 +147,12 @@ export default class {
             'neutrons': 24,
             'electrons': 21
         },
+        {
+            'name': 'Titanium',
+            'symbol': 'Ti',
+            'protons': 22,
+            'neutrons': 26,
+            'electrons': 22
+        },
     ]
 }
