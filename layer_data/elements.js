@@ -182,5 +182,12 @@ export default class {
             'neutrons': 30,
             'electrons': 26
         },
+        {
+            'name': 'Cobalt',
+            'symbol': 'Co',
+            'protons': 27,
+            'neutrons': 32,
+            'electrons': 27
+        },
     ]
 }
