@@ -1,10 +1,10 @@
 import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
-import StoreLayerData from '../layers/store_layer_data.js'
+import StoreLayerData from '../layer_data/store_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import JsonLayer from '../engine/json_layer.js'
-import Scores from '../layers/scores.js'
+import Scores from '../layer/scores.js'
 
 
 export default class extends Level {

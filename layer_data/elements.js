@@ -142,7 +142,7 @@ export default class {
         },
         {
             'name': 'Scandium',
-            'symbol': 'SC',
+            'symbol': 'Sc',
             'protons': 21,
             'neutrons': 24,
             'electrons': 21
