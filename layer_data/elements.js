@@ -175,5 +175,12 @@ export default class {
             'neutrons': 30,
             'electrons': 25
         },
+        {
+            'name': 'Iron',
+            'symbol': 'Fe',
+            'protons': 26,
+            'neutrons': 30,
+            'electrons': 26
+        },
     ]
 }
