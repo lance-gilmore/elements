@@ -189,5 +189,12 @@ export default class {
             'neutrons': 32,
             'electrons': 27
         },
+        {
+            'name': 'Nickel',
+            'symbol': 'Ni',
+            'protons': 28,
+            'neutrons': 30,
+            'electrons': 28
+        },
     ]
 }
