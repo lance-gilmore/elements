@@ -4,7 +4,7 @@ import Girl from '../player_charicters/girl.js'
 import StoreLayerData from '../layer_data/store_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import JsonLayer from '../engine/json_layer.js'
-import Scores from '../layer/scores.js'
+import Scores from '../layers/scores.js'
 
 
 export default class extends Level {

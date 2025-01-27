@@ -154,5 +154,12 @@ export default class {
             'neutrons': 26,
             'electrons': 22
         },
+        {
+            'name': 'Vanadium',
+            'symbol': 'V',
+            'protons': 23,
+            'neutrons': 28,
+            'electrons': 23
+        },
     ]
 }
