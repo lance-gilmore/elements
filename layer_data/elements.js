@@ -168,5 +168,12 @@ export default class {
             'neutrons': 28,
             'electrons': 24
         },
+        {
+            'name': 'Manganese',
+            'symbol': 'Mn',
+            'protons': 25,
+            'neutrons': 30,
+            'electrons': 25
+        },
     ]
 }
