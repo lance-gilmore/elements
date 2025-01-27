@@ -161,5 +161,12 @@ export default class {
             'neutrons': 28,
             'electrons': 23
         },
+        {
+            'name': 'Chromium',
+            'symbol': 'Cr',
+            'protons': 24,
+            'neutrons': 28,
+            'electrons': 24
+        },
     ]
 }
