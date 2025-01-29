@@ -5,6 +5,7 @@ import StoreLayerData from '../layer_data/store_layer_data.js'
 import TopBar from '../layers/top_bar.js'
 import JsonLayer from '../engine/json_layer.js'
 import Scores from '../layers/scores.js'
+import StoreItems from '../layers/store_items.js'
 
 
 export default class extends Level {
@@ -42,6 +43,10 @@ export default class extends Level {
         const exit = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await exit.load(layerData.exit)
         this.layers.push(exit)
+
+        const items = new StoreItems(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await items.load(layerData.store_items)
+        this.layers.push(items)
 
         const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,250)
         scores.neutrons = this.scores.neutrons
