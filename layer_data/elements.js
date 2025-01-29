@@ -196,5 +196,12 @@ export default class {
             'neutrons': 30,
             'electrons': 28
         },
+        {
+            'name': 'Copper',
+            'symbol': 'Cu',
+            'protons': 29,
+            'neutrons': 34,
+            'electrons': 29
+        },
     ]
 }

@@ -12,6 +12,7 @@ export default class extends Layer {
         for (const image of json) {
             const layerImage = new StoreItem(this.ctx,image.x,image.y,image.w,image.h)
             layerImage.imageLocation = image.img
+            console.log(image.img)
             await layerImage.load()
             this.elements.push(layerImage)
         }
