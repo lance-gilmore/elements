@@ -44,7 +44,7 @@ export default class extends Level {
         await exit.load(layerData.exit)
         this.layers.push(exit)
 
-        // const items = new StoreItems(this.ctx,0,0,this.viewWidth,this.viewHeight)
+         const items = new StoreItems(this.ctx,0,0,this.viewWidth,this.viewHeight)
         // await items.load(layerData.store_items)
         // this.layers.push(items)
 
