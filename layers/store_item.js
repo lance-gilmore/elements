@@ -11,7 +11,7 @@ export default class extends Drawable {
     electrons = 0
     image
 
-    constructor(ctx, x, y, w, h, positionx, positiony, image, protons, neutrons, electrons, symbol, name) {
+    constructor(ctx, x, y, w, h, positionx, positiony, protons, neutrons, electrons, symbol, name) {
         super(ctx, x, y, w, h)
        
         this.#positionx = positionx
@@ -19,7 +19,6 @@ export default class extends Drawable {
         this.protons = protons
         this.neutrons = neutrons
         this.electrons = electrons
-        this.image = image
     }
 
     async load() {
