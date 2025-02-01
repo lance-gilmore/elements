@@ -210,5 +210,12 @@ export default class {
             'neutrons': 34,
             'electrons': 30
         },
+        {
+            'name': 'Gallium',
+            'symbol': 'Ga',
+            'protons': 31,
+            'neutrons': 38,
+            'electrons': 31
+        },
     ]
 }

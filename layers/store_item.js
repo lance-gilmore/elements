@@ -44,7 +44,7 @@ export default class extends Drawable {
         this.elements.push(layerImage3)
 
         const img2 = "https://lance-gilmore.github.io/elements/images/proton1.png"
-        const layerImage2 = new ImageDrawable(this.ctx15+this.#positionx,infoOffsetTop+this.#positiony,15,15)
+        const layerImage2 = new ImageDrawable(this.ctx,15+this.#positionx,infoOffsetTop+this.#positiony,15,15)
         layerImage2.imageLocation = img2
         await layerImage2.load()
         this.elements.push(layerImage2)
