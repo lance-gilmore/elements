@@ -9,16 +9,15 @@ export default class extends Drawable {
     neutrons = 0
     protons = 0
     electrons = 0
+    symbol = ''
+    name = ''
     image
 
-    constructor(ctx, x, y, w, h, positionx, positiony, protons, neutrons, electrons, symbol, name) {
+    constructor(ctx, x, y, w, h, positionx, positiony) {
         super(ctx, x, y, w, h)
        
         this.#positionx = positionx
         this.#positiony = positiony
-        this.protons = protons
-        this.neutrons = neutrons
-        this.electrons = electrons
     }
 
     async load() {
@@ -30,22 +29,22 @@ export default class extends Drawable {
         this.elements.push(arc)
 
 
-        const infoOffsetTop = 23
+        const infoOffsetTop = 2
 
         const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
-        const layerImage1 = new ImageDrawable(this.ctx,15+this.#positionx,infoOffsetTop+this.#positiony,20,20)
+        const layerImage1 = new ImageDrawable(this.ctx,2+this.#positionx,infoOffsetTop+this.#positiony,20,20)
         layerImage1.imageLocation = img
         await layerImage1.load()
         this.elements.push(layerImage1)
 
         const img3 = "https://lance-gilmore.github.io/elements/images/electron1.png"
-        const layerImage3 = new ImageDrawable(this.ctx,80+this.#positionx,-5+infoOffsetTop+this.#positiony,10,10)
+        const layerImage3 = new ImageDrawable(this.ctx,10+this.#positionx,-5+infoOffsetTop+this.#positiony,10,10)
         layerImage3.imageLocation = img3
         await layerImage3.load()
         this.elements.push(layerImage3)
 
         const img2 = "https://lance-gilmore.github.io/elements/images/proton1.png"
-        const layerImage2 = new ImageDrawable(this.ctx,140+this.#positionx,infoOffsetTop+this.#positiony,20,20)
+        const layerImage2 = new ImageDrawable(this.ctx,15+this.#positionx,infoOffsetTop+this.#positiony,20,20)
         layerImage2.imageLocation = img2
         await layerImage2.load()
         this.elements.push(layerImage2)
