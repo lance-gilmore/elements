@@ -217,5 +217,12 @@ export default class {
             'neutrons': 38,
             'electrons': 31
         },
+        {
+            'name': 'Germanium',
+            'symbol': 'Ge',
+            'protons': 32,
+            'neutrons': 42,
+            'electrons': 32
+        },
     ]
 }
