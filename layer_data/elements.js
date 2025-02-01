@@ -203,5 +203,12 @@ export default class {
             'neutrons': 34,
             'electrons': 29
         },
+        {
+            'name': 'Zinc',
+            'symbol': 'Zn',
+            'protons': 30,
+            'neutrons': 34,
+            'electrons': 30
+        },
     ]
 }

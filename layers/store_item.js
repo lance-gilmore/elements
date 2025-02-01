@@ -11,11 +11,11 @@ export default class extends Drawable {
     electrons = 0
     image
 
-    constructor(ctx, x, y, w, h, positionx, positiony, protons, neutrons, electrons, symbol, name) {
+    constructor(ctx, x, y, w, h, protons, neutrons, electrons, symbol, name) {
         super(ctx, x, y, w, h)
        
-        this.#positionx = positionx
-        this.#positiony = positiony
+        this.#positionx = x
+        this.#positiony = y
         this.protons = protons
         this.neutrons = neutrons
         this.electrons = electrons
