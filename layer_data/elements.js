@@ -231,5 +231,12 @@ export default class {
             'neutrons': 42,
             'electrons': 33
         },
+        {
+            'name': 'Selenium',
+            'symbol': 'Se',
+            'protons': 34,
+            'neutrons': 46,
+            'electrons': 34
+        },
     ]
 }
