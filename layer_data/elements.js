@@ -224,5 +224,12 @@ export default class {
             'neutrons': 42,
             'electrons': 32
         },
+        {
+            'name': 'Arsenic',
+            'symbol': 'As',
+            'protons': 33,
+            'neutrons': 42,
+            'electrons': 33
+        },
     ]
 }
