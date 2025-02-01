@@ -6,10 +6,10 @@ export default class extends Drawable {
 
     #positionx = 0
     #positiony = 0
-    neutrons = 0
-    protons = 0
-    electrons = 0
-    symbol = ''
+    neutrons = 1
+    protons = 2
+    electrons = 3
+    symbol = 'Mm'
     name = ''
     image
 
@@ -50,20 +50,21 @@ export default class extends Drawable {
         this.elements.push(layerImage2)
 
 
-        const textOffsetTop = 61
+        const textOffsetTop = 3
         const fontSize = "16"
 
         const txt1 = new TextDrawable(this.ctx,10+this.#positionx,textOffsetTop+this.#positiony,fontSize)
         txt1.text =  this.neutrons
         this.elements.push(txt1)
 
-        const txt2 = new TextDrawable(this.ctx,75+this.#positionx,-14+textOffsetTop+this.#positiony,fontSize)
-        txt2.text =  this.electrons
-        this.elements.push(txt2)
 
-        const txt3 = new TextDrawable(this.ctx,135+this.#positionx,textOffsetTop+this.#positiony,fontSize)
+        const txt3 = new TextDrawable(this.ctx,30+this.#positionx,textOffsetTop+this.#positiony,fontSize)
         txt3.text =  this.protons
         this.elements.push(txt3)
+
+        const symbolText = new TextDrawable(this.ctx,5+this.#positionx,30+this.#positiony,"30")
+        symbolText.text =  this.symbol
+        this.elements.push(symbolText)
     }
 
     update() {
