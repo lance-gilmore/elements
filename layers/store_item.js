@@ -29,10 +29,10 @@ export default class extends Drawable {
         this.elements.push(arc)
 
 
-        const infoOffsetTop = 2
+        const infoOffsetTop = 4
 
         const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
-        const layerImage1 = new ImageDrawable(this.ctx,2+this.#positionx,infoOffsetTop+this.#positiony,20,20)
+        const layerImage1 = new ImageDrawable(this.ctx,30+this.#positionx,infoOffsetTop+this.#positiony,15,15)
         layerImage1.imageLocation = img
         await layerImage1.load()
         this.elements.push(layerImage1)
@@ -44,13 +44,13 @@ export default class extends Drawable {
         this.elements.push(layerImage3)
 
         const img2 = "https://lance-gilmore.github.io/elements/images/proton1.png"
-        const layerImage2 = new ImageDrawable(this.ctx,15+this.#positionx,infoOffsetTop+this.#positiony,20,20)
+        const layerImage2 = new ImageDrawable(this.ctx15+this.#positionx,infoOffsetTop+this.#positiony,15,15)
         layerImage2.imageLocation = img2
         await layerImage2.load()
         this.elements.push(layerImage2)
 
 
-        const textOffsetTop = 3
+        const textOffsetTop = 10
         const fontSize = "16"
 
         const txt1 = new TextDrawable(this.ctx,10+this.#positionx,textOffsetTop+this.#positiony,fontSize)
@@ -62,7 +62,7 @@ export default class extends Drawable {
         txt3.text =  this.protons
         this.elements.push(txt3)
 
-        const symbolText = new TextDrawable(this.ctx,5+this.#positionx,30+this.#positiony,"30")
+        const symbolText = new TextDrawable(this.ctx,5+this.#positionx,50+this.#positiony,"30")
         symbolText.text =  this.symbol
         this.elements.push(symbolText)
     }
