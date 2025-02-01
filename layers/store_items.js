@@ -10,9 +10,8 @@ export default class extends Layer {
     async load(json) {
 
         for (const image of json) {
-            const layerImage = new StoreItem(this.ctx,image.x,image.y,1,1,1)
+            const layerImage = new StoreItem(this.ctx,image.x,image.y,image.w,image.h,1,1,1)
             layerImage.image = image.img
-            console.log(image.img)
             await layerImage.load()
             this.elements.push(layerImage)
         }

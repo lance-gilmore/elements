@@ -24,7 +24,7 @@ export default class extends Drawable {
     async load() {
 
         const itemBackground = this.image
-        const arc = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,180,180)
+        const arc = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,this.canvasw,this.canvasy)
         arc.imageLocation = itemBackground
         await arc.load()
         this.elements.push(arc)
