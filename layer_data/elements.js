@@ -240,10 +240,17 @@ export default class {
         },
         {
             'name': 'Bromine',
-            'symbol': 'Se',
+            'symbol': 'Br',
             'protons': 35,
             'neutrons': 44,
             'electrons': 35
+        },
+        {
+            'name': 'Krypton',
+            'symbol': 'Kr',
+            'protons': 36,
+            'neutrons': 48,
+            'electrons': 36
         },
     ]
 }

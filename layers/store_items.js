@@ -1,6 +1,6 @@
 import Layer from '../engine/json_layer.js'
 import StoreItem from '../layers/store_item.js'
-import Elements from '../layers/elements.js'
+import Elements from '../layer_data/elements.js'
 
 export default class extends Layer {
 
