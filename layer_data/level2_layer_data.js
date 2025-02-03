@@ -13,7 +13,7 @@ export default class extends LayerData {
     exit = [{"w":150,"h":190,"x":3540,"y":310.00000762939453,"img":"https://lance-gilmore.github.io/elements/images/archway.png"}]
 
 
-    store = [{"w":150,"h":210,"x":126.23750591278076,"y":291.4000053405762,"img":"https://lance-gilmore.github.io/elements/images/shop.png"}]
+    store = [{"w":190,"h":260,"x":110.00000286102295,"y":240.0000057220459,"img":"https://lance-gilmore.github.io/elements/images/shop.png"}]
 
     lava = []
 
