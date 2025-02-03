@@ -252,5 +252,12 @@ export default class {
             'neutrons': 48,
             'electrons': 36
         },
+        {
+            'name': 'Rubidium',
+            'symbol': 'Rb',
+            'protons': 37,
+            'neutrons': 48,
+            'electrons': 37
+        },
     ]
 }
