@@ -238,5 +238,12 @@ export default class {
             'neutrons': 46,
             'electrons': 34
         },
+        {
+            'name': 'Bromine',
+            'symbol': 'Se',
+            'protons': 35,
+            'neutrons': 44,
+            'electrons': 35
+        },
     ]
 }
