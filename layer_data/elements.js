@@ -259,5 +259,12 @@ export default class {
             'neutrons': 48,
             'electrons': 37
         },
+        {
+            'name': 'Strontium',
+            'symbol': 'Sr',
+            'protons': 38,
+            'neutrons': 50,
+            'electrons': 38
+        },
     ]
 }
