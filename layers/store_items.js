@@ -26,12 +26,6 @@ export default class extends Layer {
                 this.elements.push(layerImage)
             }
         }
-        // for (const image of json) {
-        //     const layerImage = new StoreItem(this.ctx,image.x,image.y,image.w,image.h,1,1,1)
-        //     layerImage.image = image.img
-        //     await layerImage.load()
-        //     this.elements.push(layerImage)
-        // }
         
     }
 
