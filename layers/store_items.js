@@ -11,6 +11,16 @@ export default class extends Layer {
     async load(json) {
         const elements = new Elements()
 
+        json.sort(function(a,b) {
+            if (a.x < b.x) {
+                return a
+            }
+            if (a.x === b.x && a.y < b.y) {
+                return a
+            }
+            return b
+        })
+
         for (let i=0;i<json.length;i++) {
             const image = json[i]
             if (i < elements.elements.length) {
