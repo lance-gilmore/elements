@@ -13,12 +13,12 @@ export default class extends Layer {
 
         json.sort(function(a,b) {
             if (a.x < b.x) {
-                return a
+                return -1
             }
             if (a.x === b.x && a.y < b.y) {
-                return a
+                return -1
             }
-            return b
+            return 1
         })
 
         for (let i=0;i<json.length;i++) {
