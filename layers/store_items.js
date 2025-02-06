@@ -12,10 +12,10 @@ export default class extends Layer {
         const elements = new Elements()
 
         json.sort(function(a,b) {
-            if (a.x < b.x) {
+            if (a.y < b.y) {
                 return -1
             }
-            if (a.x === b.x && a.y < b.y) {
+            if (a.y === b.y && a.x < b.x) {
                 return -1
             }
             return 1
