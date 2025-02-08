@@ -8,6 +8,7 @@ export default class extends Drawable {
     electrons
     atomicNumber
     nucleusImage
+    electronImages = []
 
     constructor(ctx, x, y, w, h, positionx, positiony, electrons, atomicNumber, nucleusImage, electronImage) {
         super(ctx, x, y, w, h)
@@ -32,10 +33,30 @@ export default class extends Drawable {
         await electronImg.load()
         this.elements.push(electronImg)
 
+        const electronOrbit = {
+            img: electronImg,
+            startx: electronImg.x,
+            starty: electronImg.y,
+            radius: 30,
+            h: this.#positionx/2, 
+            k: this.#positiony/2,
+            theta: 0
+        }
+
+        electronImages.push(electronOrbit)
+
     }
 
     update() {
-        
+        const step = 2*Math.PI/20;
+        for (const e of this.electronImages) {
+            e.theta += step
+            x = e.h + e.radius*Math.cos(e.theta);
+            y = e.k - e.radius*Math.sin(e.theta);
+
+            e.img.x = x
+            e.img.y = y
+        }
     }
 
 }

@@ -11,4 +11,5 @@ export default class {
     electrons = []
     protons = []
     blueMonsters = []
+    atoms = []
 }

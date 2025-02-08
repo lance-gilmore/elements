@@ -4,7 +4,8 @@ import Girl from '../player_charicters/girl.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import TopBar from '../layers/top_bar.js'
-import Particles from '../layers/particle.js'
+import Particles from '../layers/particle.js
+import Atoms from '../layers/atoms.js'
 
 
 export default class extends Level {
@@ -57,6 +58,10 @@ export default class extends Level {
         const protons = new Particles(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.protons, 'proton')
         await protons.load()
         this.layers.push(protons)
+
+        const atoms = new Atoms(this.ctx,0,0,this.viewWidth,this.viewHeight,layerData.atoms)
+        await atoms.load()
+        this.layers.push(atoms)
 
         const bmobs = new BlueMonsterLayer(this.ctx,0,0,this.viewWidth,this.viewHeight,[platforms], layerData.blueMonsters)
         await bmobs.load()

@@ -23,4 +23,6 @@ export default class extends LayerData {
 
     blueMonsters = [{"w":70,"h":60,"x":589.453125,"y":438,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png","/elements/images/crab3.png"]},{"w":70,"h":60,"x":2520.453125,"y":437,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png","/elements/images/crab3.png"]}]
     
+    atoms = [{"w":10,"h":10,"x":594.2499876022339,"y":430.40000915527344,"img":"https://lance-gilmore.github.io/elements/images/proton1.png"}]
+
 }
