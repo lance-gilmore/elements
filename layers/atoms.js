@@ -9,7 +9,7 @@ export default class extends JsonLayer {
         this.layerData = layerData
     }
 
-    async load() {
+    async load(json) {
         const electronImage = "https://lance-gilmore.github.io/elements/images/electron1.png"
         for (const image of json) {
 
