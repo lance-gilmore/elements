@@ -20,6 +20,10 @@ export default class extends Layer {
         const lvl2 = new Door(this.ctx,0,0,0,0,1110,320,'Level2',new (this.levels.get('Level2'))(), this.levelScores['Level2'])
         await lvl2.load()
         this.elements.push(lvl2)
+
+        const lvl3 = new Door(this.ctx,0,0,0,0,1710,320,'Level3',new (this.levels.get('Level3'))(), this.levelScores['Level3'])
+        await lvl3.load()
+        this.elements.push(lvl3)
         
     }
 
