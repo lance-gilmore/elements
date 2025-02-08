@@ -1,5 +1,5 @@
 import JsonLayer from '../engine/json_layer.js'
-import Atom from '../layers.atom.js'
+import Atom from '../layers/atom.js'
 
 export default class extends JsonLayer {
     layerData
