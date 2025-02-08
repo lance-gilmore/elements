@@ -3,18 +3,14 @@ import ImageDrawable from '../engine/image_drawable.js'
 
 export default class extends Drawable {
 
-    #positionx = 0
-    #positiony = 0
     electrons
     atomicNumber
     nucleusImage
     electronImages = []
 
-    constructor(ctx, x, y, w, h, positionx, positiony, electrons, atomicNumber, nucleusImage, electronImage) {
+    constructor(ctx, x, y, w, h, electrons, atomicNumber, nucleusImage, electronImage) {
         super(ctx, x, y, w, h)
        
-        this.#positionx = positionx
-        this.#positiony = positiony
         this.electrons = electrons
         this.atomicNumber = atomicNumber
         this.nucleusImage = nucleusImage
@@ -23,12 +19,12 @@ export default class extends Drawable {
 
     async load() {
 
-        const nucleusImg = new ImageDrawable(this.ctx,this.#positionx,this.#positiony,20,20)
+        const nucleusImg = new ImageDrawable(this.ctx,this.x,this.y,20,20)
         nucleusImg.imageLocation = this.nucleusImage
         await nucleusImg.load()
         this.elements.push(nucleusImg)
 
-        const electronImg = new ImageDrawable(this.ctx,this.#positionx+30,this.#positiony+30,5,5)
+        const electronImg = new ImageDrawable(this.ctx,this.x+30,this.y+30,5,5)
         electronImg.imageLocation = this.electronImage
         await electronImg.load()
         this.elements.push(electronImg)
@@ -38,8 +34,8 @@ export default class extends Drawable {
             startx: electronImg.x,
             starty: electronImg.y,
             radius: 30,
-            h: this.#positionx/2, 
-            k: this.#positiony/2,
+            h: this.w/2, 
+            k: this.y/2,
             theta: 0
         }
 
