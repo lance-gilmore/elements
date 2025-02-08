@@ -9,9 +9,9 @@ export default class extends JsonLayer {
         this.layerData = layerData
     }
 
-    async load(json) {
+    async load() {
         const electronImage = "https://lance-gilmore.github.io/elements/images/electron1.png"
-        for (const image of json) {
+        for (const image of this.layerData) {
 
             const layerImage = new Atom(this.ctx,image.x,image.y,image.w,image.h,image.x,image.y,1,1,image.img,electronImage)
             //layerImage.imageLocation = image.img
