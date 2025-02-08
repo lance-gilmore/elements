@@ -4,7 +4,7 @@ import Girl from '../player_charicters/girl.js'
 import BlueMonsterLayer from '../layers/blue_monster.js'
 import JsonLayer from '../engine/json_layer.js'
 import TopBar from '../layers/top_bar.js'
-import Particles from '../layers/particle.js
+import Particles from '../layers/particle.js'
 import Atoms from '../layers/atoms.js'
 
 
