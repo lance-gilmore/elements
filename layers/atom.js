@@ -51,11 +51,8 @@ export default class extends Drawable {
         const step = 2*Math.PI/20;
         for (const e of this.electronImages) {
             e.theta += step
-            x = e.h + e.radius*Math.cos(e.theta);
-            y = e.k - e.radius*Math.sin(e.theta);
-
-            e.img.x = x
-            e.img.y = y
+            e.img.x = e.h + e.radius*Math.cos(e.theta);
+            e.img.y = e.k - e.radius*Math.sin(e.theta);
         }
     }
 
