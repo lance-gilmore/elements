@@ -24,15 +24,15 @@ export default class extends Drawable {
         await nucleusImg.load()
         this.elements.push(nucleusImg)
 
-        const electronImg = new ImageDrawable(this.ctx,this.x+30,this.y+30,5,5)
+        const electronImg = new ImageDrawable(this.ctx,this.canvasx+30,this.canvasy+30,5,5)
         electronImg.imageLocation = this.electronImage
         await electronImg.load()
         this.elements.push(electronImg)
 
         const electronOrbit = {
             img: electronImg,
-            startx: electronImg.x,
-            starty: electronImg.y,
+            startx: electronImg.canvasx,
+            starty: electronImg.canvasy,
             radius: 30,
             h: this.w/2, 
             k: this.y/2,

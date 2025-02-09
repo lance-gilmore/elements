@@ -322,5 +322,13 @@ export default class {
             'electrons': 45,
             'shells': [2,8,18,16,1]
         },
+        {
+            'name': 'Palladium',
+            'symbol': 'Pd',
+            'protons': 46,
+            'neutrons': 60,
+            'electrons': 46,
+            'shells': [2,8,18,18]
+        },
     ]
 }
