@@ -1,5 +1,6 @@
 import Layer from '../engine/layer.js'
 import Atom from '../layers/atom.js'
+import ImageDrawable from './image_drawable.js'
 
 export default class extends Layer {
     layerData
