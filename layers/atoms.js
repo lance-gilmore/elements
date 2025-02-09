@@ -14,15 +14,15 @@ export default class extends Layer {
         const electronImage = "https://lance-gilmore.github.io/elements/images/electron1.png"
         for (const image of this.layerData) {
 
-            const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
-            layerImage.imageLocation = image.img
-            await layerImage.load()
-            this.elements.push(layerImage)
-
-            // const layerImage = new Atom(this.ctx,image.x,image.y,image.w,image.h,1,1,image.img,electronImage)
-            // //layerImage.imageLocation = image.img
+            // const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
+            // layerImage.imageLocation = image.img
             // await layerImage.load()
             // this.elements.push(layerImage)
+
+            const layerImage = new Atom(this.ctx,image.x,image.y,image.w,image.h,1,1,image.img,electronImage)
+             //layerImage.imageLocation = image.img
+            await layerImage.load()
+            this.elements.push(layerImage)
             
         }
     }
