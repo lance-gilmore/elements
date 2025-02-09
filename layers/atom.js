@@ -39,7 +39,7 @@ export default class extends Drawable {
             theta: 0
         }
 
-        this.electronImages.push(electronOrbit)
+        //this.electronImages.push(electronOrbit)
 
     }
 

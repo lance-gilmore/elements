@@ -330,5 +330,13 @@ export default class {
             'electrons': 46,
             'shells': [2,8,18,18]
         },
+        {
+            'name': 'Silver',
+            'symbol': 'Ag',
+            'protons': 47,
+            'neutrons': 60,
+            'electrons': 47,
+            'shells': [2,8,18,18,1]
+        },
     ]
 }
