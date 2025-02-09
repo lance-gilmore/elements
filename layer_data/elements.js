@@ -314,5 +314,13 @@ export default class {
             'electrons': 44,
             'shells': [2,8,18,15,1]
         },
+        {
+            'name': 'Rhodium',
+            'symbol': 'Rh',
+            'protons': 45,
+            'neutrons': 58,
+            'electrons': 45,
+            'shells': [2,8,18,16,1]
+        },
     ]
 }

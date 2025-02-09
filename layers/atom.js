@@ -19,7 +19,7 @@ export default class extends Drawable {
 
     async load() {
 
-        const nucleusImg = new ImageDrawable(this.ctx,this.x,this.y,20,20)
+        const nucleusImg = new ImageDrawable(this.ctx,this.canvasx,this.canvasy,this.canvasw,this.canvash)
         nucleusImg.imageLocation = this.nucleusImage
         await nucleusImg.load()
         this.elements.push(nucleusImg)
