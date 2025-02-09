@@ -43,13 +43,13 @@ export default class extends Drawable {
 
     }
 
-    update() {
-        const step = 2*Math.PI/20;
-        for (const e of this.electronImages) {
-            e.theta += step
-            e.img.x = e.h + e.radius*Math.cos(e.theta);
-            e.img.y = e.k - e.radius*Math.sin(e.theta);
-        }
-    }
+    // update() {
+    //     const step = 2*Math.PI/20;
+    //     for (const e of this.electronImages) {
+    //         e.theta += step
+    //         e.img.x = e.h + e.radius*Math.cos(e.theta);
+    //         e.img.y = e.k - e.radius*Math.sin(e.theta);
+    //     }
+    // }
 
 }
