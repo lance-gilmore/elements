@@ -1,6 +1,6 @@
 import Layer from '../engine/layer.js'
 import Atom from '../layers/atom.js'
-import ImageDrawable from './image_drawable.js'
+import ImageDrawable from '../engine/image_drawable.js'
 
 export default class extends Layer {
     layerData
@@ -13,7 +13,6 @@ export default class extends Layer {
     async load() {
         const electronImage = "https://lance-gilmore.github.io/elements/images/electron1.png"
         for (const image of this.layerData) {
-            console.log('here')
 
             const layerImage = new ImageDrawable(this.ctx,image.x,image.y,image.w,image.h)
             layerImage.imageLocation = image.img
