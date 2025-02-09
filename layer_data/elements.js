@@ -338,5 +338,13 @@ export default class {
             'electrons': 47,
             'shells': [2,8,18,18,1]
         },
+        {
+            'name': 'Cadmium',
+            'symbol': 'Cd',
+            'protons': 48,
+            'neutrons': 66,
+            'electrons': 48,
+            'shells': [2,8,18,18,2]
+        },
     ]
 }
