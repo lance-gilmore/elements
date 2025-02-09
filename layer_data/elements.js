@@ -267,11 +267,52 @@ export default class {
             'electrons': 38
         },
         {
-            'name': 'Strontium',
-            'symbol': 'Sr',
-            'protons': 38,
+            'name': 'Yttrium',
+            'symbol': 'Y',
+            'protons': 39,
+            'neutrons': 51,
+            'electrons': 39,
+            'shells': [2,8,18,9,2]
+        },
+        {
+            'name': 'Zirconium',
+            'symbol': 'Zr',
+            'protons': 40,
             'neutrons': 50,
-            'electrons': 38
+            'electrons': 40,
+            'shells': [2,8,18,10,2]
+        },
+        {
+            'name': 'Niobium',
+            'symbol': 'Nb',
+            'protons': 41,
+            'neutrons': 52,
+            'electrons': 41,
+            'shells': [2,8,18,12,1]
+        },
+        {
+            'name': 'Molybdenum',
+            'symbol': 'Mo',
+            'protons': 42,
+            'neutrons': 56,
+            'electrons': 42,
+            'shells': [2,8,18,13,1]
+        },
+        {
+            'name': 'Technetium',
+            'symbol': 'Tc',
+            'protons': 43,
+            'neutrons': 56,
+            'electrons': 43,
+            'shells': [2,8,18,13,2]
+        },
+        {
+            'name': 'Ruthenium',
+            'symbol': 'Ru',
+            'protons': 44,
+            'neutrons': 58,
+            'electrons': 44,
+            'shells': [2,8,18,15,1]
         },
     ]
 }

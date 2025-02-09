@@ -1,7 +1,7 @@
-import JsonLayer from '../engine/json_layer.js'
+import Layer from '../engine/layer.js'
 import Atom from '../layers/atom.js'
 
-export default class extends JsonLayer {
+export default class extends Layer {
     layerData
 
     constructor(ctx, x, y, w, h, layerData) {
