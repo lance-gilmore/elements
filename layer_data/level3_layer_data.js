@@ -16,9 +16,13 @@ export default class extends LayerData {
     store = []
     lava = []
 
-    neutrons = []
+    neutrons = [{"w":30,"h":30,"x":403.2374267578125,"y":421.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":560.449951171875,"y":420.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":727.449951171875,"y":414.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":967.0499877929688,"y":408.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":1169.0499877929688,"y":414.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":1909.25,"y":459.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":2602.8500366210938,"y":426.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]}]
+
 
     electrons = []
 
-    blueMonsters = []
+    protons = []
+
+    blueMonsters = [{"w":50,"h":50,"x":720.0001220703125,"y":509.00001525878906,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png"]},{"w":50,"h":50,"x":1070.0001220703125,"y":509.00001525878906,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png"]},{"w":50,"h":50,"x":2170.0000972747803,"y":509.00001525878906,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png"]},{"w":50,"h":50,"x":2450.0000915527344,"y":509.00001525878906,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png"]},{"w":50,"h":50,"x":2740.0001220703125,"y":509.00001525878906,"img":["https://lance-gilmore.github.io/elements/images/crab1.png","/elements/images/crab2.png"]}]
+
 }
