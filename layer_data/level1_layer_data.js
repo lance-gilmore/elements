@@ -10,7 +10,7 @@ export default class extends LayerData {
     bounce = [{"w":60,"h":50,"x":1560.0000610351562,"y":350.00001525878906,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"},{"w":60,"h":50,"x":731.0000305175781,"y":450,"img":"https://lance-gilmore.github.io/elements/images/mushroom.png"}]
 
 
-    foreground = [{"w":60,"h":60,"x":2202.2500915527344,"y":461.40000915527344,"img":"https://lance-gilmore.github.io/elements/images/grey_platform3.png"}]
+    foreground = [{"w":100,"h":100,"x":3539.9999389648438,"y":300.00001525878906,"img":"https://lance-gilmore.github.io/elements/images/grey_platform2.png"}]
 
 
     exit = [{"w":140,"h":140,"x":3344.453125,"y":268,"img":"https://lance-gilmore.github.io/elements/images/portal.png"}]
