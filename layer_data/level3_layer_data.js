@@ -11,7 +11,8 @@ export default class extends LayerData {
     bounce = []
     foreground = []
 
-    exit = []
+    exit = [{"w":160,"h":180,"x":3279.999969482422,"y":380.00001525878906,"img":"https://lance-gilmore.github.io/elements/images/archway.png"}]
+
 
     store = []
     lava = []
