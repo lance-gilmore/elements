@@ -14,7 +14,8 @@ export default class extends LayerData {
     exit = [{"w":160,"h":180,"x":3279.999969482422,"y":380.00001525878906,"img":"https://lance-gilmore.github.io/elements/images/archway.png"}]
 
 
-    store = []
+    store = [{"w":180,"h":240,"x":39.999999046325684,"y":320,"img":"https://lance-gilmore.github.io/elements/images/shop.png"}]
+
     lava = []
 
     neutrons = [{"w":30,"h":30,"x":403.2374267578125,"y":421.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":560.449951171875,"y":420.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":727.449951171875,"y":414.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":967.0499877929688,"y":408.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":1169.0499877929688,"y":414.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":1909.25,"y":459.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]},{"w":30,"h":30,"x":2602.8500366210938,"y":426.4000015258789,"img":["https://lance-gilmore.github.io/elements/images/neutron1.png","/elements/images/neutron2.png"]}]
