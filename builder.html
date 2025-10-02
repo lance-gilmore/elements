@@ -29,7 +29,7 @@
     <div style="display:inline-block; border: 1px solid black;">
       <h2>Mode</h2>
       <label for="mode_move">Move</label>
-      <input id="mode_move" type="radio" oninput="changeMode()" name="mode" value="move">
+      <input id="mode_move" type="radio" oninput="changeMode()" name="mode" value="move" checked>
       <br>
       <label for="mode_place">Place</label>
       <input id="mode_place" type="radio" oninput="changeMode()" name="mode" value="place">
@@ -153,6 +153,14 @@
       function changeActiveLayer() {
         let e = window.event;
         active_layer = e.target.value
+      }
+
+      let mode = "move"
+
+      function changeMode() {
+        let e = window.event;
+        mode = e.target.value
+        console.log(mode)
       }
 
       function loadImage() {
