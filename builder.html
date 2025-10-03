@@ -76,7 +76,7 @@
         <h4>Add image</h4>
         <div>
           <label for="image_url">Url</label>
-          <input id="image_url" type="text" value="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">
+          <input id="image_url" class="w-20" type="text" value="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">
           <button type="button" class="border p-2 rounded-sm" onclick="loadImage()">Add</button>
           <button type="button" class="border p-2 rounded-sm" onclick="addFrame()">Add Frame</button>
         </div>
@@ -174,11 +174,11 @@
           <img class="list_img" src="`+imageUrl+`" width="100" height="100" draggable="true" onmousedown="addImageDrag()" style="border:1px solid black;">
           <div>
             <label>width:</label>
-            <input oninput="widthChange()" class="image_width" type="number" step="10" value="100">  
+            <input oninput="widthChange()" class="image_width w-20" type="number" step="10" value="100">  
           </div>
           <div>
             <label>height:</label>
-            <input oninput="heightChange()" class="image_height" type="number" step="10" value="100">  
+            <input oninput="heightChange()" class="image_height w-20" type="number" step="10" value="100">  
           </div>
         </div>`)
         imageUrlInput.value = ''
