@@ -308,7 +308,7 @@
       const target = document.getElementById("builderCanvas");
       target.addEventListener("dragover", (e) => {
         e.preventDefault();
-        if (e.clientX > addingImage.left) {
+        if (addingImage != null && e.clientX > addingImage.left) {
           console.log(e.clientX)
         }
       });
