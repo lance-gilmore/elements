@@ -14,10 +14,10 @@
     <div class="inline-block border p-1">
       <h2>Position</h2>
       <div style="text-align: center;">
-        <button type="button" onclick="posUp()" class="border p-2 rounded-sm">^</button><br>
-        <button type="button" onclick="posLeft()" style="padding:20px">&lt;</button>
-        <button type="button" onclick="posDown()" style="padding:20px">v</button>
-        <button type="button" onclick="posRight()" style="padding:20px">&gt;</button>
+        <button type="button" onclick="posUp()" class="border p-2 rounded-sm shadow-sm">^</button><br>
+        <button type="button" onclick="posLeft()" class="border p-2 rounded-sm">&lt;</button>
+        <button type="button" onclick="posDown()" class="border p-2 rounded-sm">v</button>
+        <button type="button" onclick="posRight()" class="border p-2 rounded-sm">&gt;</button>
       </div>
       <div>
         <label for="xpos">x:</label>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="inline-block border">
+    <div class="inline-block border p-1">
       <h2>Mode</h2>
       <label for="mode_move">Move</label>
       <input id="mode_move" type="radio" oninput="changeMode()" name="mode" value="move" checked>
@@ -39,9 +39,9 @@
     </div>
 
 
-    <div class="inline-block border">
+    <div class="inline-block border p-1">
       <h2>Images</h2>
-      <select id="image_list">
+      <select id="image_list" class="border p-1 rounded-sm">
       <option value="/elements/images/mountan_background.png">Mountain Background</option>
       <option value="/elements/images/mushroom.png">Mushroom</option>
       <option value="/elements/images/transparent.png">Transparent</option>
@@ -77,15 +77,15 @@
         <div>
           <label for="image_url">Url</label>
           <input id="image_url" type="text" value="https://cdnb.artstation.com/p/assets/images/images/010/604/427/large/nick-rossi-gam322-nrossi-m11-lava.jpg">
-          <button type="button" onclick="loadImage()">Add</button>
-          <button type="button" onclick="addFrame()">Add Frame</button>
+          <button type="button" class="border p-2 rounded-sm" onclick="loadImage()">Add</button>
+          <button type="button" class="border p-2 rounded-sm" onclick="addFrame()">Add Frame</button>
         </div>
       </form>
       <div id="images"></div>
     </div>
 
     <div class="block border padding-1">
-      <button type="button" onclick="getOutput()">Get output</button>
+      <button type="button" class="border p-2 rounded-sm" onclick="getOutput()">Get output</button>
       <div id="generated"></div>
     </div>
 
