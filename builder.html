@@ -309,7 +309,7 @@
       target.addEventListener("dragover", (e) => {
         e.preventDefault();
         if (addingImage != null && e.clientX > addingImage.left) {
-          console.log(e.clientX)
+          console.log(addingImage.left, e.clientX)
         }
       });
 
