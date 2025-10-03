@@ -14,7 +14,7 @@
     <div class="inline-block border p-1">
       <h2>Position</h2>
       <div style="text-align: center;">
-        <button type="button" onclick="posUp()" class="border p-2 rounded-sm shadow-sm">^</button><br>
+        <button type="button" onclick="posUp()" class="border p-2 rounded-sm">^</button><br>
         <button type="button" onclick="posLeft()" class="border p-2 rounded-sm">&lt;</button>
         <button type="button" onclick="posDown()" class="border p-2 rounded-sm">v</button>
         <button type="button" onclick="posRight()" class="border p-2 rounded-sm">&gt;</button>
@@ -290,7 +290,9 @@
           height: e.target.height,
           offsetx: posx,
           offsety: posy,
-          frames: ''
+          frames: '',
+          left: rect.left,
+          top: rect.top
         }
 
         if (e.target.dataset.frames) {
@@ -304,8 +306,11 @@
       }
 
       const target = document.getElementById("builderCanvas");
-      target.addEventListener("dragover", (event) => {
-        event.preventDefault();
+      target.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        if (e.clientX > addingImage.left) {
+          console.log(e.clientX)
+        }
       });
 
       target.addEventListener('drop', (e) => {
