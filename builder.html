@@ -306,19 +306,32 @@
       }
 
       const target = document.getElementById("builderCanvas");
+      let draggPlaced = 0
       target.addEventListener("dragover", (e) => {
         e.preventDefault();
+        if (mode == 'move') {
+          return;
+        }
         const selectedImageRight = addingImage.left + addingImage.width
         if (addingImage != null && e.clientX > selectedImageRight) {
-          let dragAddImageLeft = selectedImageRight
-          while (dragAddImageLeft < e.clientX) {
-            // add image
+          let dragAddImageLeft = selectedImageRight + (addingImage.width * draggPlaced)
+          if (dragAddImageLeft < e.clientX) {
+            var rect = target.getBoundingClientRect(); 
+            var posx = dragAddImageLeft; 
+            var posy = rect.top - addingImage.offsety;
+
+            e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          
           }
           console.log(addingImage.left, e.clientX)
         }
       });
 
       target.addEventListener('drop', (e) => {
+        draggPlaced = 0
+        if (mode !== 'move') {
+          return;
+        }
         if (addingImage) {
           var rect = target.getBoundingClientRect(); 
           var posx = e.clientX - rect.left - addingImage.offsetx; 
