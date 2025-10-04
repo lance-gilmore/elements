@@ -326,19 +326,16 @@
           let dragAddImageLeft = selectedImageRight + ((addingImage.width+1) * draggPlacedRigth)
           if (dragAddImageLeft < e.clientX) {
             var rect = target.getBoundingClientRect(); 
-            var posx = dragAddImageLeft;
+            var posx = dragAddImageLeft - addingImage.width;
             var posy = addingImage.top - rect.top
             addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
-            //e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
             draggPlacedRigth++
           }
         }
 
         if (e.clientX < addingImage.left) {
-          console.log('here1')
           let dragAddImageLeft = addingImage.left - ((addingImage.width+1) * draggPlacedLeft)
           if (dragAddImageLeft > e.clientX) {
-            console.log('here2')
             var rect = target.getBoundingClientRect(); 
             var posx = dragAddImageLeft;
             var posy = addingImage.top - rect.top
