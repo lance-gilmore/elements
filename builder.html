@@ -360,7 +360,7 @@
         if (e.clientY < addingImage.top) {
           let dragAddImageTop = addingImage.top - ((addingImage.height+1) * draggPlacedTop)
           if (dragAddImageTop > e.clientY) {
-            console.log('adding')
+            console.log('adding', dragAddImageTop)
             var rect = target.getBoundingClientRect(); 
             var posx = addingImage.left - rect.left;
             var posy = dragAddImageTop - addingImage.height
