@@ -254,7 +254,7 @@
             } else {
               imgSrc = element.src
             }
-            output.push({w:element.width,h:element.height,x:left,y:top,img:imgSrc})
+            output.push({w:element.width,h:element.height,x:Math.round(left),y:Math.round(top),img:imgSrc})
           }
         }
         const outputBox = document.getElementById("generated");
@@ -404,8 +404,6 @@
 
       }
 
-
-      
     </script>
 
 
