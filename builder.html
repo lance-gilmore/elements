@@ -335,8 +335,10 @@
         }
 
         if (e.clientX < addingImage.left) {
-          let dragAddImageLeft = addingImage.left - ((addingImage.width+1) * draggPlacedRigth)
+          console.log('here1')
+          let dragAddImageLeft = addingImage.left - ((addingImage.width+1) * draggPlacedLeft)
           if (dragAddImageLeft > e.clientX) {
+            console.log('here2')
             var rect = target.getBoundingClientRect(); 
             var posx = dragAddImageLeft;
             var posy = addingImage.top - rect.top
@@ -360,7 +362,7 @@
         }
 
         if (e.clientY < addingImage.top) {
-          let dragAddImageTop = addingImage.top - ((addingImage.height+1) * draggPlacedBelow)
+          let dragAddImageTop = addingImage.top - ((addingImage.height+1) * draggPlacedTop)
           if (dragAddImageTop > e.clientY) {
             var rect = target.getBoundingClientRect(); 
             var posx = addingImage.left - rect.left;
