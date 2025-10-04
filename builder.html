@@ -314,7 +314,7 @@
         }
         const selectedImageRight = addingImage.left + addingImage.width
         if (addingImage != null && e.clientX > selectedImageRight) {
-          let dragAddImageLeft = selectedImageRight + (addingImage.width * draggPlaced)
+          let dragAddImageLeft = selectedImageRight + ((addingImage.width+1) * draggPlaced)
           if (dragAddImageLeft < e.clientX) {
             console.log(dragAddImageLeft, e.clientX)
             var rect = target.getBoundingClientRect(); 
