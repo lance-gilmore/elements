@@ -352,7 +352,8 @@
           var posx = e.clientX - rect.left - addingImage.offsetx; 
           var posy = e.clientY - rect.top - addingImage.offsety;
 
-          e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+          addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
+          //e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
           if (addingImage.moveElement) {
             addingImage.moveElement.remove()
           }
@@ -365,6 +366,13 @@
 
         addingImage = null
       })
+
+      function addImagehtml(target, frames, posx, posy, height, width, src) {
+        target.insertAdjacentHTML('beforeend', '<image data-frames="'+frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:width;height:'+height+'" src="'+src+'" width="'+width+'" height="'+height+'">')
+
+      }
+
+
       
     </script>
 
