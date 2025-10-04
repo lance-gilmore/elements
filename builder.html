@@ -306,31 +306,44 @@
       }
 
       const target = document.getElementById("builderCanvas");
-      let draggPlaced = 0
+      let draggPlacedx = 0
+      let draggPlacedy = 0
       target.addEventListener("dragover", (e) => {
         e.preventDefault();
-        if (mode == 'move') {
+        if (mode == 'move' || addingImage == null) {
           return;
         }
         const selectedImageRight = addingImage.left + addingImage.width
-        if (addingImage != null && e.clientX > selectedImageRight) {
-          let dragAddImageLeft = selectedImageRight + ((addingImage.width+1) * draggPlaced)
+        if (e.clientX > selectedImageRight) {
+          let dragAddImageLeft = selectedImageRight + ((addingImage.width+1) * draggPlacedx)
           if (dragAddImageLeft < e.clientX) {
-            console.log(dragAddImageLeft, e.clientX)
             var rect = target.getBoundingClientRect(); 
-            var posx = dragAddImageLeft; 
-           // var posy = addingImage.top - rect.top - addingImage.offsety;
-            var posy = addingImage.top - rect.top //- addingImage.offsety;
+            var posx = dragAddImageLeft;
+            var posy = addingImage.top - rect.top
 
             e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
-            draggPlaced++
+            draggPlacedx++
           }
-          
         }
+
+        const selectedImageBottom = addingImage.top + addingImage.height
+        if (e.clientY > selectedImageBottom) {
+          let dragAddImageTop = selectedImageBottom + ((addingImage.height+1) * draggPlacedy)
+          if (dragAddImageTop < e.clientY) {
+            var rect = target.getBoundingClientRect(); 
+            var posx = addingImage.left - rect.left;
+            var posy = dragAddImageTop
+
+            e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
+            draggPlacedy++
+          }
+        }
+
       });
 
       target.addEventListener('drop', (e) => {
-        draggPlaced = 0
+        draggPlacedx = 0
+        draggPlacedy = 0
         if (mode !== 'move') {
           return;
         }
