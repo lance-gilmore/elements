@@ -359,6 +359,18 @@
           }
         }
 
+        if (e.clientY < addingImage.top) {
+          let dragAddImageTop = addingImage.top - ((addingImage.height+1) * draggPlacedBelow)
+          if (dragAddImageTop > e.clientY) {
+            var rect = target.getBoundingClientRect(); 
+            var posx = addingImage.left - rect.left;
+            var posy = dragAddImageTop
+
+            addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
+            draggPlacedTop++
+          }
+        }
+
       });
 
       target.addEventListener('drop', (e) => {
