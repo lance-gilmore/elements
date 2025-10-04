@@ -319,7 +319,7 @@
             console.log(addingImage.left, e.clientX)
             var rect = target.getBoundingClientRect(); 
             var posx = dragAddImageLeft; 
-            var posy = e.clientY - rect.top - addingImage.offsety;
+            var posy = addingImage.top;
 
             e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
             draggPlaced++
