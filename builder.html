@@ -353,7 +353,6 @@
             var posy = dragAddImageTop
 
             addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
-            //e.target.insertAdjacentHTML('beforeend', '<image data-frames="'+addingImage.frames+'" class="img_tile layer_'+active_layer+'" onmousedown="addImageDrag()" draggable="true" style="left:'+posx+'px;top:'+posy+'px;position:absolute;width:addingImage.width;height:'+addingImage.height+'" src="'+addingImage.src+'" width="'+addingImage.width+'" height="'+addingImage.height+'">')
             draggPlacedBelow++
           }
         }
@@ -363,7 +362,7 @@
           if (dragAddImageTop > e.clientY) {
             var rect = target.getBoundingClientRect(); 
             var posx = addingImage.left - rect.left;
-            var posy = dragAddImageTop - addingImage.top - 1
+            var posy = dragAddImageTop - addingImage.height - 1
 
             addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
             draggPlacedTop++
