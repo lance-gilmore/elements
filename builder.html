@@ -259,6 +259,7 @@
         }
         const outputBox = document.getElementById("generated");
         outputBox.textContent = JSON.stringify(output)
+        navigator.clipboard.writeText(JSON.stringify(output))
       }
 
       function widthChange() {
