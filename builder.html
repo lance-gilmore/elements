@@ -94,8 +94,7 @@
     </div>
 
     <div class="block border p-1">
-      <button type="button" class="border p-2 rounded-sm" onclick="getOutput()">Get output</button>
-      <div id="generated"></div>
+      <button type="button" class="border p-2 rounded-sm" onclick="getOutput()">Copy output</button>
     </div>
 
     <script type="module">
@@ -257,8 +256,8 @@
             output.push({w:element.width,h:element.height,x:Math.round(left),y:Math.round(top),img:imgSrc})
           }
         }
-        const outputBox = document.getElementById("generated");
-        outputBox.textContent = JSON.stringify(output)
+        // const outputBox = document.getElementById("generated");
+        // outputBox.textContent = JSON.stringify(output)
         navigator.clipboard.writeText(JSON.stringify(output))
       }
 
