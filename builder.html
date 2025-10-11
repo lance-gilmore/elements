@@ -323,7 +323,7 @@
         }
         const selectedImageRight = addingImage.left + addingImage.width
         if (e.clientX > selectedImageRight) {
-          let dragAddImageLeft = selectedImageRight + ((addingImage.width+1) * draggPlacedRigth)
+          let dragAddImageLeft = selectedImageRight + ((addingImage.width) * draggPlacedRigth)
           if (dragAddImageLeft < e.clientX) {
             var rect = target.getBoundingClientRect()
             var posx = dragAddImageLeft + target.parentElement.scrollLeft;
