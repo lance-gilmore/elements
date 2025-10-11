@@ -339,7 +339,7 @@
           let dragAddImageLeft = addingImage.left - ((addingImage.width+1) * draggPlacedLeft)
           if (dragAddImageLeft > e.clientX) {
             var rect = target.getBoundingClientRect(); 
-            var posx = dragAddImageLeft - addingImage.width
+            var posx = dragAddImageLeft + target.parentElement.scrollLeft - addingImage.width
             var posy = addingImage.top - rect.top
             addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
             draggPlacedLeft++
