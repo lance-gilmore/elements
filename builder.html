@@ -329,7 +329,7 @@
             var posx = dragAddImageLeft + target.scrollLeft;
             var posy = addingImage.top - rect.top
 
-            console.log('placing image')
+            console.log('placing image', target.scrollLeft)
             addImagehtml(e.target, addingImage.frames, posx, posy, addingImage.height, addingImage.width, addingImage.src)
             draggPlacedRigth++
           }
