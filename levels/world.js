@@ -44,10 +44,10 @@ export default class extends Level {
         this.layers.push(doors)
 
 
-        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[])
+        const s = new Bunny(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[], store)
         await this.setupPlayer(s, doors)
 
-        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[])
+        const g = new Girl(this.ctx, this.controlls, [platforms], this.viewWidth,this.viewHeight, bounce, doors,[],[], store)
         await this.setupPlayer(g, doors)
 
         const foreground = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
