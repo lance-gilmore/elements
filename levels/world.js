@@ -2,7 +2,7 @@ import Level from '../engine/level.js'
 import Bunny from '../player_charicters/bunny.js'
 import Girl from '../player_charicters/girl.js'
 import TopBar from '../layers/top_bar.js'
-import LayerData from '../layers/world_layer_data.js'
+import LayerData from '../layer_data/world_layer_data.js'
 import JsonLayer from '../engine/json_layer.js'
 import Doors from '../layers/world_doors.js'
 
