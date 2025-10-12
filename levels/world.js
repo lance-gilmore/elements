@@ -31,6 +31,10 @@ export default class extends Level {
         await platforms.load(layerData.platforms)
         this.layers.push(platforms)
 
+        const store = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
+        await store.load(layerData.store)
+        this.layers.push(store)
+
         const bounce = new JsonLayer(this.ctx,0,0,this.viewWidth,this.viewHeight)
         await bounce.load(layerData.bounce)
         this.layers.push(bounce)
@@ -56,6 +60,9 @@ export default class extends Level {
         await player.load()
         player.addExitLevelListener(() => {
             this.triggerExitLevel(doors.level)
+        })
+        player.addStoreListener(() => {
+            this.triggerStore()
         })
 
         this.playerCharicters.push(player)
