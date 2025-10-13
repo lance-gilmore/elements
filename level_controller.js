@@ -37,7 +37,7 @@ export default class extends Drawable {
             this.loadLevel(level);
         })
         l.addStoreListener((level) => {
-            //this.#updateScores(level,l.topBar)
+            this.#updateScores(level,l.topBar)
             this.loadStore(level);
         })
     }
