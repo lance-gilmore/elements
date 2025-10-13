@@ -32,6 +32,22 @@ export default class extends Layer {
         const lvl5 = new Door(this.ctx,0,0,0,0,1910,320,'Level5',new (this.levels.get('Level5'))(), this.levelScores['Level5'])
         await lvl5.load()
         this.elements.push(lvl5)
+
+        const lvl6 = new Door(this.ctx,0,0,0,0,2210,320,'Level6',new (this.levels.get('Level6'))(), this.levelScores['Level6'])
+        await lvl6.load()
+        this.elements.push(lvl6)
+
+        const lvl7 = new Door(this.ctx,0,0,0,0,2510,320,'Level7',new (this.levels.get('Level7'))(), this.levelScores['Level7'])
+        await lvl7.load()
+        this.elements.push(lvl7)
+
+        const lvl8 = new Door(this.ctx,0,0,0,0,2810,320,'Level8',new (this.levels.get('Level8'))(), this.levelScores['Level8'])
+        await lvl8.load()
+        this.elements.push(lvl8)
+
+        const lvl9 = new Door(this.ctx,0,0,0,0,3110,320,'Level9',new (this.levels.get('Level9'))(), this.levelScores['Level9'])
+        await lvl9.load()
+        this.elements.push(lvl9)
         
     }
 
