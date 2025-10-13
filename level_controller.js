@@ -5,6 +5,12 @@ import World from './levels/world.js'
 import Level1 from './layer_data/level1_layer_data.js'
 import Level2 from './layer_data/level2_layer_data.js'
 import Level3 from './layer_data/level3_layer_data.js'
+import Level4 from './layer_data/level4_layer_data.js'
+import Level5 from './layer_data/level5_layer_data.js'
+import Level6 from './layer_data/level6_layer_data.js'
+import Level7 from './layer_data/level7_layer_data.js'
+import Level8 from './layer_data/level8_layer_data.js'
+import Level9 from './layer_data/level9_layer_data.js'
 
 export default class extends Drawable {
     
@@ -15,7 +21,13 @@ export default class extends Drawable {
     levels = new Map([
         ['Level1', Level1],
         ['Level2', Level2],
-        ['Level3', Level3]
+        ['Level3', Level3],
+        ['Level4', Level4],
+        ['Level5', Level5],
+        ['Level6', Level6],
+        ['Level7', Level7],
+        ['Level8', Level8],
+        ['Level9', Level9]
       ]);
 
 
