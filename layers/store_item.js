@@ -51,7 +51,7 @@ export default class extends Drawable {
 
 
 
-        const textOffsetTop = 28
+        const textOffsetTop = 29
         const fontSize = "14"
 
         const txt1 = new TextDrawable(this.ctx,37+this.#positionx,textOffsetTop+this.#positiony,fontSize)
