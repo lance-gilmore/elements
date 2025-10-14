@@ -62,7 +62,7 @@ export default class extends Drawable {
         txt3.text =  this.protons
         this.elements.push(txt3)
 
-        const symbolText = new TextDrawable(this.ctx,5+this.#positionx,50+this.#positiony,"30")
+        const symbolText = new TextDrawable(this.ctx,9+this.#positionx,50+this.#positiony,"30")
         symbolText.text =  this.symbol
         this.elements.push(symbolText)
     }
