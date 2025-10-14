@@ -55,7 +55,18 @@ export default class extends Drawable {
     }
 
     async loadStore(level) {
-        const l = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, level, this.levelScores[level])
+        let totalScores = {
+            protons: 0,
+            neutrons: 0,
+            electrons: 0
+        }
+        this.levels.forEach((_value, key) => {
+            totalScores.protons += this.levelScores[key].protons
+            totalScores.neutrons += this.levelScores[key].neutrons
+            totalScores.electrons += this.levelScores[key].electrons
+        })
+
+        const l = new Store(this.ctx, 0, 0, this.canvasw, this.canvash, this.controlls, level, totalScores)
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener(() => {

@@ -49,6 +49,7 @@ export default class extends Level {
          this.layers.push(items)
 
         const scores = new Scores(this.ctx,0,0,this.viewWidth,this.viewHeight,250)
+        
         scores.neutrons = this.scores.neutrons
         scores.protons = this.scores.protons
         scores.electrons = this.scores.electrons
