@@ -70,7 +70,7 @@ export default class extends Drawable {
         await l.load()
         this.currentLevel = l
         l.addExitLevelListener(() => {
-            loadWorld()
+            this.loadWorld()
             //this.loadLevel(l.level);
           })
     }
