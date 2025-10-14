@@ -32,7 +32,7 @@ export default class extends Drawable {
         const infoOffsetTop = 5
 
         const img = "https://lance-gilmore.github.io/elements/images/neutron1.png"
-        const layerImage1 = new ImageDrawable(this.ctx,35+this.#positionx,infoOffsetTop+this.#positiony,12,12)
+        const layerImage1 = new ImageDrawable(this.ctx,37+this.#positionx,infoOffsetTop+this.#positiony,12,12)
         layerImage1.imageLocation = img
         await layerImage1.load()
         this.elements.push(layerImage1)
@@ -51,10 +51,10 @@ export default class extends Drawable {
 
 
 
-        const textOffsetTop = 27
+        const textOffsetTop = 28
         const fontSize = "14"
 
-        const txt1 = new TextDrawable(this.ctx,35+this.#positionx,textOffsetTop+this.#positiony,fontSize)
+        const txt1 = new TextDrawable(this.ctx,37+this.#positionx,textOffsetTop+this.#positiony,fontSize)
         txt1.text =  this.neutrons
         this.elements.push(txt1)
 
